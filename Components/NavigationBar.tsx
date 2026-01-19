@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { MdOutlineDarkMode } from "react-icons/md";
+
 
 const NavigationBar = () => {
   const [open, setOpen] = useState(false);
 
   const navMenu = [
-    { name: "Home", path: "/" },
     { name: "Components", path: "/components" },
     { name: "Documentation", path: "/documentation" },
     { name: "Contact", path: "/contact" },
@@ -19,14 +20,14 @@ const NavigationBar = () => {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-lg font-semibold tracking-tight text-gray-900 transition hover:opacity-90 hover:scale-110"
+          className="flex items-center gap-2 text-lg font-semibold tracking-tight md:font-bold md:text-2xl text-gray-900 transition hover:opacity-90 hover:scale-110"
         >
           <img
-            src="/lightLogo.png"
+            src="/darkLogo.png"
             alt="SaelixUI logo"
-            className="h-7 w-7 bg-gray-100 rounded-lg shadow-2xl"
+            className="size-8 bg-black rounded-lg shadow-2xl"
           />
-          <span>SaelixUI</span>
+          <span>Saelix UI</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -51,7 +52,7 @@ const NavigationBar = () => {
                        font-medium text-gray-700 transition
                        hover:bg-gray-100 active:scale-95"
           >
-            Toggle theme
+            <MdOutlineDarkMode />
           </button>
         </div>
 
@@ -62,7 +63,7 @@ const NavigationBar = () => {
                        font-medium text-gray-700 transition
                        hover:bg-gray-100 active:scale-95"
           >
-            Theme
+            <MdOutlineDarkMode />
           </button>
 
           {/* Hamburger */}
