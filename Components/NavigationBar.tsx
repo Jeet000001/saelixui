@@ -14,15 +14,19 @@ const NavigationBar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur">
+    <nav className="sticky top-0 z-50 w-full border-b bg-white/70 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-
         {/* Logo */}
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-gray-900 transition-all hover:text-blue-600 hover:scale-105"
+          className="flex items-center gap-2 text-lg font-semibold tracking-tight text-gray-900 transition hover:opacity-90 hover:scale-110"
         >
-          SaelixUI
+          <img
+            src="/lightLogo.png"
+            alt="SaelixUI logo"
+            className="h-7 w-7 bg-gray-100 rounded-lg shadow-2xl"
+          />
+          <span>SaelixUI</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -31,9 +35,10 @@ const NavigationBar = () => {
             <Link
               key={item.name}
               href={item.path}
-              className="relative text-sm font-medium text-gray-600 transition-colors hover:text-blue-600
-                         after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0
-                         after:rounded-full after:bg-blue-600 after:transition-all after:duration-300
+              className="relative text-sm font-medium text-gray-600 transition-colors
+                         hover:text-gray-900
+                         after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0
+                         after:bg-gray-900 after:transition-all after:duration-300
                          hover:after:w-full"
             >
               {item.name}
@@ -41,25 +46,21 @@ const NavigationBar = () => {
           ))}
 
           {/* Theme Button */}
-          
-        </div>
-        <div>
-            <button
-            className="rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium
-                       text-gray-700 transition-all
-                       hover:border-blue-600 hover:text-blue-600
-                       hover:shadow-sm active:scale-95"
+          <button
+            className="rounded-md border border-gray-300 px-3 py-1.5 text-sm
+                       font-medium text-gray-700 transition
+                       hover:bg-gray-100 active:scale-95"
           >
-            Theme
+            Toggle theme
           </button>
         </div>
 
-        {/* Right Controls (Mobile) */}
-        <div className="flex items-center gap-3 md:hidden">
+        {/* Mobile Controls */}
+        <div className="flex items-center gap-2 md:hidden">
           <button
-            className="rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium
-                       text-gray-700 transition-all
-                       hover:border-blue-600 hover:text-blue-600 active:scale-95"
+            className="rounded-md border border-gray-300 px-3 py-1.5 text-sm
+                       font-medium text-gray-700 transition
+                       hover:bg-gray-100 active:scale-95"
           >
             Theme
           </button>
@@ -67,20 +68,21 @@ const NavigationBar = () => {
           {/* Hamburger */}
           <button
             onClick={() => setOpen(!open)}
-            className="flex flex-col justify-center gap-1.5 rounded-md border border-gray-300 p-2 transition hover:border-blue-600"
+            className="flex flex-col justify-center gap-1.5 rounded-md
+                       border border-gray-300 p-2 transition hover:bg-gray-100"
           >
             <span
-              className={`h-0.5 w-5 bg-gray-800 transition-all duration-300 ${
+              className={`h-0.5 w-5 bg-gray-900 transition-all duration-300 ${
                 open ? "translate-y-2 rotate-45" : ""
               }`}
             />
             <span
-              className={`h-0.5 w-5 bg-gray-800 transition-all duration-300 ${
+              className={`h-0.5 w-5 bg-gray-900 transition-all duration-300 ${
                 open ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`h-0.5 w-5 bg-gray-800 transition-all duration-300 ${
+              className={`h-0.5 w-5 bg-gray-900 transition-all duration-300 ${
                 open ? "-translate-y-2 -rotate-45" : ""
               }`}
             />
@@ -91,18 +93,17 @@ const NavigationBar = () => {
       {/* Mobile Menu */}
       <div
         className={`overflow-hidden transition-all duration-300 md:hidden ${
-          open ? "max-h-80" : "max-h-0"
+          open ? "max-h-72" : "max-h-0"
         }`}
       >
-        <div className="mx-4 mb-4 rounded-xl border bg-white p-4 shadow-sm">
+        <div className="mx-4 mb-4 rounded-lg border bg-white shadow-sm">
           {navMenu.map((item) => (
             <Link
               key={item.name}
               href={item.path}
               onClick={() => setOpen(false)}
-              className="block rounded-md px-3 py-2 text-sm font-medium
-                         text-gray-700 transition
-                         hover:bg-blue-50 hover:text-blue-600"
+              className="block px-4 py-3 text-sm font-medium text-gray-700
+                         transition hover:bg-gray-100"
             >
               {item.name}
             </Link>
