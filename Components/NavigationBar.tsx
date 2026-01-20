@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+
 import { useState } from "react";
 import { Moon } from "lucide-react";
 
@@ -16,7 +16,7 @@ const NavigationBar = () => {
     <nav className="sticky top-0 z-50 w-full border-b bg-white/70 backdrop-blur-md">
       <div className="flex justify-between items-center md:px-35 md:py-3 px-8 py-3">
         <Link href={"/"} className="flex items-center md:gap-3 gap-1 hover:scale-105 ease-in-out duration-500">
-          <Image
+          <img
             src="/LightLogo.png"
             alt="Logo"
             width={0}
