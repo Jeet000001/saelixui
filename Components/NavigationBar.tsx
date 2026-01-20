@@ -16,7 +16,10 @@ const NavigationBar = () => {
   return (
     <nav className="sticky top-0 z-50 w-full shadow-lg bg-white/70 backdrop-blur-md">
       <div className="flex justify-between items-center md:px-25 md:py-3 px-8 py-3">
-        <Link href={"/"} className="flex items-center md:gap-3 gap-1 hover:scale-105 ease-in-out duration-500">
+        <Link
+          href={"/"}
+          className="flex items-center md:gap-3 gap-1 hover:scale-105 ease-in-out duration-500"
+        >
           <Image
             src="/LightLogo.png"
             alt="Logo"
@@ -24,7 +27,9 @@ const NavigationBar = () => {
             height={0}
             className="bg-black rounded-lg size-7 md:size-10 shadow-2xl"
           />
-          <h1 className="font-bold text-xl md:text-2xl text-shadow-lg">Saelix UI</h1>
+          <h1 className="font-bold text-xl md:text-2xl text-shadow-lg">
+            Saelix UI
+          </h1>
         </Link>
         <div className="md:flex md:gap-8 md:items-center hidden">
           {NavMenu.map((menu) => (
@@ -97,4 +102,3 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
-
