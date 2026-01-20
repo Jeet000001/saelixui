@@ -1,72 +1,41 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import { MdOutlineDarkMode } from "react-icons/md";
-
+import { Moon } from "lucide-react";
 
 const NavigationBar = () => {
   const [open, setOpen] = useState(false);
-
-  const navMenu = [
+  const NavMenu = [
     { name: "Components", path: "/components" },
     { name: "Documentation", path: "/documentation" },
     { name: "Contact", path: "/contact" },
   ];
-
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-lg font-semibold tracking-tight md:font-bold md:text-2xl text-gray-900 transition hover:opacity-90 hover:scale-110"
-        >
-          <img
-            src="/darkLogo.png"
-            alt="SaelixUI logo"
-            className="size-8 bg-black rounded-lg shadow-2xl"
+      <div className="flex justify-between items-center px-35 py-3">
+        <Link href={"/"} className="flex items-center gap-3">
+          <Image
+            src="/LightLogo.png"
+            alt="Logo"
+            width={40}
+            height={40}
+            className="bg-black rounded-lg"
           />
-          <span>Saelix UI</span>
+          <h1 className="font-bold text-2xl">Saelix UI</h1>
         </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden items-center gap-8 md:flex">
-          {navMenu.map((item) => (
-            <Link
-              key={item.name}
-              href={item.path}
-              className="relative text-sm font-medium text-gray-600 transition-colors
-                         hover:text-gray-900
-                         after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0
-                         after:bg-gray-900 after:transition-all after:duration-300
-                         hover:after:w-full"
-            >
-              {item.name}
+        <div className="md:flex md:gap-8 md:items-center hidden">
+          {NavMenu.map((menu) => (
+            <Link key={menu.name} href={menu.path}>
+              {menu.name}
             </Link>
           ))}
-
-          {/* Theme Button */}
-          <button
-            className="rounded-md border border-gray-300 px-3 py-1.5 text-sm
-                       font-medium text-gray-700 transition
-                       hover:bg-gray-100 active:scale-95"
-          >
-            <MdOutlineDarkMode />
+          <button className="border px-3 py-3 rounded-lg">
+            <Moon className="size-5 text-gray-600" />
           </button>
         </div>
-
-        {/* Mobile Controls */}
-        <div className="flex items-center gap-2 md:hidden">
-          <button
-            className="rounded-md border border-gray-300 px-3 py-1.5 text-sm
-                       font-medium text-gray-700 transition
-                       hover:bg-gray-100 active:scale-95"
-          >
-            <MdOutlineDarkMode />
-          </button>
-
-          {/* Hamburger */}
+        <div className="md:hidden">
           <button
             onClick={() => setOpen(!open)}
             className="flex flex-col justify-center gap-1.5 rounded-md
@@ -88,27 +57,6 @@ const NavigationBar = () => {
               }`}
             />
           </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`overflow-hidden transition-all duration-300 md:hidden ${
-          open ? "max-h-72" : "max-h-0"
-        }`}
-      >
-        <div className="mx-4 mb-4 rounded-lg border bg-white shadow-sm">
-          {navMenu.map((item) => (
-            <Link
-              key={item.name}
-              href={item.path}
-              onClick={() => setOpen(false)}
-              className="block px-4 py-3 text-sm font-medium text-gray-700
-                         transition hover:bg-gray-100"
-            >
-              {item.name}
-            </Link>
-          ))}
         </div>
       </div>
     </nav>
