@@ -1,9 +1,9 @@
-import { Button } from '@/src/components/button'
-
+import HeroSection from "@/Components/HeroSection"
 
 const page = () => {
   return (
     <div>
+      <HeroSection />
     </div>
   )
 }
