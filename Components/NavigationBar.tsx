@@ -15,7 +15,7 @@ const NavigationBar = () => {
   ];
   return (
     <nav className="sticky top-0 z-50 w-full shadow-lg bg-white/70 backdrop-blur-md">
-      <div className="flex justify-between items-center md:px-35 md:py-3 px-8 py-3">
+      <div className="flex justify-between items-center md:px-25 md:py-3 px-8 py-3">
         <Link href={"/"} className="flex items-center md:gap-3 gap-1 hover:scale-105 ease-in-out duration-500">
           <Image
             src="/LightLogo.png"
