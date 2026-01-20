@@ -15,15 +15,15 @@ const NavigationBar = () => {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white/70 backdrop-blur-md">
       <div className="flex justify-between items-center md:px-35 md:py-3 px-8 py-3">
-        <Link href={"/"} className="flex items-center md:gap-3 gap-1">
+        <Link href={"/"} className="flex items-center md:gap-3 gap-1 hover:scale-105 ease-in-out duration-500">
           <Image
             src="/LightLogo.png"
             alt="Logo"
             width={0}
             height={0}
-            className="bg-black rounded-lg size-7 md:size-10"
+            className="bg-black rounded-lg size-7 md:size-10 shadow-2xl"
           />
-          <h1 className="font-bold text-xl md:text-2xl">Saelix UI</h1>
+          <h1 className="font-bold text-xl md:text-2xl text-shadow-lg">Saelix UI</h1>
         </Link>
         <div className="md:flex md:gap-8 md:items-center hidden">
           {NavMenu.map((menu) => (
@@ -31,7 +31,7 @@ const NavigationBar = () => {
               key={menu.name}
               href={menu.path}
               className="relative text-sm font-medium text-gray-600 transition-colors
-                         hover:text-gray-900
+                         hover:text-gray-900 text-shadow-lg
                          after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0
                          after:bg-gray-900 after:transition-all after:duration-300
                          hover:after:w-full"
@@ -39,8 +39,8 @@ const NavigationBar = () => {
               {menu.name}
             </Link>
           ))}
-          <button className="border px-3 py-3 rounded-lg">
-            <Moon className="size-5 text-gray-600" />
+          <button className="bg-gray-700 hover:bg-gray-800 active:scale-95 cursor-pointer px-2 shadow-xl py-2 rounded-lg">
+            <Moon className="size-5 text-gray-200" />
           </button>
         </div>
 
