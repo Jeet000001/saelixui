@@ -39,14 +39,14 @@ const NavigationBar = () => {
               {menu.name}
             </Link>
           ))}
-          <button className="bg-gray-700 hover:bg-gray-800 active:scale-95 cursor-pointer px-2 shadow-xl py-2 rounded-lg">
+          <button className="bg-gray-700 hover:bg-gray-800 active:scale-95 transition-all duration-300  cursor-pointer px-2 shadow-xl py-2 rounded-lg">
             <Moon className="size-5 text-gray-200" />
           </button>
         </div>
 
         <div className="md:hidden flex justify-center gap-3">
           <div className="md:hidden">
-            <button className="bg-gray-700 hover:bg-gray-800 cursor-pointer px-2 shadow-xl py-2 rounded-lg">
+            <button className="bg-gray-700 hover:bg-gray-800 cursor-pointer px-2 transition-all duration-300  shadow-xl py-2 rounded-lg">
               <Moon className="size-5 text-gray-200" />
             </button>
           </div>
@@ -96,3 +96,4 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
+
