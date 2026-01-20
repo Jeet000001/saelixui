@@ -47,7 +47,7 @@ export default function HeroSection() {
       </h1>
 
       {/* Description */}
-      <p className="max-w-2xl text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed sm:leading-relaxed">
+      <p className="w-80 md:w-4xl text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed sm:leading-relaxed">
         SaelixUI is a comprehensive collection of reusable UI components built
         for speed and scalability. Use our default styles to get started
         quickly, or adapt the components to match your custom design system
