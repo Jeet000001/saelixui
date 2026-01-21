@@ -39,7 +39,7 @@ export default function HeroSection() {
       >
         Modern UI That Makes Your Website 10x
         <span
-          className={`ml-3 inline-block text-blue-600 transition-all duration-500 ease-in-out text-shadow-md text-shadow-blue-200
+          className={`ml-3 inline-block text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-purple-500 transition-all duration-500 ease-in-out text-shadow-lg
           ${visible ? "opacity-100 translate-x-3" : "opacity-0 translate-x-0"}`}
         >
           {words[index]}

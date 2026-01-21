@@ -1,5 +1,5 @@
-import ContactCards from "@/Components/ContactCards";
 import ContactForm from "@/Components/ContactForm";
+import { Clock4 } from "lucide-react";
 
 const ContactPage = () => {
   return (
@@ -15,7 +15,7 @@ const ContactPage = () => {
             {/* Heading */}
             <h4 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
               Let's Start a{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-purple-500">
                 Conversation
               </span>
             </h4>
@@ -27,7 +27,7 @@ const ContactPage = () => {
             </p>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 flex justify-center">
+        <div className=" flex justify-center">
           <ContactForm />
         </div>
       </div>
