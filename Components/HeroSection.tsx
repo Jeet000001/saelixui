@@ -38,6 +38,7 @@ export default function HeroSection() {
         bg-linear-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent"
       >
         Modern UI That Makes Your Website
+        <br />
         <span
           className={`ml-3 inline-block text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-purple-500 transition-all duration-500 ease-in-out text-shadow-lg
           ${visible ? "opacity-100 translate-x-3" : "opacity-0 translate-x-0"}`}
