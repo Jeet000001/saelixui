@@ -1,5 +1,4 @@
 import ContactForm from "@/Components/ContactForm";
-import { Clock4 } from "lucide-react";
 
 const ContactPage = () => {
   return (
