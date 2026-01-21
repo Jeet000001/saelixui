@@ -1,13 +1,7 @@
 "use client";
 
 import {
-  Mail,
-  MessageCircle,
-  Github,
-  Linkedin,
   Send,
-  MapPin,
-  Clock,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -25,7 +19,8 @@ const ContactForm = () => {
     setMessage("");
   };
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 sm:w-100">
+    <div className="w-80 bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
       <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
         <div>
           <label
@@ -111,6 +106,7 @@ const ContactForm = () => {
         <Send className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
     </form>
+    </div>
   );
 };
 
