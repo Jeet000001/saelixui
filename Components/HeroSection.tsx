@@ -60,7 +60,7 @@ export default function HeroSection() {
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
         </button>
 
-        <button className="w-full sm:w-auto text-slate-700 hover:text-slate-400 shadow-lg hover:shadow-xl shadow-slate-300 cursor-pointer active:scale-95 transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold border border-slate-200 hover:border-slate-300 bg-white/50 backdrop-blur-sm">
+        <button className="text-shadow-lg w-full sm:w-auto text-slate-700 hover:text-slate-400 shadow-lg hover:shadow-xl shadow-slate-300 cursor-pointer active:scale-95 transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold border border-slate-200 hover:border-slate-300 bg-white/50 backdrop-blur-sm">
           Browse Components
         </button>
       </div>
