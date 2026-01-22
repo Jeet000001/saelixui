@@ -7,14 +7,14 @@ const ContactPage = () => {
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <div className="w-full max-w-3xl mx-auto text-center space-y-4 sm:space-y-6">
             {/* Badge */}
-            <p className="inline-block px-4 py-1 text-sm font-medium text-indigo-600 bg-indigo-100 rounded-full">
+            <p className="inline-block px-4 py-1 text-sm font-medium  border border-gray-200 text-gray-600 bg-gray-100 rounded-full border-b-2 shadow-md">
               Get In Touch
             </p>
 
             {/* Heading */}
             <h4 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
               Let's Start a{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-purple-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
                 Conversation
               </span>
             </h4>

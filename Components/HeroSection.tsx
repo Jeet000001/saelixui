@@ -25,12 +25,10 @@ export default function HeroSection() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 px-6 sm:px-10 lg:px-24 text-center">
       {/* Badge */}
-      <div className="border-b-2 border-gray-400 rounded-full shadow-md">
-        <div className="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 text-gray-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
+        <div className="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 text-gray-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border-b-2 shadow-md">
           <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
           <span className="text-shadow-md">50+ Premium Components</span>
         </div>
-      </div>
 
       {/* Heading */}
       <h1
@@ -39,7 +37,7 @@ export default function HeroSection() {
         Modern UI That Makes Your Website
         <br />
         <span
-          className={`ml-3 inline-block text-gray-700 transition-all duration-500 ease-in-out text-shadow-lg
+          className={`ml-3 inline-block text-transparent bg-clip-text bg-linear-to-b from-gray-900 to-gray-400 transition-all duration-500 ease-in-out text-shadow-lg
           ${visible ? "opacity-100 translate-x-3" : "opacity-0 translate-x-0"}`}
         >
           {words[index]}
@@ -62,7 +60,7 @@ export default function HeroSection() {
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
         </button>
 
-        <button className="w-full sm:w-auto text-slate-700 hover:text-slate-400 shadow-lg shadow-slate-300 cursor-pointer active:scale-95 transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold border border-slate-200 hover:border-slate-300 bg-white/50 backdrop-blur-sm">
+        <button className="w-full sm:w-auto text-slate-700 hover:text-slate-400 shadow-lg hover:shadow-xl shadow-slate-300 cursor-pointer active:scale-95 transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold border border-slate-200 hover:border-slate-300 bg-white/50 backdrop-blur-sm">
           Browse Components
         </button>
       </div>
