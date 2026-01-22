@@ -25,7 +25,7 @@ export default function HeroSection() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 px-6 sm:px-10 lg:px-24 text-center">
       {/* Badge */}
-      <div className="border-b-2 border-gray-400 rounded-full shadow-2xl">
+      <div className="border-b-2 border-gray-400 rounded-full shadow-md">
         <div className="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 text-gray-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
           <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
           <span className="text-shadow-md">50+ Premium Components</span>
@@ -34,13 +34,12 @@ export default function HeroSection() {
 
       {/* Heading */}
       <h1
-        className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight sm:leading-tight md:leading-[1.15]
-        bg-linear-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent"
+        className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight sm:leading-tight md:leading-[1.15] text-black"
       >
         Modern UI That Makes Your Website
         <br />
         <span
-          className={`ml-3 inline-block text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-purple-500 transition-all duration-500 ease-in-out text-shadow-lg
+          className={`ml-3 inline-block text-gray-700 transition-all duration-500 ease-in-out text-shadow-lg
           ${visible ? "opacity-100 translate-x-3" : "opacity-0 translate-x-0"}`}
         >
           {words[index]}
