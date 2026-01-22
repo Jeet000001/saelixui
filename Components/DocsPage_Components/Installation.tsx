@@ -1,73 +1,121 @@
 "use client";
 
+import { Copy } from "lucide-react";
+
 const Installation = () => {
   return (
-    <div className="md:px-50 md:pt-10">
-      {/* introduction */}
-      <div>
-        <h1 className="text-2xl mb-5 font-bold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">Introduction</h1>
+    <div className="max-w-5xl mx-auto px-6 md:px-10 py-12 space-y-16">
+
+      {/* Introduction */}
+      <section className="space-y-4">
+        <h1 className="group relative inline-block text-3xl font-bold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
+          Introduction
+          <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-700 transition-all duration-300 group-hover:w-full" />
+        </h1>
+
+        <p className="text-gray-600 leading-relaxed">
+          <span className="font-medium text-gray-800">Saelix UI</span> is a modern
+          UI component library designed to help developers build clean,
+          consistent, and professional user interfaces with minimal effort.
+          It provides reusable and customizable components that integrate
+          seamlessly with <span className="font-medium">Tailwind CSS</span>,
+          making it perfect for React and Next.js projects.
+        </p>
+      </section>
+
+      {/* Installation */}
+      <section className="space-y-3">
+        <h2 className="group relative inline-block text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
+          Installation
+          <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-700 transition-all duration-300 group-hover:w-full" />
+        </h2>
+
         <p className="text-gray-600">
-          Saelix UI is a modern UI component library designed to help developers
-          build clean, consistent, and professional user interfaces with minimal
-          effort. It provides pre-built, customizable components that integrate
-          seamlessly with Tailwind CSS, making it an ideal choice for developers
-          working with React or Next.js who want reusable, maintainable
-          components and faster development with a consistent design system.
+          Follow the steps below to install Saelix UI and set up your project
+          correctly.
         </p>
-      </div>
-      {/* installetion */}
-      <div>
-        <h2>Installation</h2>
-        <p>How to install dependencies and structure your app.</p>
-      </div>
+      </section>
+
       {/* Quick Start */}
-      <div>
-        <h2>Quick Start</h2>
-        <p>Run the following command to set up Saelix UI in your project:</p>
-        <div>
-          <div>
-            <h2>npm</h2>
-            <button>copy</button>
-          </div>
-          <p>npx saelix-ui@latest init</p>
-        </div>
-        <p>
-          This command will guide you through the setup process, allowing you to
-          configure Saelix UI with your preferred framework (React or Next.js),
-          Tailwind CSS configuration, and default theme. Once completed, you can
-          start using Saelix UI components immediately in your project.
+      <section className="space-y-4">
+        <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
+          Quick Start
+        </h3>
+
+        <p className="text-gray-600">
+          Run the following command to initialize Saelix UI:
         </p>
-      </div>
-      {/* chose Framework */}
-      <div>
-        <h2>Pick Your Framework</h2>
-        <p>
-          Start by selecting your preferred framework and follow the
-          instructions to install the required dependencies and set up your
-          project structure. Saelix UI is designed to work seamlessly with
-          modern React frameworks, including React and Next.js, providing full
-          compatibility and a consistent development experience across
-          environments.
-        </p>
-        <div>
-          <div>
-            <img
-              width="48"
-              height="48"
-              src="https://img.icons8.com/color/48/nextjs.png"
-              alt="nextjs"
-            />
+
+        {/* Code Block */}
+        <div className="relative rounded-xl border hover:scale-105 transition-all duration-300 order-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm">
+          <div className="absolute top-2 right-2">
+            <button className="flex items-center gap-1 rounded-md border active:scale-95 bg-white px-2 py-1 text-xs text-gray-600 hover:bg-gray-100 transition">
+              <Copy size={14} />
+              Copy
+            </button>
           </div>
-          <div>
-            <img
-              width="48"
-              height="48"
-              src="https://img.icons8.com/color/48/vite.png"
-              alt="vite"
-            />
+
+          <span className="text-green-600">npx</span>{" "}
+          <span className="text-blue-600">saelix-ui@latest</span>{" "}
+          <span className="text-purple-600">init</span>
+        </div>
+
+        <p className="text-gray-600 leading-relaxed">
+          This command will guide you through the setup process where you can
+          select your framework, configure Tailwind CSS, and choose a default
+          theme. Once completed, you can start using Saelix UI components
+          instantly.
+        </p>
+      </section>
+
+      {/* Pick Framework */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
+          Pick Your Framework
+        </h2>
+
+        <p className="text-gray-600 max-w-3xl">
+          Choose your preferred framework and follow the instructions to install
+          the required dependencies. Saelix UI works seamlessly with modern
+          React frameworks like <strong>Next.js</strong> and <strong>Vite</strong>.
+        </p>
+
+        {/* Framework Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* Next.js */}
+          <div className="group rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition">
+            <div className="flex items-center gap-4">
+              <img
+                src="https://img.icons8.com/color/48/nextjs.png"
+                alt="Next.js"
+              />
+              <div>
+                <h4 className="font-semibold text-lg">Next.js</h4>
+                <p className="text-sm text-gray-600">
+                  Recommended for production-ready apps
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Vite */}
+          <div className="group rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition">
+            <div className="flex items-center gap-4">
+              <img
+                src="https://img.icons8.com/color/48/vite.png"
+                alt="Vite"
+              />
+              <div>
+                <h4 className="font-semibold text-lg">Vite</h4>
+                <p className="text-sm text-gray-600">
+                  Fast and lightweight development setup
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
     </div>
   );
 };
