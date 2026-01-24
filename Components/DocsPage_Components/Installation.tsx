@@ -1,6 +1,7 @@
 "use client";
 
 import { Copy } from "lucide-react";
+import Link from "next/link";
 
 const Installation = () => {
   return (
@@ -83,33 +84,40 @@ const Installation = () => {
         {/* Framework Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Next.js */}
-          <div className="group rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition">
-            <div className="flex items-center gap-4">
-              <img
-                src="https://img.icons8.com/color/48/nextjs.png"
-                alt="Next.js"
-              />
-              <div>
-                <h4 className="font-semibold text-lg">Next.js</h4>
-                <p className="text-sm text-gray-600">
-                  Recommended for production-ready apps
-                </p>
+          <Link href="/documentation/nextjs-installation">
+            <div className="group rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition">
+              <div className="flex items-center gap-4">
+                <img
+                  src="https://img.icons8.com/color/48/nextjs.png"
+                  alt="Next.js"
+                />
+                <div>
+                  <h4 className="font-semibold text-lg">Next.js</h4>
+                  <p className="text-sm text-gray-600">
+                    Recommended for production-ready apps
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Vite */}
-          <div className="group rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition">
-            <div className="flex items-center gap-4">
-              <img src="https://img.icons8.com/color/48/vite.png" alt="Vite" />
-              <div>
-                <h4 className="font-semibold text-lg">Vite</h4>
-                <p className="text-sm text-gray-600">
-                  Fast and lightweight development setup
-                </p>
+          <Link href="/documentation/vite-installation">
+            <div className="group rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition">
+              <div className="flex items-center gap-4">
+                <img
+                  src="https://img.icons8.com/color/48/vite.png"
+                  alt="Vite"
+                />
+                <div>
+                  <h4 className="font-semibold text-lg">Vite</h4>
+                  <p className="text-sm text-gray-600">
+                    Fast and lightweight development setup
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
     </div>
