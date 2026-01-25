@@ -95,7 +95,7 @@ const Installation = () => {
         {/* Framework Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Next.js */}
-          <Link href="/documentation/nextjs-installation">
+          <Link href="/documentation/next">
             <div className="group rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition">
               <div className="flex items-center gap-4">
                 <img
@@ -113,7 +113,7 @@ const Installation = () => {
           </Link>
 
           {/* Vite */}
-          <Link href="/documentation/vite-installation">
+          <Link href="/documentation/vite">
             <div className="group rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition">
               <div className="flex items-center gap-4">
                 <img
