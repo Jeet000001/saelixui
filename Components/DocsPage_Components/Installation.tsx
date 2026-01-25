@@ -1,12 +1,16 @@
 "use client";
 
-import { Copy } from "lucide-react";
+import { Copy, Check } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const Installation = () => {
+  const [copied, setCopied] = useState(false);
   const command = "npx saelix-ui@latest init";
   const handelCopy = () => {
     navigator.clipboard.writeText(command);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
   return (
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-12 space-y-16">
@@ -54,8 +58,11 @@ const Installation = () => {
         {/* Code Block */}
         <div className="relative rounded-xl border hover:scale-105 transition-all duration-300 order-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm">
           <div className="absolute top-2 right-2">
-            <button onClick={handelCopy} className="flex items-center gap-1 rounded-md border active:scale-95 bg-white px-2 py-1 text-xs text-gray-600 hover:bg-gray-100 transition">
-              <Copy size={14} />
+            <button
+              onClick={handelCopy}
+              className="flex items-center gap-1 rounded-md border active:scale-95 bg-white px-2 py-1 text-xs text-gray-600 hover:bg-gray-100 transition"
+            >
+              {copied ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
           <span className="text-green-600">npx</span>{" "}
