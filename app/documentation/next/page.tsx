@@ -1,8 +1,11 @@
+import NextInstallation from '@/Components/DocsPage_Components/NextInstallation'
 import React from 'react'
 
 const NextJs_Installation_page = () => {
   return (
-    <div>NextJs_Installation_</div>
+    <div>
+      <NextInstallation />
+    </div>
   )
 }
 
