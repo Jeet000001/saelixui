@@ -6,8 +6,11 @@ import { Copy, Check } from "lucide-react";
 import { useState } from "react";
 
 const NextInstallation = () => {
-  const [copied, setCopied] = useState(false);
-  const command = "npx saelix-ui@latest init";
+  const [initCommandCopy, setinitCommandCopy] = useState(false);
+  const [addCommandCopy, setAddCommandCopy] = useState(false);
+  const [codeCopy, setCodeCopy] = useState(false)
+  const initCommand = "npx saelix-ui init";
+  const addCommand = "npx saelix-ui add button"
   const code = `import { Button } from "@/components/ui/button"
  
 export default function Home() {
@@ -18,11 +21,6 @@ export default function Home() {
   )
 }`;
 
-  const handelCopy = () => {
-    navigator.clipboard.writeText(command);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
   return (
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-12 space-y-16">
       {/* Quick Start */}
@@ -41,10 +39,14 @@ export default function Home() {
         <div className="relative rounded-xl border border-gray-200 hover:scale-105 transition-all duration-300 order-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm">
           <div className="absolute top-2 right-2">
             <button
-              onClick={handelCopy}
+              onClick={() => {
+                navigator.clipboard.writeText(initCommand);
+                setinitCommandCopy(true);
+                setTimeout(() => setinitCommandCopy(false), 2000);
+              }}
               className="flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition"
             >
-              {copied ? <Check size={14} /> : <Copy size={14} />}
+              {initCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
           <p className="text-gray-800 text-shadow-lg">npx saelix-ui init</p>
@@ -64,10 +66,14 @@ export default function Home() {
         <div className="relative rounded-xl border border-gray-200 hover:scale-105 transition-all duration-300 order-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm">
           <div className="absolute top-2 right-2">
             <button
-              onClick={handelCopy}
+              onClick={() => {
+                navigator.clipboard.writeText(addCommand);
+                setAddCommandCopy(true);
+                setTimeout(() => setAddCommandCopy(false), 2000);
+              }}
               className="flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition"
             >
-              {copied ? <Check size={14} /> : <Copy size={14} />}
+              {addCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
           <p>npx saelix-ui add button</p>
@@ -89,12 +95,12 @@ export default function Home() {
             <button
               onClick={() => {
                 navigator.clipboard.writeText(code);
-                setCopied(true);
-                setTimeout(() => setCopied(false), 2000);
+                setCodeCopy(true);
+                setTimeout(() => setCodeCopy(false), 2000);
               }}
               className="rounded-md p-1 text-gray-800 transition"
             >
-              {copied ? <Check size={14} /> : <Copy size={14} />}
+              {codeCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
 
