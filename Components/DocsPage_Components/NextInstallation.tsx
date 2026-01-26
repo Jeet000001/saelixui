@@ -8,9 +8,9 @@ import { useState } from "react";
 const NextInstallation = () => {
   const [initCommandCopy, setinitCommandCopy] = useState(false);
   const [addCommandCopy, setAddCommandCopy] = useState(false);
-  const [codeCopy, setCodeCopy] = useState(false)
+  const [codeCopy, setCodeCopy] = useState(false);
   const initCommand = "npx saelix-ui init";
-  const addCommand = "npx saelix-ui add button"
+  const addCommand = "npx saelix-ui add button";
   const code = `import { Button } from "@/components/ui/button"
  
 export default function Home() {
@@ -49,7 +49,7 @@ export default function Home() {
               {initCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
-          <p className="text-gray-800 text-shadow-lg">npx saelix-ui init</p>
+          <p className="text-gray-700 text-shadow-lg">npx saelix-ui init</p>
         </div>
       </section>
       <section className="space-y-4">
@@ -76,19 +76,26 @@ export default function Home() {
               {addCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
-          <p>npx saelix-ui add button</p>
+          <p className="text-gray-700 text-shadow-lg">
+            npx saelix-ui add button
+          </p>
         </div>
 
         <p className="text-gray-600 leading-relaxed">
-          The command above installs the Button component into your project.
-          After that, you can import it like this:
+          The command above installs the{" "}
+          <span className="bg-gray-50 px-2 py-1 rounded-lg border border-gray-200 shadow-sm">
+            Button
+          </span>{" "}
+          component into your project. After that, you can import it like this:
         </p>
         {/* Code Preview */}
         <div className="relative overflow-hidden bg-gray-50 border-gray-200 hover:scale-105 transition-all duration-300 rounded-xl border shadow-sm">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2">
             <div className="flex items-center gap-2 text-xs">
-              <span className="rounded-sm px-2 py-0.5 bg-gray-900 text-white">TS</span>
+              <span className="rounded-sm px-2 py-0.5 bg-gray-900 text-white">
+                TS
+              </span>
               <span className="text-slate-400">app/page.tsx</span>
             </div>
 
