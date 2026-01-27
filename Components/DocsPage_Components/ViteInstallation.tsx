@@ -9,11 +9,13 @@ const ViteInstallation = () => {
   const [viteCommandCopy, setViteCommandCopy] = useState(false);
   const [tailwindcssCommandCopy, setTailwindcssCommandCopy] = useState(false);
   const [importCommandCopy, setImportCommandCopy] = useState(false);
+  const [initCommandCopy, setInitCommandCopy] = useState(false)
   const [addCommandCopy, setAddCommandCopy] = useState(false);
   const [codeCopy, setCodeCopy] = useState(false);
   const viteCommand = "npm create vite@latest";
   const tailwindcssCommand = "npm install tailwindcss @tailwindcss/vite";
   const importCommand = `@import "tailwindcss";`;
+  const initCommand = "npx saelix-ui init"
   const addCommand = "npx saelix-ui add button";
   const code = `import { Button } from "@/components/ui/button"
  
@@ -143,9 +145,38 @@ export default function Home() {
           </pre>
         </div>
       </section>
+
       <section className="space-y-4">
         <h2 className="group text-shadow-lg relative inline-block text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
-          Add Components
+          Run the CLI
+          <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-700 transition-all duration-300 group-hover:w-full" />
+        </h2>
+
+        <p className="text-gray-600">
+          Run the init command to configure your project and generate the required setup files : 
+        </p>
+
+        {/* Code Block */}
+        <div className="relative rounded-xl border border-gray-200 hover:scale-105 transition-all duration-300 order-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm">
+          <div className="absolute top-2 right-2">
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(initCommand);
+                setInitCommandCopy(true);
+                setTimeout(() => setInitCommandCopy(false), 2000);
+              }}
+              className="flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition"
+            >
+              {initCommandCopy ? <Check size={14} /> : <Copy size={14} />}
+            </button>
+          </div>
+          <p className="text-gray-700 text-shadow-lg">npx saelix-ui init</p>
+        </div>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="group text-shadow-lg relative inline-block text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
+          Add Component
           <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-700 transition-all duration-300 group-hover:w-full" />
         </h2>
 
@@ -174,7 +205,7 @@ export default function Home() {
 
         <p className="text-gray-600 leading-relaxed">
           The command above installs the{" "}
-          <span className="bg-gray-50 px-2 py-1 rounded-lg border border-gray-200 shadow-sm">
+          <span className="bg-gray-50 px-2 py-0.5 rounded-lg border border-gray-200 shadow-sm">
             Button
           </span>{" "}
           component into your project. After that, you can import it like this:
