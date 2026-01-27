@@ -9,14 +9,14 @@ const ViteInstallation = () => {
   const [viteCommandCopy, setViteCommandCopy] = useState(false);
   const [tailwindcssCommandCopy, setTailwindcssCommandCopy] = useState(false);
   const [importCommandCopy, setImportCommandCopy] = useState(false);
-  const [configCopy, setConfigCopy] = useState(false)
-  const [initCommandCopy, setInitCommandCopy] = useState(false)
+  const [configCopy, setConfigCopy] = useState(false);
+  const [initCommandCopy, setInitCommandCopy] = useState(false);
   const [addCommandCopy, setAddCommandCopy] = useState(false);
   const [codeCopy, setCodeCopy] = useState(false);
   const viteCommand = "npm create vite@latest";
   const tailwindcssCommand = "npm install tailwindcss @tailwindcss/vite";
   const importCommand = `@import "tailwindcss";`;
-  const initCommand = "npx saelix-ui init"
+  const initCommand = "npx saelix-ui init";
   const addCommand = "npx saelix-ui add button";
   const vite_config = `import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -26,7 +26,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 })
-`
+`;
   const code = `import { Button } from "@/components/ui/button"
  
 export default function Home() {
@@ -154,11 +154,15 @@ export default function Home() {
             </SyntaxHighlighter>
           </pre>
         </div>
-        <p>Update your <span className="bg-gray-50 px-2 py-1 rounded-lg border border-gray-200 shadow-sm">
-                vite.config.ts
-              </span>  so your app can use tailwindcss without error:</p>
+        <p>
+          Update your{" "}
+          <span className="bg-gray-50 px-2 py-1 rounded-lg border border-gray-200 shadow-sm">
+            vite.config.ts
+          </span>{" "}
+          so your app can use tailwindcss without error:
+        </p>
 
-                <div className="relative overflow-hidden bg-gray-50 border-gray-200 hover:scale-105 transition-all duration-300 rounded-xl border shadow-sm">
+        <div className="relative overflow-hidden bg-gray-50 border-gray-200 hover:scale-105 transition-all duration-300 rounded-xl border shadow-sm">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2">
             <div className="flex items-center gap-2 text-xs">
@@ -200,7 +204,8 @@ export default function Home() {
         </h2>
 
         <p className="text-gray-600">
-          Run the init command to configure your project and generate the required setup files : 
+          Run the init command to configure your project and generate the
+          required setup files :
         </p>
 
         {/* Code Block */}
