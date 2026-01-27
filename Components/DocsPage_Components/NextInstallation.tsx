@@ -23,6 +23,15 @@ export default function Home() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-12 space-y-16">
+      <section className="space-y-4">
+        <h2 className="group text-shadow-lg inline-block text-3xl font-bold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
+          Next.js
+        </h2>
+
+        <p className="text-gray-500">
+          Install and configure saelix ui for Next.js.
+        </p>
+      </section>
       {/* Quick Start */}
       <section className="space-y-4">
         <h2 className="group text-shadow-lg relative inline-block text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
