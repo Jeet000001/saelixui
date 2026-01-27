@@ -9,6 +9,7 @@ const ViteInstallation = () => {
   const [viteCommandCopy, setViteCommandCopy] = useState(false);
   const [tailwindcssCommandCopy, setTailwindcssCommandCopy] = useState(false);
   const [importCommandCopy, setImportCommandCopy] = useState(false);
+  const [configCopy, setConfigCopy] = useState(false)
   const [initCommandCopy, setInitCommandCopy] = useState(false)
   const [addCommandCopy, setAddCommandCopy] = useState(false);
   const [codeCopy, setCodeCopy] = useState(false);
@@ -17,6 +18,15 @@ const ViteInstallation = () => {
   const importCommand = `@import "tailwindcss";`;
   const initCommand = "npx saelix-ui init"
   const addCommand = "npx saelix-ui add button";
+  const vite_config = `import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+})
+`
   const code = `import { Button } from "@/components/ui/button"
  
 export default function Home() {
@@ -141,6 +151,43 @@ export default function Home() {
               customStyle={{ background: "transparent" }}
             >
               {importCommand}
+            </SyntaxHighlighter>
+          </pre>
+        </div>
+        <p>Update your <span className="bg-gray-50 px-2 py-1 rounded-lg border border-gray-200 shadow-sm">
+                vite.config.ts
+              </span>  so your app can use tailwindcss without error:</p>
+
+                <div className="relative overflow-hidden bg-gray-50 border-gray-200 hover:scale-105 transition-all duration-300 rounded-xl border shadow-sm">
+          {/* Header */}
+          <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2">
+            <div className="flex items-center gap-2 text-xs">
+              <span className="rounded-sm px-2 py-0.5 bg-gray-900 text-white">
+                TS
+              </span>
+              <span className="text-slate-400">vite.config.ts</span>
+            </div>
+
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(vite_config);
+                setConfigCopy(true);
+                setTimeout(() => setConfigCopy(false), 2000);
+              }}
+              className="rounded-md p-1 text-gray-800 transition"
+            >
+              {configCopy ? <Check size={14} /> : <Copy size={14} />}
+            </button>
+          </div>
+
+          {/* Code */}
+          <pre className="rounded-xl p-4 text-sm">
+            <SyntaxHighlighter
+              language="jsx"
+              style={prism}
+              customStyle={{ background: "transparent" }}
+            >
+              {vite_config}
             </SyntaxHighlighter>
           </pre>
         </div>
