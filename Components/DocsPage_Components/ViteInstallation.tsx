@@ -6,10 +6,10 @@ import { Copy, Check } from "lucide-react";
 import { useState } from "react";
 
 const ViteInstallation = () => {
-  const [initCommandCopy, setinitCommandCopy] = useState(false);
+  const [viteCommandCopy, setViteCommandCopy] = useState(false);
   const [addCommandCopy, setAddCommandCopy] = useState(false);
   const [codeCopy, setCodeCopy] = useState(false);
-  const initCommand = "npx saelix-ui init";
+  const viteCommand = "npm create vite@latest";
   const addCommand = "npx saelix-ui add button";
   const code = `import { Button } from "@/components/ui/button"
  
@@ -25,11 +25,11 @@ export default function Home() {
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-12 space-y-16">
       <section className="space-y-4">
         <h2 className="group text-shadow-lg inline-block text-3xl font-bold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
-          Next.js
+          Vite
         </h2>
 
         <p className="text-gray-500">
-          Install and configure saelix ui for Next.js.
+          Install and configure saelix ui for Vite.
         </p>
       </section>
       {/* Quick Start */}
@@ -40,8 +40,20 @@ export default function Home() {
         </h2>
 
         <p className="text-gray-600">
-          Use the init command to either spin up a fresh Next.js project or
-          configure an existing one :
+          First, initialize a new project using{" "}
+          <span className="bg-gray-50 px-2 py-0.5 rounded-lg border border-gray-200 shadow-sm">
+            Vite.
+          </span>{" "}
+          During the setup process, select the{" "}
+          <span className="text-gray-900">
+            React
+          </span>{" "}
+           +{" "}
+          <span className="text-gray-900">
+            TypeScript
+          </span>{" "}
+          TypeScript template to ensure type safety and a modern development
+          setup.
         </p>
 
         {/* Code Block */}
@@ -49,16 +61,16 @@ export default function Home() {
           <div className="absolute top-2 right-2">
             <button
               onClick={() => {
-                navigator.clipboard.writeText(initCommand);
-                setinitCommandCopy(true);
-                setTimeout(() => setinitCommandCopy(false), 2000);
+                navigator.clipboard.writeText(viteCommand);
+                setViteCommandCopy(true);
+                setTimeout(() => setViteCommandCopy(false), 2000);
               }}
               className="flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition"
             >
-              {initCommandCopy ? <Check size={14} /> : <Copy size={14} />}
+              {viteCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
-          <p className="text-gray-700 text-shadow-lg">npx saelix-ui init</p>
+          <p className="text-gray-700 text-shadow-lg">npm create vite@latest</p>
         </div>
       </section>
       <section className="space-y-4">
