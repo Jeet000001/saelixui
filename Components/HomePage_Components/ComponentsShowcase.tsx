@@ -11,9 +11,9 @@ const ComponentsShowcase = () => {
     absolute top-0 left-0 z-20
     h-15 w-full
     bg-linear-to-b
-    from-black
-    via-black/80
-    to-transparent
+   from-white
+via-white/80
+to-transparent
   "
         />
 
@@ -23,10 +23,10 @@ const ComponentsShowcase = () => {
     pointer-events-none
     absolute bottom-0 left-0 z-20
     h-15 w-full
-    bg-linear-to-b
-    from-black
-    via-black/80
-    to-transparent
+    bg-linear-to-t  
+    from-white
+via-white/80
+to-transparent
   "
         />
 
