@@ -3,7 +3,7 @@
 const ComponentsShowcase = () => {
   return (
     <div>
-      <div className="relative h-screen w-full bg-black text-white p-6 overflow-hidden">
+      <div className="relative h-screen w-full p-6 overflow-hidden">
         {/* 🔥 TOP BLUR */}
         <div
           className="
