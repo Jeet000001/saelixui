@@ -20,13 +20,15 @@ const NavigationBar = () => {
           href={"/"}
           className="flex items-center md:gap-3 gap-1 hover:scale-105 ease-in-out duration-500"
         >
+          <div className="bg-black rounded-lg size-9 md:size-10 shadow-2xl flex justify-center items-center">
           <Image
-            src="/LightLogo.png"
+            src="/letter-s.png"
             alt="Logo"
-            width={0}
-            height={0}
-            className="bg-black rounded-lg size-7 md:size-10 shadow-2xl"
+            width={30}
+            height={30}
+            // className="bg-black rounded-lg size-7 md:size-10 shadow-2xl"
           />
+          </div>
           <h1 className="font-bold text-xl md:text-2xl text-shadow-lg">
             Saelix UI
           </h1>
