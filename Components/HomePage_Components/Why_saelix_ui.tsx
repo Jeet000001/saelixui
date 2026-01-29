@@ -22,7 +22,7 @@ const Why_saelix_ui = () => {
           description="Every component is built to be configurable and extensible. From styles to behavior, Saelix UI gives you full control without fighting the framework."
         />
         <Card
-          image="/thunder.png"
+          image="/file.png"
           title="Clear and practical documentation"
           description="No guessing, no confusion. Our documentation focuses on real use-cases, simple examples, and best practices so you can build faster with confidence."
         />
