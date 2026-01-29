@@ -6,17 +6,17 @@ const Why_saelix_ui = () => {
   return (
     <div className="bg-gray-50 py-16">
       {/* Header Section */}
-      <section className="text-center px-4 sm:px-8 lg:px-32 mb-12">
+      <section className="text-center px-4 sm:px-8 lg:px-32 mb-16">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Why built with Saelix UI?
+          Why build with Saelix UI?
         </h1>
-        <p className="text-lg sm:text-xl text-gray-700">
-          A smooth and powerful experience for developers and end users
+        <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto">
+          A smooth and powerful experience for developers and end users.
         </p>
       </section>
 
       {/* Cards Section */}
-      <section className="px-4 sm:px-8 lg:px-20 grid grid-cols-1 mx-auto sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-15 ">
+      <section className="px-4 sm:px-8 lg:px-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-40 justify-items-center">
         <Card
           image="/thunder.png"
           title="Modern & Clean Design"
