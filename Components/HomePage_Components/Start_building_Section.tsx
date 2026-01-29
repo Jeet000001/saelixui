@@ -25,10 +25,10 @@ const StartBuildingSection = () => {
       </p>
 
       {/* CTA */}
-      <button className=" mt-8 w-80 sm:w-auto group bg-slate-900 hover:bg-slate-800 shadow-lg shadow-slate-400 cursor-pointer active:scale-95 text-white px-6 sm:px-7 py-3 sm:py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-xl">
-          <Link href={"/documentation"}>Explore Saelix UI</Link>
+      <Link href={"/documentation"} className="mt-8 w-80 sm:w-auto group bg-slate-900 hover:bg-slate-800 shadow-lg shadow-slate-400 cursor-pointer active:scale-95 text-white px-6 sm:px-7 py-3 sm:py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-xl">
+          Explore Saelix UI
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-        </button>
+        </Link>
     </section>
   );
 };

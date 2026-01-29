@@ -54,14 +54,14 @@ export default function HeroSection() {
       {/* Buttons */}
 
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mt-2 sm:mt-4">
-        <button className="w-80 sm:w-auto group bg-slate-900 hover:bg-slate-800 shadow-lg shadow-slate-400 cursor-pointer active:scale-95 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-xl">
-          <Link href={"/documentation"}>Get Started</Link>
+        <Link href={"/documentation"} className="w-80 sm:w-auto group bg-slate-900 hover:bg-slate-800 shadow-lg shadow-slate-400 cursor-pointer active:scale-95 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-xl">
+          Get Started
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-        </button>
+        </Link>
 
-        <button className="text-shadow-lg w-full sm:w-auto text-slate-700 hover:text-slate-400 shadow-lg hover:shadow-xl shadow-slate-300 cursor-pointer active:scale-95 transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold border border-slate-200 hover:border-slate-300 bg-white/50 backdrop-blur-sm">
-          <Link href={"/components"}>Browse Components</Link>
-        </button>
+        <Link href={"/components"} className="text-shadow-lg w-full sm:w-auto text-slate-700 hover:text-slate-400 shadow-lg hover:shadow-xl shadow-slate-300 cursor-pointer active:scale-95 transition-all duration-300 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold border border-slate-200 hover:border-slate-300 bg-white/50 backdrop-blur-sm">
+          Browse Components
+        </Link>
       </div>
     </main>
   );
