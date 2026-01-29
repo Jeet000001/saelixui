@@ -18,17 +18,17 @@ const Why_saelix_ui = () => {
         />
         <Card
           image="/gear.png"
-          title="Developer-first customization"
+          title="Developer Focused"
           description="Every component is built to be configurable and extensible. From styles to behavior, Saelix UI gives you full control without fighting the framework."
         />
         <Card
           image="/file.png"
-          title="Clear and practical documentation"
+          title="Clear Documentation"
           description="No guessing, no confusion. Our documentation focuses on real use-cases, simple examples, and best practices so you can build faster with confidence."
         />
         <Card
           image="/dart.png"
-          title="Built with accessibility in mind"
+          title="Inclusive Design"
           description="We design components that work for everyone. Keyboard navigation, proper semantics, and accessibility standards are considered from day one."
         />
       </section>
