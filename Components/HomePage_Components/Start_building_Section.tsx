@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 const StartBuildingSection = () => {
   return (
     <section className="flex flex-col items-center text-center px-6 py-20">
@@ -22,9 +25,10 @@ const StartBuildingSection = () => {
       </p>
 
       {/* CTA */}
-      <button className="mt-8 inline-flex items-center rounded-xl bg-gray-800 px-6 py-3 text-sm font-semibold text-white hover:bg-gray-900 shadow-lg active:scale-95 transition duration-300">
-        Explore Saelix UI
-      </button>
+      <button className=" mt-8 w-80 sm:w-auto group bg-slate-900 hover:bg-slate-800 shadow-lg shadow-slate-400 cursor-pointer active:scale-95 text-white px-6 sm:px-7 py-3 sm:py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-xl">
+          <Link href={"/documentation"}>Explore Saelix UI</Link>
+          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+        </button>
     </section>
   );
 };
