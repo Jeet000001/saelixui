@@ -27,7 +27,7 @@ const Why_saelix_ui = () => {
           description="No guessing, no confusion. Our documentation focuses on real use-cases, simple examples, and best practices so you can build faster with confidence."
         />
         <Card
-          image="/.png"
+          image="/dart.png"
           title="Built with accessibility in mind"
           description="We design components that work for everyone. Keyboard navigation, proper semantics, and accessibility standards are considered from day one."
         />
