@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const Why_saelix_ui = () => {
   return (
-    <div className="bg-gray-50 py-16">
+    <div className=" py-16">
       {/* Header Section */}
       <section className="text-center px-4 sm:px-8 lg:px-32 mb-16">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
