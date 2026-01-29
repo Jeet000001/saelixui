@@ -17,7 +17,7 @@ const Why_saelix_ui = () => {
           description="Craft visually pleasing interfaces without extra effort. Saelix UI follows modern design principles while staying flexible enough to match your brand’s personality."
         />
         <Card
-          image="/thunder.png"
+          image="/gear.png"
           title="Developer-first customization"
           description="Every component is built to be configurable and extensible. From styles to behavior, Saelix UI gives you full control without fighting the framework."
         />
