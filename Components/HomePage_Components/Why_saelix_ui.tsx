@@ -4,16 +4,22 @@ import Card from "./Card";
 
 const Why_saelix_ui = () => {
   return (
-    <div>
-      <section>
-        <h1>Why built with Saelix Ui?</h1>
-        <p>A smooth and powefull experience</p>
-        <p>for developers and end users</p>
+    <div className="bg-gray-50 py-16">
+      {/* Header Section */}
+      <section className="text-center px-4 sm:px-8 lg:px-32 mb-12">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Why built with Saelix UI?
+        </h1>
+        <p className="text-lg sm:text-xl text-gray-700">
+          A smooth and powerful experience for developers and end users
+        </p>
       </section>
-      <section className="flex gap-5 px-20">
+
+      {/* Cards Section */}
+      <section className="px-4 sm:px-8 lg:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <Card
           image="/thunder.png"
-          title="Modern & clean design"
+          title="Modern & Clean Design"
           description="Craft visually pleasing interfaces without extra effort. Saelix UI follows modern design principles while staying flexible enough to match your brand’s personality."
         />
         <Card
