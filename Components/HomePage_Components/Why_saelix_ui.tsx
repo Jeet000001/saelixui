@@ -16,7 +16,7 @@ const Why_saelix_ui = () => {
       </section>
 
       {/* Cards Section */}
-      <section className="px-4 sm:px-8 lg:px-20 flex flex-col items-center sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="px-4 sm:px-8 lg:px-20 grid grid-cols-1 mx-auto sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-15 ">
         <Card
           image="/thunder.png"
           title="Modern & Clean Design"
