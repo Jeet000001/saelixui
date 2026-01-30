@@ -1,11 +1,14 @@
 "use client";
 
 import { Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const DarkModeButton = () => {
+  const { theme, setTheme } = useTheme();
   return (
     <div>
       <button
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         className="
         fixed bottom-6 right-10 z-50
         rounded-full p-3
