@@ -4,7 +4,7 @@ import "./globals.css";
 import NavigationBar from "@/Components/NavigationBar";
 import Footer from "@/Components/Footer";
 import { Toaster } from "react-hot-toast";
-import { ThemeProvider } from "next-themes";
+import Providers from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,25 +18,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Saelix UI",
-  description: "A Ract/NextJs UI Component Library",
+  description: "A React/Next.js UI Component Library",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+        <Providers>
           <NavigationBar />
           {children}
           <Toaster position="top-center" />
           <Footer />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
