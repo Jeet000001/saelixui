@@ -8,7 +8,7 @@ const DarkModeButton = () => {
   return (
     <div>
       <button
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         className="
         fixed bottom-6 right-10 z-50
         rounded-full p-3
