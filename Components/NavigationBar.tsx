@@ -22,7 +22,7 @@ const NavigationBar = () => {
         >
           <div className="bg-black rounded-lg size-9 md:size-10 shadow-2xl flex justify-center items-center">
           <Image
-            src="/letter-s.png"
+            src="/letter-s (2).png"
             alt="Logo"
             width={30}
             height={30}
