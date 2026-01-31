@@ -2,10 +2,14 @@
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Copy, Check } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 const NextInstallation = () => {
+  const { theme } = useTheme();
   const [initCommandCopy, setinitCommandCopy] = useState(false);
   const [addCommandCopy, setAddCommandCopy] = useState(false);
   const [codeCopy, setCodeCopy] = useState(false);
@@ -49,8 +53,10 @@ export default function Home() {
         </p>
 
         {/* Code Block */}
-        <div className="relative rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm transition-all duration-300 hover:scale-105
-                        dark:border-[#1F2937] dark:bg-[#111827] dark:text-[#E5E7EB] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+        <div
+          className="relative rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm transition-all duration-300 hover:scale-105
+                        dark:border-[#1F2937] dark:bg-[#111827] dark:text-[#E5E7EB] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+        >
           <div className="absolute top-2 right-2">
             <button
               onClick={() => {
@@ -82,8 +88,10 @@ export default function Home() {
         </p>
 
         {/* Code Block */}
-        <div className="relative rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm transition-all duration-300 hover:scale-105
-                        dark:border-[#1F2937] dark:bg-[#111827] dark:text-[#E5E7EB] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+        <div
+          className="relative rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm transition-all duration-300 hover:scale-105
+                        dark:border-[#1F2937] dark:bg-[#111827] dark:text-[#E5E7EB] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+        >
           <div className="absolute top-2 right-2">
             <button
               onClick={() => {
@@ -104,18 +112,24 @@ export default function Home() {
 
         <p className="text-gray-600 dark:text-[#9CA3AF] leading-relaxed">
           The command above installs the{" "}
-          <span className="bg-gray-50 px-2 py-1 rounded-lg border border-gray-200 shadow-sm
-                           dark:bg-[#111827] dark:border-[#1F2937] dark:text-[#E5E7EB]">
+          <span
+            className="bg-gray-50 px-2 py-1 rounded-lg border border-gray-200 shadow-sm
+                           dark:bg-[#111827] dark:border-[#1F2937] dark:text-[#E5E7EB]"
+          >
             Button
           </span>{" "}
           component into your project.
         </p>
 
         {/* Code Preview */}
-        <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm transition-all duration-300 hover:scale-105
-                        dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
-          <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2
-                          dark:border-[#1F2937]">
+        <div
+          className="relative overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm transition-all duration-300 hover:scale-105
+                        dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+        >
+          <div
+            className="flex items-center justify-between border-b border-gray-200 px-4 py-2
+                          dark:border-[#1F2937]"
+          >
             <div className="flex items-center gap-2 text-xs">
               <span className="rounded-sm px-2 py-0.5 bg-gray-900 text-white">
                 TS
@@ -135,11 +149,26 @@ export default function Home() {
             </button>
           </div>
 
-          <pre className="p-4 text-sm text-[#E5E7EB]">
+          <pre
+            className="
+        py-4 px-10 text-sm overflow-x-auto
+        bg-gray-100 text-gray-900
+        dark:bg-[#0f172a] dark:text-gray-100
+      "
+          >
             <SyntaxHighlighter
               language="jsx"
-              style={prism}
-              customStyle={{ background: "transparent" }}
+              style={theme === "dark" ? oneDark : oneLight}
+              customStyle={{
+                background: "transparent",
+                margin: 0,
+                padding: 0,
+              }}
+              codeTagProps={{
+                style: {
+                  background: "transparent",
+                },
+              }}
             >
               {code}
             </SyntaxHighlighter>
