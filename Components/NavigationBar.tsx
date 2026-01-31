@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import DarkModeButton from "./DarkModeButton";
+import ThemeToggle from "./ThemeToggleButton";
 
 const NavigationBar = () => {
   const [open, setOpen] = useState(false);
@@ -16,7 +16,7 @@ const NavigationBar = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-40 w-full bg-white/70 backdrop-blur-md shadow-lg">
+      <nav className="sticky top-0 z-40 w-full bg-white/70 backdrop-blur-md shadow-lg dark:bg-red-500">
         <div className="flex items-center justify-between px-8 py-3 md:px-25 md:py-3">
           {/* Logo */}
           <Link
@@ -92,7 +92,7 @@ const NavigationBar = () => {
           </div>
         </div>
       </nav>
-      <DarkModeButton />
+      <ThemeToggle />
     </>
   );
 };
