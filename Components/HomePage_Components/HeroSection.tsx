@@ -104,8 +104,8 @@ export default function HeroSection() {
       bg-slate-900 text-white
       hover:bg-slate-800 shadow-xl
 
-      dark:bg-[#3B82F6]
-      dark:hover:bg-[#2563EB]
+      dark:bg-[#266ad8]
+      dark:hover:bg-[#0051ff]
       dark:shadow-[0_12px_35px_rgba(59,130,246,0.35)]
     "
   >
@@ -123,9 +123,9 @@ export default function HeroSection() {
       transition-all duration-300 active:scale-95
       flex items-center justify-center
 
-      border bg-white/60 backdrop-blur-md
+      border border-gray-200 bg-white/60 backdrop-blur-md
       text-slate-700 hover:text-black
-      hover:bg-white shadow-lg
+      hover:bg-gray-50 shadow-lg
 
       dark:bg-[#111827]/70
       dark:border-[#1F2937]
