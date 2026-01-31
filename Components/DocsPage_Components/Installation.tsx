@@ -3,8 +3,10 @@
 import { Copy, Check } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 const Installation = () => {
+  const { theme } = useTheme();
   const [copied, setCopied] = useState(false);
   const command = "npx saelix-ui@latest init";
 
@@ -105,7 +107,7 @@ const Installation = () => {
             <div className="group rounded-2xl border border-gray-200 p-6 transition hover:shadow-lg
                             dark:border-[#1F2937] dark:bg-[#111827] dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
               <div className="flex items-center gap-4">
-                <img src="https://img.icons8.com/color/48/nextjs.png" />
+                <img src={theme === "dark" ? "/nextjsdark.png" : "/nextjslight.png"}/>
                 <div>
                   <h4 className="font-semibold text-lg dark:text-[#E5E7EB]">
                     Next.js
