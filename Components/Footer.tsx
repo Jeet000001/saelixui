@@ -33,7 +33,7 @@ const Footer = () => {
               dark:border-[#1F2937]
               dark:text-[#9CA3AF]
               dark:hover:bg-[#111827]
-              dark:hover:text-[#E5E7EB]
+              dark:hover:text-[#3B82F6]
               dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
             "
           >
