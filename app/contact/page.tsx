@@ -20,7 +20,7 @@ const ContactPage = () => {
             rounded-full
             bg-white/80 dark:bg-[#0B0F19]
             text-neutral-700 dark:text-neutral-300
-            border-2 border-neutral-200 dark:border-neutral-800
+            border-2 border-neutral-200 dark:border-[#182034]
             shadow-sm backdrop-blur
           "
           >
