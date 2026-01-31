@@ -32,11 +32,33 @@ export default function ThemeToggle() {
         dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
       "
     >
-      {theme === "dark" ? (
-        <Sun className="h-5 w-5 transition-transform duration-300 rotate-0 dark:rotate-180" />
-      ) : (
-        <Moon className="h-5 w-5 transition-transform duration-300" />
-      )}
+      <div className="relative h-5 w-5">
+        {/* Sun */}
+        <Sun
+          className={`
+      absolute h-5 w-5
+      transition-all duration-500 ease-in-out
+      ${
+        theme === "dark"
+          ? "rotate-180 scale-0 opacity-0"
+          : "rotate-0 scale-100 opacity-100"
+      }
+    `}
+        />
+
+        {/* Moon */}
+        <Moon
+          className={`
+      absolute h-5 w-5
+      transition-all duration-500 ease-in-out
+      ${
+        theme === "dark"
+          ? "rotate-0 scale-100 opacity-100"
+          : "-rotate-180 scale-0 opacity-0"
+      }
+    `}
+        />
+      </div>
     </button>
   );
 }
