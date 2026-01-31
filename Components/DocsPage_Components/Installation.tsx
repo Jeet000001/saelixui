@@ -71,7 +71,7 @@ const Installation = () => {
             <button
               onClick={handelCopy}
               className="flex items-center gap-1 rounded-md px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition active:scale-90
-                         dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
+                         dark:text-[#E5E7EB] dark:hover:bg-[#1F2937] cursor-pointer"
             >
               {copied ? <Check size={14} /> : <Copy size={14} />}
             </button>

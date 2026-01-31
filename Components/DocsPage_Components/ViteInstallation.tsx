@@ -80,7 +80,7 @@ export default function Home() {
                 setViteCommandCopy(true);
                 setTimeout(() => setViteCommandCopy(false), 2000);
               }}
-              className="flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
+              className="cursor-pointer flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
             >
               {viteCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
@@ -107,7 +107,7 @@ export default function Home() {
                 setTailwindcssCommandCopy(true);
                 setTimeout(() => setTailwindcssCommandCopy(false), 2000);
               }}
-              className="flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
+              className="cursor-pointer flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
             >
               {tailwindcssCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
@@ -143,7 +143,7 @@ export default function Home() {
                 setImportCommandCopy(true);
                 setTimeout(() => setImportCommandCopy(false), 2000);
               }}
-              className="rounded-md p-1 text-gray-800 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
+              className="cursor-pointer rounded-md p-1 text-gray-800 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
             >
               {importCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
@@ -191,7 +191,7 @@ export default function Home() {
                 setConfigCopy(true);
                 setTimeout(() => setConfigCopy(false), 2000);
               }}
-              className="rounded-md p-1 text-gray-800 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
+              className="cursor-pointer rounded-md p-1 text-gray-800 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
             >
               {configCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
@@ -236,7 +236,7 @@ export default function Home() {
                 setInitCommandCopy(true);
                 setTimeout(() => setInitCommandCopy(false), 2000);
               }}
-              className="flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
+              className="cursor-pointer flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
             >
               {initCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
@@ -266,7 +266,7 @@ export default function Home() {
                 setAddCommandCopy(true);
                 setTimeout(() => setAddCommandCopy(false), 2000);
               }}
-              className="flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
+              className="cursor-pointer flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
             >
               {addCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
@@ -298,7 +298,7 @@ export default function Home() {
                 setCodeCopy(true);
                 setTimeout(() => setCodeCopy(false), 2000);
               }}
-              className="rounded-md p-1 text-gray-800 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
+              className="cursor-pointer rounded-md p-1 text-gray-800 transition dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
             >
               {codeCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>

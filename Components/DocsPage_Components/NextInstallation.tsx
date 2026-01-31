@@ -64,7 +64,7 @@ export default function Home() {
                 setTimeout(() => setinitCommandCopy(false), 2000);
               }}
               className="flex items-center gap-1 rounded-md px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition active:scale-90
-                         dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
+                         dark:text-[#E5E7EB] dark:hover:bg-[#1F2937] cursor-pointer"
             >
               {initCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
@@ -99,7 +99,7 @@ export default function Home() {
                 setTimeout(() => setAddCommandCopy(false), 2000);
               }}
               className="flex items-center gap-1 rounded-md px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition active:scale-90
-                         dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
+                         dark:text-[#E5E7EB] dark:hover:bg-[#1F2937] cursor-pointer"
             >
               {addCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
@@ -142,7 +142,7 @@ export default function Home() {
                 setCodeCopy(true);
                 setTimeout(() => setCodeCopy(false), 2000);
               }}
-              className="rounded-md p-1 text-gray-800 dark:text-[#E5E7EB]"
+              className="rounded-md p-1 text-gray-800 dark:text-[#E5E7EB] cursor-pointer"
             >
               {codeCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
