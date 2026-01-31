@@ -33,7 +33,6 @@ export default function ThemeToggle() {
       "
     >
       <div className="relative h-5 w-5">
-        {/* Sun */}
         <Sun
           className={`
       absolute h-5 w-5
@@ -45,8 +44,6 @@ export default function ThemeToggle() {
       }
     `}
         />
-
-        {/* Moon */}
         <Moon
           className={`
       absolute h-5 w-5
