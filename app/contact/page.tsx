@@ -2,31 +2,68 @@ import ContactForm from "@/Components/ContactPage_Components/ContactForm";
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-100/10 to-slate-100 py-16 md:py-24 px-4 sm:px-6">
-      <div className="max-w-7xl mx-auto flex flex-col items-center gap-12">
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-          <div className="w-full max-w-3xl mx-auto text-center space-y-4 sm:space-y-6">
-            {/* Badge */}
-            <p className="inline-block px-4 py-1 text-sm font-medium  border border-gray-200 text-gray-600 bg-gray-100 rounded-full border-b-2 shadow-md">
-              Get In Touch
-            </p>
+    <div
+      className="
+      min-h-screen
+     dark:bg-[#0B0F19]
+      py-20 px-4 sm:px-6
+    "
+    >
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-14">
+        {/* Heading Section */}
+        <div className="max-w-3xl text-center space-y-5">
+          {/* Badge */}
+          <p
+            className="
+            inline-flex items-center gap-2
+            px-4 py-1.5 text-sm font-medium
+            rounded-full
+            bg-white/80 dark:bg-neutral-900/80
+            text-neutral-700 dark:text-neutral-300
+            border border-neutral-200 dark:border-neutral-800
+            shadow-sm backdrop-blur
+          "
+          >
+            Get in Touch
+          </p>
 
-            {/* Heading */}
-            <h4 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-              Let's Start a{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
-                Conversation
-              </span>
-            </h4>
+          {/* Heading */}
+          <h1
+            className="
+            text-4xl sm:text-5xl lg:text-6xl
+            font-extrabold tracking-tight
+            text-neutral-900 dark:text-white
+          "
+          >
+            Let’s Start a{" "}
+            <span
+              className="
+              text-transparent bg-clip-text
+              bg-linear-to-b from-neutral-900 to-neutral-500
+              dark:from-[#3B82F6]
+            dark:to-[#9CA3AF]
+            "
+            >
+              Conversation
+            </span>
+          </h1>
 
-            {/* Description */}
-            <p className="max-w-xl mx-auto text-sm sm:text-base text-gray-500 leading-relaxed">
-              Have a question or want to work together? Drop us a message and
-              we'll get back to you within 24 hours.
-            </p>
-          </div>
+          {/* Description */}
+          <p
+            className="
+            max-w-xl mx-auto
+            text-sm sm:text-base
+            text-neutral-600 dark:text-neutral-400
+            leading-relaxed
+          "
+          >
+            Have a question or want to work together? Drop us a message and
+            we’ll get back to you within 24 hours.
+          </p>
         </div>
-        <div className=" flex justify-center">
+
+        {/* Form */}
+        <div className="flex justify-center w-full">
           <ContactForm />
         </div>
       </div>
