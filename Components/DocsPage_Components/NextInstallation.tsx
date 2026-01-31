@@ -9,8 +9,10 @@ const NextInstallation = () => {
   const [initCommandCopy, setinitCommandCopy] = useState(false);
   const [addCommandCopy, setAddCommandCopy] = useState(false);
   const [codeCopy, setCodeCopy] = useState(false);
+
   const initCommand = "npx saelix-ui init";
   const addCommand = "npx saelix-ui add button";
+
   const code = `import { Button } from "@/components/ui/button"
  
 export default function Home() {
@@ -22,30 +24,33 @@ export default function Home() {
 }`;
 
   return (
-    <div className="max-w-5xl mx-auto px-6 md:px-10 py-12 space-y-16">
+    <div className="mx-auto px-6 md:px-40 py-12 space-y-16 dark:bg-[#0B0F19]">
+      {/* Header */}
       <section className="space-y-4">
-        <h2 className="group text-shadow-lg inline-block text-3xl font-bold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
+        <h2 className="group inline-block text-3xl font-bold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500 dark:from-[#E5E7EB] dark:to-[#9CA3AF]">
           Next.js
         </h2>
 
-        <p className="text-gray-500">
+        <p className="text-gray-500 dark:text-[#9CA3AF]">
           Install and configure saelix ui for Next.js.
         </p>
       </section>
-      {/* Quick Start */}
+
+      {/* Create project */}
       <section className="space-y-4">
-        <h2 className="group text-shadow-lg relative inline-block text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
+        <h2 className="group relative inline-block text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500 dark:from-[#E5E7EB] dark:to-[#9CA3AF]">
           Create project
-          <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-700 transition-all duration-300 group-hover:w-full" />
+          <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-700 dark:bg-[#1F2937] transition-all duration-300 group-hover:w-full" />
         </h2>
 
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-[#9CA3AF]">
           Use the init command to either spin up a fresh Next.js project or
           configure an existing one :
         </p>
 
         {/* Code Block */}
-        <div className="relative rounded-xl border border-gray-200 hover:scale-105 transition-all duration-300 order-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm">
+        <div className="relative rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm transition-all duration-300 hover:scale-105
+                        dark:border-[#1F2937] dark:bg-[#111827] dark:text-[#E5E7EB] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
           <div className="absolute top-2 right-2">
             <button
               onClick={() => {
@@ -53,26 +58,32 @@ export default function Home() {
                 setinitCommandCopy(true);
                 setTimeout(() => setinitCommandCopy(false), 2000);
               }}
-              className="flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition"
+              className="flex items-center gap-1 rounded-md px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition active:scale-90
+                         dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
             >
               {initCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
-          <p className="text-gray-700 text-shadow-lg">npx saelix-ui init</p>
+          <p className="text-gray-700 dark:text-[#E5E7EB]">
+            npx saelix-ui init
+          </p>
         </div>
       </section>
+
+      {/* Add components */}
       <section className="space-y-4">
-        <h2 className="group text-shadow-lg relative inline-block text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500">
+        <h2 className="group relative inline-block text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500 dark:from-[#E5E7EB] dark:to-[#9CA3AF]">
           Add Components
-          <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-700 transition-all duration-300 group-hover:w-full" />
+          <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-700 dark:bg-[#1F2937] transition-all duration-300 group-hover:w-full" />
         </h2>
 
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-[#9CA3AF]">
           You’re all set to begin adding components to your project :
         </p>
 
         {/* Code Block */}
-        <div className="relative rounded-xl border border-gray-200 hover:scale-105 transition-all duration-300 order-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm">
+        <div className="relative rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm transition-all duration-300 hover:scale-105
+                        dark:border-[#1F2937] dark:bg-[#111827] dark:text-[#E5E7EB] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
           <div className="absolute top-2 right-2">
             <button
               onClick={() => {
@@ -80,27 +91,31 @@ export default function Home() {
                 setAddCommandCopy(true);
                 setTimeout(() => setAddCommandCopy(false), 2000);
               }}
-              className="flex items-center gap-1 rounded-md active:scale-90 px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition"
+              className="flex items-center gap-1 rounded-md px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition active:scale-90
+                         dark:text-[#E5E7EB] dark:hover:bg-[#1F2937]"
             >
               {addCommandCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
-          <p className="text-gray-700 text-shadow-lg">
+          <p className="text-gray-700 dark:text-[#E5E7EB]">
             npx saelix-ui add button
           </p>
         </div>
 
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-gray-600 dark:text-[#9CA3AF] leading-relaxed">
           The command above installs the{" "}
-          <span className="bg-gray-50 px-2 py-1 rounded-lg border border-gray-200 shadow-sm">
+          <span className="bg-gray-50 px-2 py-1 rounded-lg border border-gray-200 shadow-sm
+                           dark:bg-[#111827] dark:border-[#1F2937] dark:text-[#E5E7EB]">
             Button
           </span>{" "}
-          component into your project. After that, you can import it like this:
+          component into your project.
         </p>
+
         {/* Code Preview */}
-        <div className="relative overflow-hidden bg-gray-50 border-gray-200 hover:scale-105 transition-all duration-300 rounded-xl border shadow-sm">
-          {/* Header */}
-          <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2">
+        <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm transition-all duration-300 hover:scale-105
+                        dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+          <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2
+                          dark:border-[#1F2937]">
             <div className="flex items-center gap-2 text-xs">
               <span className="rounded-sm px-2 py-0.5 bg-gray-900 text-white">
                 TS
@@ -114,14 +129,13 @@ export default function Home() {
                 setCodeCopy(true);
                 setTimeout(() => setCodeCopy(false), 2000);
               }}
-              className="rounded-md p-1 text-gray-800 transition"
+              className="rounded-md p-1 text-gray-800 dark:text-[#E5E7EB]"
             >
               {codeCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
 
-          {/* Code */}
-          <pre className="rounded-xl p-4 text-sm">
+          <pre className="p-4 text-sm text-[#E5E7EB]">
             <SyntaxHighlighter
               language="jsx"
               style={prism}
