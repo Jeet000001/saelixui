@@ -40,25 +40,25 @@ const Why_saelix_ui = () => {
         "
       >
         <Card
-        image={theme === "dark" ? "/thunderdark.png" : "/thunder.png"}
+        image={theme === "dark" ? "/thunderdark.png" : "/thunderlight.png"}
           title="Modern & Clean Design"
           description="Craft visually pleasing interfaces without extra effort. Saelix UI follows modern design principles while staying flexible enough to match your brand’s personality."
         />
 
         <Card
-          image="/gear.png"
+          image={theme === "dark" ? "/bullseyesdark.png" : "/bullseyeslight.png"}
           title="Developer Focused"
           description="Every component is built to be configurable and extensible. From styles to behavior, Saelix UI gives you full control without fighting the framework."
         />
 
         <Card
-          image="/file.png"
+        image={theme === "dark" ? "/filedark.png" : "/filelight.png"}
           title="Clear Documentation"
           description="No guessing, no confusion. Our documentation focuses on real use-cases, simple examples, and best practices so you can build faster with confidence."
         />
 
         <Card
-          image="/dart.png"
+          image={theme === "dark" ? "/websitedark.png" : "/websitelight.png"}
           title="Inclusive Design"
           description="We design components that work for everyone. Keyboard navigation, proper semantics, and accessibility standards are considered from day one."
         />

@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({ image, title, description }) => {
 
         dark:bg-[#111827]
         dark:border-[#1F2937]
-        dark:hover:border-[#3B82F6]
+        dark:hover:border-[#294268]
         dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
       "
     >
@@ -30,7 +30,7 @@ const Card: React.FC<CardProps> = ({ image, title, description }) => {
 
           border-neutral-200 bg-neutral-50 group-hover:bg-neutral-100
 
-          dark:bg-[#212f54]
+          dark:bg-[#0B0F19]
           dark:border-[#1F2937]
           dark:group-hover:bg-[#111827]
         "
