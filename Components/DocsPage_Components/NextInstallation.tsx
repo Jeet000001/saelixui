@@ -130,7 +130,7 @@ export default function Home() {
                           dark:border-[#1F2937]"
           >
             <div className="flex items-center gap-2 text-xs">
-              <span className="rounded-sm px-2 py-0.5 bg-gray-900 text-white">
+              <span className="rounded-sm px-2 py-0.5 bg-gray-900 text-white dark:bg-[#3B82F6]">
                 TS
               </span>
               <span className="text-slate-400">app/page.tsx</span>
