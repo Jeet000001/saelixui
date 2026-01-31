@@ -18,9 +18,9 @@ const ContactPage = () => {
             inline-flex items-center gap-2
             px-4 py-1.5 text-sm font-medium
             rounded-full
-            bg-white/80 dark:bg-neutral-900/80
+            bg-white/80 dark:bg-[#0B0F19]
             text-neutral-700 dark:text-neutral-300
-            border border-neutral-200 dark:border-neutral-800
+            border-2 border-neutral-200 dark:border-neutral-800
             shadow-sm backdrop-blur
           "
           >

@@ -24,7 +24,7 @@ const ContactForm = () => {
         "HqPux1QUAuYq1cBT4"
       )
       .then(() => {
-        toast.success("Message sent successfully 🚀");
+        toast.success("Message sent successfully");
         form.current?.reset();
       })
       .catch(() => {
