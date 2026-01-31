@@ -1,8 +1,10 @@
 "use client";
 
 import Card from "./Card";
+import { useTheme } from "next-themes";
 
 const Why_saelix_ui = () => {
+  const { theme } = useTheme();
   return (
     <div className="py-16 dark:bg-[#0B0F19]">
       
@@ -38,7 +40,7 @@ const Why_saelix_ui = () => {
         "
       >
         <Card
-          image="/thunder.png"
+        image={theme === "dark" ? "/thunderdark.png" : "/thunder.png"}
           title="Modern & Clean Design"
           description="Craft visually pleasing interfaces without extra effort. Saelix UI follows modern design principles while staying flexible enough to match your brand’s personality."
         />
