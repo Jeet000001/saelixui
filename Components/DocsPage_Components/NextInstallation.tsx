@@ -10,7 +10,7 @@ import { useTheme } from "next-themes";
 const NextInstallation = () => {
   const { theme } = useTheme();
 
-  const [isTs, setIsTs] = useState(false);
+  const [isTs, setIsTs] = useState(true);
   const [openLang, setOpenLang] = useState(false);
 
   const [initCommandCopy, setinitCommandCopy] = useState(false);
