@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/Components/NavigationBar";
-import Footer from "@/Components/Footer";
+
+
 import { Toaster } from "react-hot-toast";
 import { Providers } from "./providers"; 
 
@@ -32,11 +33,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers>        
-          <NavigationBar />
+        <Providers>   
+          <NavigationBar />     
           {children}
           <Toaster position="top-center" />
-          <Footer />
         </Providers>
       </body>
     </html>

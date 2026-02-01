@@ -1,9 +1,7 @@
-import React from 'react'
+import { redirect } from "next/navigation";
 
-const ComponentPage = () => {
-  return (
-    <div>ComponentPage</div>
-  )
+const page = () => {
+  redirect("/components/button");
 }
 
-export default ComponentPage
+export default page
