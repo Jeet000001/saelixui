@@ -1,7 +1,5 @@
 import { redirect } from "next/navigation";
 
-const page = () => {
+export default function ComponentsPage() {
   redirect("/components/button");
 }
-
-export default page
