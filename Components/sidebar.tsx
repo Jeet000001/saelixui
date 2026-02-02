@@ -44,7 +44,7 @@ const Sidebar = () => {
   );
 
   return (
-    <aside className="flex h-screen w-64 flex-col border-r p-4
+    <aside className="flex h-screen w-64 flex-col border-r border-gray-200 p-4
       dark:bg-[#0B0F19] dark:border-[#1F2937]
       dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
 
@@ -65,7 +65,7 @@ const Sidebar = () => {
           onChange={(e) => setSearch(e.target.value)}
           className="w-full rounded-md border px-9 py-1.5 text-sm
             bg-white text-gray-900
-            focus:outline-none focus:ring-2 focus:ring-blue-500
+            focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-blue-500
             dark:bg-[#020617] dark:border-[#1F2937] dark:text-white
             dark:placeholder:text-gray-400"
         />
