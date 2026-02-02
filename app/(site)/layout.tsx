@@ -1,5 +1,4 @@
 import Footer from "@/Components/Footer";
-import NavigationBar from "@/Components/NavigationBar";
 
 export default function SiteLayout({
   children,
@@ -8,7 +7,6 @@ export default function SiteLayout({
 }) {
   return (
     <>
-    <NavigationBar /> 
       {children}
       <Footer />
     </>
