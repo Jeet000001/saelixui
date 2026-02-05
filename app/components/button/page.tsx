@@ -1,4 +1,5 @@
 import ShowComponent from "@/Components/ShowComponent";
+import { Github, Linkedin } from "lucide-react";
 
 const ComponentPage = () => {
   return (
@@ -179,11 +180,55 @@ const RoundedButtonDemo = () => <Button>Rounded</Button>;
 
 export default RoundedButtonDemo;`}
         >
-          <button
-            className="bg-black hover:bg-gray-900 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-black border-b-2 border-gray-600 dark:border-b-2 dark:border-gray-400 px-5 py-2 rounded-full active:scale-95 transition duration-300 ease-in-out cursor-pointer"
-          >
+          <button className="bg-black hover:bg-gray-900 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-black border-b-2 border-gray-600 dark:border-b-2 dark:border-gray-400 px-5 py-2 rounded-full active:scale-95 transition duration-300 ease-in-out cursor-pointer">
             Disabled
           </button>
+        </ShowComponent>
+        {/* Icon Button */}
+        <ShowComponent
+          ComponentName="09. Icon"
+          installation="npx saelix-ui add icon-button"
+          ComponentCodeTS={`import Icon_Button from "@/components/ui/Icon-button";
+import { Github, Linkedin } from "lucide-react";
+
+const IconButtonDemo = () => {
+  return (
+    <div className="flex gap-4">
+      <Button>
+        <Github />
+      </Button>
+      <Button>
+        <Linkedin />
+      </Button>
+    </div>
+  );
+};
+export default IconButtonDemo;`}
+          ComponentCodeJS={`import Icon_Button from "./components/ui/Icon-button";
+import { Github, Linkedin } from "lucide-react";
+
+const IconButtonDemo = () => {
+  return (
+    <div className="flex gap-4">
+      <Button>
+        <Github />
+      </Button>
+      <Button>
+        <Linkedin />
+      </Button>
+    </div>
+  );
+};
+export default IconButtonDemo;`}
+        >
+          <div className="flex gap-4">
+            <button className="bg-black hover:bg-gray-900 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-black px-3 py-3 rounded-full active:scale-95 transition duration-300 ease-in-out cursor-pointer">
+              <Github />
+            </button>
+            <button className="bg-black hover:bg-gray-900 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-black px-3 py-3 rounded-full active:scale-95 transition duration-300 ease-in-out cursor-pointer">
+              <Linkedin />
+            </button>
+          </div>
         </ShowComponent>
       </div>
     </div>
