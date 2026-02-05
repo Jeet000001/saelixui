@@ -13,7 +13,8 @@ export default function ComponentsLayout({
       <Sidebar />
 
       {/* Main content scrolls independently of the sidebar */}
-      <main className="flex-1 overflow-y-auto px-5 py-5">{children}</main>
+      <main className="flex-1 overflow-y-auto px-5 py-5 border-gray-200
+      dark:bg-[#0B0F19] ">{children}</main>
     </div>
   );
 }
