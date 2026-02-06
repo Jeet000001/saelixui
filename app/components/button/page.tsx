@@ -230,6 +230,68 @@ export default IconButtonDemo;`}
             </button>
           </div>
         </ShowComponent>
+        {/* Gradient Backgroung Button  */}
+        <ShowComponent
+          ComponentName="10. Background Gradient"
+          installation="npx saelix-ui add gradient-button"
+          ComponentCodeTS={`import Gradient-Button from "@/components/ui/Gradient-button";
+
+const GradientButtonDemo = () => <Button>Gradient</Button>;
+
+export default GradientButtonDemo;
+`}
+          ComponentCodeJS={`import Gradient-Button from "./components/ui/Gradient-button";
+
+const GradientButtonDemo = () => <Button>Gradient</Button>;
+
+export default GradientButtonDemo;`}
+        >
+          <button
+            className="px-5 py-2 rounded-xl text-white
+        bg-linear-to-t from-pink-500 via-purple-500 to-indigo-500
+        bg-size-[200%_200%] animate-[gradientMove_2s_ease_infinite]
+        transition-transform duration-300 active:scale-95"
+          >
+            Gradient
+          </button>
+        </ShowComponent>
+        {/* Gradient Animation Button */}
+        <ShowComponent
+          ComponentName="11. Background Gradient"
+          installation="npx saelix-ui add gradient-animation-button"
+          ComponentCodeTS={`import Gradient-Button from "@/components/ui/Gradient-animation-button";
+
+const GradientAnimationButtonDemo = () => {
+  return <button>Gradient Animation</button>;
+};
+export default GradientAnimationButtonDemo;;
+`}
+          ComponentCodeJS={`import Gradient-Button from "./components/ui/Gradient-animation-button";
+
+const GradientAnimationButtonDemo = () => {
+  return <button>Gradient Animation</button>;
+};
+export default GradientAnimationButtonDemo;`}
+        >
+          <>
+            <button
+              className="px-5 py-2 rounded-xl text-white
+        bg-linear-to-r from-pink-500 via-purple-500 to-indigo-500
+        bg-size-[200%_200%] animate-[gradientMove_2s_ease_infinite]
+        transition-transform duration-300 active:scale-95 ${className}"
+            >
+              Gradient Animation
+            </button>
+            <style>
+              {`@keyframes gradientMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }`}
+            </style>
+          </>
+        </ShowComponent>
+        
       </div>
     </div>
   );

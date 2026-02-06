@@ -60,7 +60,7 @@ export default function ShowComponent({
       {/* Modal */}
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-          <div className="w-full max-w-2xl max-h-[520px] rounded-xl bg-white overflow-y-auto
+          <div className="w-full max-w-2xl max-h-130 rounded-xl bg-white overflow-y-auto
             dark:bg-[#111827] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
 
             {/* Header */}
@@ -127,8 +127,8 @@ export default function ShowComponent({
             </div>
 
             {/* Code */}
-            <div className="relative p-4">
-              <pre className="py-4 px-10 text-sm overflow-x-auto text-[#E5E7EB]">
+            <div className="relative p-4 ">
+              <pre className="py-4 px-10 text-sm overflow-x-auto text-[#E5E7EB] ">
                 <SyntaxHighlighter
                   language={activeTab === "ts" ? "tsx" : "jsx"}
                   style={theme === "dark" ? oneDark : oneLight}
