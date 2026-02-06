@@ -291,7 +291,6 @@ export default GradientAnimationButtonDemo;`}
             </style>
           </>
         </ShowComponent>
-        
       </div>
     </div>
   );
