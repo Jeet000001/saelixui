@@ -14,7 +14,7 @@ export default function ComponentsLayout({
 
       {/* Main content scrolls independently of the sidebar */}
       <main className="flex-1 overflow-y-auto px-5 py-5 border-gray-200
-      dark:bg-[#0B0F19] ">{children}</main>
+      dark:bg-[#0B0F19] no-scrollbar">{children}</main>
     </div>
   );
 }

@@ -31,7 +31,7 @@ export default function ShowComponent({
   const ComponentCode = activeTab === "ts" ? ComponentCodeTS : ComponentCodeJS;
 
   return (
-    <div className="flex justify-center items-start px-10 py-3">
+    <div className="flex justify-center items-start px-10 py-3 ">
       {/* Card */}
       <div className="w-full max-w-3xl rounded-xl border border-gray-200 bg-white shadow-sm
         dark:bg-[#111827] dark:border-[#1F2937] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
@@ -60,11 +60,16 @@ export default function ShowComponent({
       {/* Modal */}
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-          <div className="w-full max-w-2xl max-h-130 rounded-xl bg-white overflow-y-auto
+          
+          {/* Modal container */}
+          <div className="w-full max-w-2xl max-h-130 rounded-xl bg-white flex flex-col
             dark:bg-[#111827] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
 
-            {/* Header */}
-            <div className="border-b border-gray-300 pb-2 dark:border-[#1F2937]">
+            {/* Sticky header */}
+            <div className="sticky top-0 z-20 border-b rounded-t-xl border-gray-300 pb-2 bg-white
+              dark:bg-[#111827] dark:border-[#1F2937]">
+
+              {/* Top row */}
               <div className="flex items-center justify-between px-4 py-3">
                 <h3 className="font-semibold dark:text-[#E5E7EB]">
                   Installation
@@ -72,8 +77,7 @@ export default function ShowComponent({
 
                 <div className="flex items-center gap-3">
                   {/* TS/JS Toggle */}
-                  <div className="flex bg-gray-200 rounded-md p-1
-                    dark:bg-[#1F2937]">
+                  <div className="flex bg-gray-200 rounded-md p-1 dark:bg-[#1F2937]">
                     <button
                       onClick={() => setActiveTab("ts")}
                       className={`px-3 py-1 text-xs rounded-md transition ${
@@ -107,8 +111,8 @@ export default function ShowComponent({
                 </div>
               </div>
 
-              {/* Install Command */}
-              <div className="mx-5 flex items-center justify-between gap-2 rounded-lg border-2 border-gray-200 px-4 py-3 text-sm
+              {/* Install command */}
+              <div className="mx-5 mb-3 flex items-center justify-between gap-2 rounded-lg border-2 border-gray-200 px-4 py-3 text-sm
                 dark:bg-[#0B0F19] dark:border-[#1F2937] dark:text-[#E5E7EB]">
                 <code className="truncate">{installation}</code>
 
@@ -126,40 +130,49 @@ export default function ShowComponent({
               </div>
             </div>
 
-            {/* Code */}
-            <div className="relative p-4 ">
-              <pre className="py-4 px-10 text-sm overflow-x-auto text-[#E5E7EB] ">
-                <SyntaxHighlighter
-                  language={activeTab === "ts" ? "tsx" : "jsx"}
-                  style={theme === "dark" ? oneDark : oneLight}
-                  customStyle={{
-                background: "transparent",
-                margin: 0,
-                padding: 0,
-              }}
-              codeTagProps={{
-                style: {
-                  background: "transparent",
-                },
-              }}
+            {/* Scrollable code area */}
+            <div className="relative flex-1 overflow-y-auto no-scrollbar">
+              
+              {/* Fixed copy button */}
+              <div className="sticky top-4 z-10 flex justify-end pr-6 pt-4">
+                <button
+                  onClick={async () => {
+                    await navigator.clipboard.writeText(ComponentCode);
+                    setCodeCopied(true);
+                    setTimeout(() => setCodeCopied(false), 1500);
+                  }}
+                  className="flex items-center gap-1 rounded-md px-2 py-1 text-xs
+                    bg-[#3B82F6] text-white hover:bg-[#2563EB]"
                 >
-                  {ComponentCode}
-                </SyntaxHighlighter>
-              </pre>
+                  {codeCopied ? <Check size={14} /> : <Copy size={14} />}
+                </button>
+              </div>
 
-              {/* Copy */}
-              <button
-                onClick={async () => {
-                  await navigator.clipboard.writeText(ComponentCode);
-                  setCodeCopied(true);
-                  setTimeout(() => setCodeCopied(false), 1500);
-                }}
-                className="absolute top-6 right-6 flex items-center gap-1 rounded-md px-2 py-1 text-xs
-                  bg-[#3B82F6] text-white hover:bg-[#2563EB]"
-              >
-                {codeCopied ? <Check size={14} /> : <Copy size={14} />}
-              </button>
+              {/* Code */}
+              <div className="p-4 pt-0 ">
+                <pre className="py-4 px-10 text-sm overflow-x-auto no-scrollbar">
+                  <SyntaxHighlighter
+                    language={activeTab === "ts" ? "tsx" : "jsx"}
+                    style={theme === "dark" ? oneDark : oneLight}
+                    customStyle={{
+                      background: "transparent",
+                      margin: 0,
+                      padding: 0,
+                    }}
+                    codeTagProps={{
+                      style: {
+                        background: "transparent",
+                      },
+                    }}
+                    className="no-scrollbar"
+                  >
+                    {ComponentCode}
+                  </SyntaxHighlighter>
+                </pre>
+              </div>
+
             </div>
+
           </div>
         </div>
       )}
