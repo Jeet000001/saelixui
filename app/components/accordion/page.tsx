@@ -1,5 +1,6 @@
 import { BoxAccordion } from "@/Components/Accordion/BoxAccordion";
 import { DefaultAccordion } from "@/Components/Accordion/DefaultAccordion";
+import { OutlineAccordion } from "@/Components/Accordion/OutlineAccordion";
 import ShowComponent from "@/Components/ShowComponent";
 
 const accordion_page = () => {
@@ -89,7 +90,7 @@ export default defaultAccordion;
             ]}
           />
         </ShowComponent>
-        {/*  */}
+        {/* Box Accordion */}
         <ShowComponent
           ComponentName="02. Box"
           installation="npx saelix-ui add box-accordion"
@@ -162,6 +163,82 @@ export default boxAccordion;
               },
             ]}
           /> 
+        </ShowComponent>
+        {/* Outline Accordion */}
+        <ShowComponent
+          ComponentName="03. Outline"
+          installation="npx saelix-ui add outline-accordion"
+          ComponentCodeTS={`import { Outline_Accordion } from "@/components/ui/Outline-accordion";
+
+const OutlineAccordion = () => {
+  return (
+    <Outline_Accordion
+      items={[
+        {
+          title: "What is this component?",
+          content: "A reusable accordion to show and hide content sections.",
+        },
+        {
+          title: "Can I customize it?",
+          content: "Yes, fully customizable with Tailwind and your styles.",
+        },
+        {
+          title: "Responsive?",
+          content: "Works smoothly on mobile, tablet, and desktop.",
+        },
+      ]}
+    />
+  );
+};
+
+export default OutlineAccordion;
+
+`}
+          ComponentCodeJS={`import { Outline_Accordion } from "./components/ui/Outline-accordion";
+
+const OutlineAccordion = () => {
+  return (
+    <Outline_Accordion
+      items={[
+        {
+          title: "What is this component?",
+          content: "A reusable accordion to show and hide content sections.",
+        },
+        {
+          title: "Can I customize it?",
+          content: "Yes, fully customizable with Tailwind and your styles.",
+        },
+        {
+          title: "Responsive?",
+          content: "Works smoothly on mobile, tablet, and desktop.",
+        },
+      ]}
+    />
+  );
+};
+
+export default OutlineAccordion;
+
+`}
+        >
+          <OutlineAccordion 
+          items={[
+          {
+            title: "Is it accessible?",
+            content:
+              "Yes. It follows accessibility best practices and keyboard navigation."
+          },
+          {
+            title: "Is it styled?",
+            content:
+              "Yes. Clean modern UI with rounded cards."
+          },
+          {
+            title: "Is it animated?",
+            content:
+              "Yes. Smooth open close animation."
+          }
+        ]}/>
         </ShowComponent>
       </div>
     </div>
