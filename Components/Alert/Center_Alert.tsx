@@ -1,6 +1,5 @@
 "use client";
-import { ReactNode } from "react";
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 
 type AlartProps = {
   btntext: string;
@@ -9,7 +8,7 @@ type AlartProps = {
   icon?: ReactNode;
 };
 
-const With_Logo_Alart = ({ btntext, alartHeading, alartDiscription, icon }: AlartProps) => {
+const Center_Alart = ({ btntext, alartHeading, alartDiscription, icon }: AlartProps) => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
@@ -29,7 +28,7 @@ const With_Logo_Alart = ({ btntext, alartHeading, alartDiscription, icon }: Alar
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
           <div
             className="
-              w-105 mx-5 p-6 rounded-2xl
+              w-[420px] mx-5 p-6 rounded-2xl
               bg-white shadow-xl
               dark:bg-[#111827]
               dark:border dark:border-[#1F2937]
@@ -37,19 +36,27 @@ const With_Logo_Alart = ({ btntext, alartHeading, alartDiscription, icon }: Alar
               animate-in fade-in zoom-in duration-200
             "
           >
-            
-                <div className="h-12 w-12 mb-3 flex items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400">
+            {/* Icon */}
+            {icon && (
+              <div className="mb-4 flex items-center justify-center">
+                <div className="h-12 w-12 flex items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400">
                   {icon}
                 </div>
-            <h2 className="text-xl font-semibold mb-2 text-black dark:text-[#E5E7EB]">
+              </div>
+            )}
+
+            {/* Heading */}
+            <h2 className="text-xl font-semibold mb-2 text-center text-black dark:text-[#E5E7EB]">
               {alartHeading}
             </h2>
 
-            <p className="text-gray-600 text-sm mb-6 dark:text-[#9CA3AF]">
+            {/* Description */}
+            <p className="text-gray-600 text-sm mb-6 text-center dark:text-[#9CA3AF]">
               {alartDiscription}
             </p>
 
-            <div className="flex justify-end gap-3">
+            {/* Buttons */}
+            <div className="flex justify-center gap-3">
               <button
                 onClick={() => setOpen(false)}
                 className="
@@ -68,9 +75,9 @@ const With_Logo_Alart = ({ btntext, alartHeading, alartDiscription, icon }: Alar
                 onClick={() => setOpen(false)}
                 className="
                   px-5 py-2 rounded-lg
-                  bg-black text-white hover:bg-gray-800
-                  dark:bg-[#3B82F6]
-                  dark:hover:bg-[#2563EB]
+                  bg-[#d13529] text-white hover:bg-[#e13024]
+                  dark:bg-[#8b2a23]
+                  dark:hover:bg-[#9a2f27]
                 "
               >
                 Continue
@@ -83,4 +90,4 @@ const With_Logo_Alart = ({ btntext, alartHeading, alartDiscription, icon }: Alar
   );
 };
 
-export default With_Logo_Alart;
+export default Center_Alart;

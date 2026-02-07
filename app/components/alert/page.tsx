@@ -1,3 +1,4 @@
+import Center_Alart from "@/Components/Alert/Center_Alert";
 import Default_Alart from "@/Components/Alert/Default_Alert";
 import With_Logo_Alart from "@/Components/Alert/With_Logo_Alert";
 import ShowComponent from "@/Components/ShowComponent";
@@ -12,8 +13,7 @@ const page = () => {
         </h1>
 
         <p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
-          A stacked set of interactive headings that toggle their content
-          panels.
+          A dialog that shows important content and asks for user confirmation.
         </p>
       </div>
       <div>
@@ -98,6 +98,52 @@ export default IconAlertDemo;
         `}
         >
           <With_Logo_Alart
+            btntext="Delete Account"
+            icon={<CircleAlert />}
+            alartHeading="Are you absolutely sure?"
+            alartDiscription="You're about to permanently delete your account and all associated data. This action cannot be undone."
+          />
+        </ShowComponent>
+        {/* Center Alert */}
+        <ShowComponent
+          ComponentName="03. Center Align"
+          installation="npx saelix-ui add center-alert"
+          ComponentCodeTS={`import Center_Alart from "@/components/ui/Center-alert";
+import { CircleAlert } from "lucide-react";
+
+const CenterAlertDemo = () => {
+  return (
+
+    <Center_Alart
+      btntext="Delete Account"
+      icon={<CircleAlert />}
+      alartHeading="Are you absolutely sure?"
+      alartDiscription="You're about to permanently delete your account and all associated data. This action cannot be undone."
+    />
+  );
+};
+
+export default CenterAlertDemo;
+        `}
+          ComponentCodeJS={`import Center_Alart from "./components/ui/Center-alert";
+import { CircleAlert } from "lucide-react";
+
+const CenterAlertDemo = () => {
+  return (
+
+    <Center_Alart
+      btntext="Delete Account"
+      icon={<CircleAlert />}
+      alartHeading="Are you absolutely sure?"
+      alartDiscription="You're about to permanently delete your account and all associated data. This action cannot be undone."
+    />
+  );
+};
+
+export default CenterAlertDemo;
+        `}
+        >
+          <Center_Alart
             btntext="Delete Account"
             icon={<CircleAlert />}
             alartHeading="Are you absolutely sure?"
