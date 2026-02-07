@@ -12,7 +12,7 @@ const accordion_page = () => {
         </h1>
 
         <p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
-          Renders a button or any element styled to behave like a button.
+          A stacked set of interactive headings that toggle their content panels.
         </p>
       </div>
       <div>
