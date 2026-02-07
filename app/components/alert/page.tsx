@@ -16,7 +16,49 @@ const page = () => {
       </div>
       <div>
         {/* Default Alert */}
-        
+        <ShowComponent
+          ComponentName="01. Default"
+          installation="npx saelix-ui add default-alert"
+          ComponentCodeTS={`import Default_Alart from "@/components/ui/Default-alert";
+
+const page = () => {
+  return (
+    <Default_Alart
+      btntext="Delete Account"
+      alartHeading="Are you absolutely sure?"
+      alartDiscription="This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers."
+    />
+  );
+};
+
+export default page;
+
+        `}
+          ComponentCodeJS={`import Default_Alart from "./components/ui/Default-alert";
+
+const page = () => {
+  return (
+    <Default_Alart
+      btntext="Delete Account"
+      alartHeading="Are you absolutely sure?"
+      alartDiscription="This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers."
+    />
+  );
+};
+
+export default page;
+
+        `}
+        >
+          <Default_Alart
+            btntext="Delete Account"
+            alartHeading="Are you absolutely sure?"
+            alartDiscription="This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers."
+          />
+        </ShowComponent>
       </div>
     </div>
   );
