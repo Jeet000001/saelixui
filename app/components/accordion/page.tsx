@@ -14,7 +14,7 @@ const accordion_page = () => {
         </p>
       </div>
       <div>
-        
+        {/* Default Accordion */}
         <ShowComponent
           ComponentName="01. Default"
           installation="npx saelix-ui add default-accordion"
