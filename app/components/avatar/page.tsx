@@ -1,3 +1,4 @@
+import Clickable_Avatar from "@/Components/Avatar/Clickable_Avatar";
 import Default_Avatar from "@/Components/Avatar/Default_Avatar";
 import ShowComponent from "@/Components/ShowComponent";
 const page = () => {
@@ -20,7 +21,7 @@ const page = () => {
           installation="npx saelix-ui add default-avatar"
           ComponentCodeTS={`import Default_Avatar from "@/components/ui/Default-avatar";
 
-const page = () => {
+const DefaultAvaterDemo = () => {
   return (
     <div>
       <Default_Avatar src="/imageLink" alt="Avater" width={45} height={45} />
@@ -28,12 +29,12 @@ const page = () => {
   );
 };
 
-export default page;
+export default DefaultAvaterDemo;
 
         `}
           ComponentCodeJS={`import Default_Avatar from "./components/ui/Default-avatar";
 
-const page = () => {
+const DefaultAvaterDemo = () => {
   return (
     <div>
       <Default_Avatar src="/imageLink" alt="Avater" width={45} height={45} />
@@ -41,7 +42,7 @@ const page = () => {
   );
 };
 
-export default page;
+export default DefaultAvaterDemo;
 
         `}
         >
@@ -51,6 +52,92 @@ export default page;
             width={45}
             height={45}
           />
+        </ShowComponent>
+        {/* Clickable Avatar */}
+        <ShowComponent
+          ComponentName="02. Clickable"
+          installation="npx saelix-ui add clickable-avatar"
+          ComponentCodeTS={`import Clickable_Avatar from "@/components/ui/Clickable-avater";
+
+const ClickableAvatarDemo = () => {
+  return (
+    <div>
+      <Clickable_Avatar
+        src="/imageLink"
+        alt="Avater"
+        href="socialLink"
+        width={45}
+        height={45}
+      />
+    </div>
+  );
+};
+
+export default ClickableAvatarDemo;
+`}
+          ComponentCodeJS={`import Clickable_Avatar from "./components/ui/Clickable-avater";
+
+const ClickableAvatarDemo = () => {
+  return (
+    <div>
+      <Clickable_Avatar
+        src="/imageLink"
+        alt="Avater"
+        href="socialLink"
+        width={45}
+        height={45}
+      />
+    </div>
+  );
+};
+
+export default ClickableAvatarDemo;
+`}
+        >
+          <Clickable_Avatar src="/myImage.jpeg" alt="Avater" href="https://github.com/Jeet000001" width={45} height={45}/>
+        </ShowComponent>
+        {/*  */}
+        <ShowComponent
+          ComponentName="02. Clickable"
+          installation="npx saelix-ui add clickable-avatar"
+          ComponentCodeTS={`import Clickable_Avatar from "@/components/ui/Clickable-avater";
+
+const ClickableAvatarDemo = () => {
+  return (
+    <div>
+      <Clickable_Avatar
+        src="/imageLink"
+        alt="Avater"
+        href="socialLink"
+        width={45}
+        height={45}
+      />
+    </div>
+  );
+};
+
+export default ClickableAvatarDemo;
+`}
+          ComponentCodeJS={`import Clickable_Avatar from "./components/ui/Clickable-avater";
+
+const ClickableAvatarDemo = () => {
+  return (
+    <div>
+      <Clickable_Avatar
+        src="/imageLink"
+        alt="Avater"
+        href="socialLink"
+        width={45}
+        height={45}
+      />
+    </div>
+  );
+};
+
+export default ClickableAvatarDemo;
+`}
+        >
+          <Clickable_Avatar src="/myImage.jpeg" alt="Avater" href="https://github.com/Jeet000001" width={45} height={45}/>
         </ShowComponent>
       </div>
     </div>
