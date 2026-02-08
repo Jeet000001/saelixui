@@ -1,5 +1,7 @@
 import Center_Alart from "@/Components/Alert/Center_Alert";
 import Default_Alart from "@/Components/Alert/Default_Alert";
+import Footer_Alart from "@/Components/Alert/Footer_Alert";
+import Header_Alart from "@/Components/Alert/Header_Alert";
 import With_Logo_Alart from "@/Components/Alert/With_Logo_Alert";
 import ShowComponent from "@/Components/ShowComponent";
 import { CircleAlert } from "lucide-react";
@@ -144,6 +146,101 @@ export default CenterAlertDemo;
         `}
         >
           <Center_Alart
+            btntext="Delete Account"
+            icon={<CircleAlert />}
+            alartHeading="Are you absolutely sure?"
+            alartDiscription="You're about to permanently delete your account and all associated data. This action cannot be undone."
+          />
+        </ShowComponent>
+        {/* Header Alert */}
+        <ShowComponent
+          ComponentName="04. Customized Header"
+          installation="npx saelix-ui add header-alert"
+          ComponentCodeTS={`import Header_Alart from "@/components/ui/Header-alert";
+import { CircleAlert } from "lucide-react";
+
+const HeaderAlertDemo = () => {
+  return (
+
+    <Header_Alart
+      btntext="Delete Account"
+      alertCardHeading="Delete Account"
+      icon={<CircleAlert />}
+      alartHeading="Are you absolutely sure?"
+      alartDiscription="You're about to permanently delete your account and all associated data. This action cannot be undone."
+    />
+  );
+};
+
+export default HeaderAlertDemo;
+        `}
+          ComponentCodeJS={`import Header_Alart from "./components/ui/Header-alert";
+import { CircleAlert } from "lucide-react";
+
+const HeaderAlertDemo = () => {
+  return (
+
+    <Header_Alart
+      btntext="Delete Account"
+      alertCardHeading="Delete Account"
+      icon={<CircleAlert />}
+      alartHeading="Are you absolutely sure?"
+      alartDiscription="You're about to permanently delete your account and all associated data. This action cannot be undone."
+    />
+  );
+};
+
+export default HeaderAlertDemo;
+        `}
+        >
+          <Header_Alart
+            btntext="Delete Account"
+            alertCardHeading="Delete Account"
+            icon={<CircleAlert />}
+            alartHeading="Are you absolutely sure?"
+            alartDiscription="You're about to permanently delete your account and all associated data. This action cannot be undone."
+          />
+        </ShowComponent>
+        {/* Footer Alert */}
+        <ShowComponent
+          ComponentName="05. Customized Footer"
+          installation="npx saelix-ui add footer-alert"
+          ComponentCodeTS={`import Footer_Alart from "@/components/ui/Footer-alert";
+import { CircleAlert } from "lucide-react";
+
+const FooterAlertDemo = () => {
+  return (
+    <Footer_Alart
+      btntext="Delete Account"
+      icon={<CircleAlert />}
+      alartHeading="Are you absolutely sure?"
+      alartDiscription="You're about to permanently delete your account and all associated data.
+       This action cannot be undone."
+    />
+  );
+};
+
+export default FooterAlertDemo;
+        `}
+          ComponentCodeJS={`import Footer_Alart from "./components/ui/Footer-alert";
+import { CircleAlert } from "lucide-react";
+
+const FooterAlertDemo = () => {
+  return (
+    <Footer_Alart
+      btntext="Delete Account"
+      icon={<CircleAlert />}
+      alartHeading="Are you absolutely sure?"
+      alartDiscription="You're about to permanently delete your account and all associated data.
+       This action cannot be undone."
+    />
+  );
+};
+
+export default FooterAlertDemo;;
+        `}
+        >
+          <Footer_Alart
             btntext="Delete Account"
             icon={<CircleAlert />}
             alartHeading="Are you absolutely sure?"
