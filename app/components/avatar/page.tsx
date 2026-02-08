@@ -1,3 +1,4 @@
+import Avatar_Card from "@/Components/Avatar/Avatar_Card";
 import Clickable_Avatar from "@/Components/Avatar/Clickable_Avatar";
 import Default_Avatar from "@/Components/Avatar/Default_Avatar";
 import ShowComponent from "@/Components/ShowComponent";
@@ -96,48 +97,28 @@ export default ClickableAvatarDemo;
         >
           <Clickable_Avatar src="/myImage.jpeg" alt="Avater" href="https://github.com/Jeet000001" width={45} height={45}/>
         </ShowComponent>
-        {/*  */}
+        {/* Avatar Card */}
         <ShowComponent
-          ComponentName="02. Clickable"
-          installation="npx saelix-ui add clickable-avatar"
-          ComponentCodeTS={`import Clickable_Avatar from "@/components/ui/Clickable-avater";
+          ComponentName="03. With Text"
+          installation="npx saelix-ui add avatar-card"
+          ComponentCodeTS={`import Avatar_Card from "@/components/ui/Avatar-card";
 
-const ClickableAvatarDemo = () => {
-  return (
-    <div>
-      <Clickable_Avatar
-        src="/imageLink"
-        alt="Avater"
-        href="socialLink"
-        width={45}
-        height={45}
-      />
-    </div>
-  );
+const AvatarCardDemo = () => {
+  return <Avatar_Card src="/my.jpeg" name="Jeet" role="Frontend Developer" />;
 };
 
-export default ClickableAvatarDemo;
+export default AvatarCardDemo;
 `}
-          ComponentCodeJS={`import Clickable_Avatar from "./components/ui/Clickable-avater";
+          ComponentCodeJS={`import Avatar_Card from "./components/ui/Avatar-card";
 
-const ClickableAvatarDemo = () => {
-  return (
-    <div>
-      <Clickable_Avatar
-        src="/imageLink"
-        alt="Avater"
-        href="socialLink"
-        width={45}
-        height={45}
-      />
-    </div>
-  );
+const AvatarCardDemo = () => {
+  return <Avatar_Card src="/my.jpeg" name="Jeet" role="Frontend Developer" />;
 };
 
-export default ClickableAvatarDemo;
+export default AvatarCardDemo;
 `}
         >
-          <Clickable_Avatar src="/myImage.jpeg" alt="Avater" href="https://github.com/Jeet000001" width={45} height={45}/>
+          <Avatar_Card src="/myImage.jpeg" name="Jeet" role="Frontend Developer" />
         </ShowComponent>
       </div>
     </div>
