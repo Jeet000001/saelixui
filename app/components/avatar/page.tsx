@@ -1,5 +1,6 @@
 import Avatar_Card from "@/Components/Avatar/Avatar_Card";
 import Avatar_character from "@/Components/Avatar/Avatar_Character";
+import Avatar_Ring from "@/Components/Avatar/Avatar_Ring";
 import Avatar_Status from "@/Components/Avatar/Avatar_Status";
 import Clickable_Avatar from "@/Components/Avatar/Clickable_Avatar";
 import Default_Avatar from "@/Components/Avatar/Default_Avatar";
@@ -157,9 +158,48 @@ export default AvatarStatusDemo;
         >
           <Avatar_Status src="/myImage.jpeg" />
         </ShowComponent>
+        {/* Avatar Ring */}
+        <ShowComponent
+          ComponentName="05. Ring"
+          installation="npx saelix-ui add avatar-ring"
+          ComponentCodeTS={`import Avatar_Ring from "@/components/ui/Avatar-ring"
+
+const AvatarRingDemo = () => {
+  return (
+    <div className="flex gap-5">
+      <Avatar_Ring src='/my.jpeg' />
+      <Avatar_Ring src='/my.jpeg' borderColor="border-blue-500"  />
+      <Avatar_Ring src='/my.jpeg' borderColor="border-green-500"  />
+    </div>
+  )
+}
+
+export default AvatarRingDemo
+`}
+          ComponentCodeJS={`import Avatar_Ring from "./components/ui/Avatar-ring"
+
+const AvatarRingDemo = () => {
+  return (
+    <div className="flex gap-5">
+      <Avatar_Ring src='/my.jpeg' />
+      <Avatar_Ring src='/my.jpeg' borderColor="border-blue-500"  />
+      <Avatar_Ring src='/my.jpeg' borderColor="border-green-500"  />
+    </div>
+  )
+}
+
+export default AvatarRingDemo
+`}
+        >
+          <div className="flex gap-5">
+            <Avatar_Ring src="/myImage.jpeg" />
+            <Avatar_Ring src="/myImage.jpeg" borderColor="border-blue-500" />
+            <Avatar_Ring src="/myImage.jpeg" borderColor="border-green-500" />
+          </div>
+        </ShowComponent>
         {/* Avatar Character */}
         <ShowComponent
-          ComponentName="05. Character"
+          ComponentName="06. Character"
           installation="npx saelix-ui add avatar-character"
           ComponentCodeTS={`import Avatar_character from "@/components/ui/Avatar-character";
 
@@ -187,9 +227,21 @@ export default AvatarCharacterDemo;
 `}
         >
           <div className="flex gap-5">
-            <Avatar_character char="J" bg="bg-blue-300" textColor="text-blue-600" />
-            <Avatar_character char="S" bg="bg-pink-300" textColor="text-pink-600" />
-            <Avatar_character char="JS" bg="bg-green-300" textColor="text-green-600" />
+            <Avatar_character
+              char="J"
+              bg="bg-blue-300"
+              textColor="text-blue-600"
+            />
+            <Avatar_character
+              char="S"
+              bg="bg-pink-300"
+              textColor="text-pink-600"
+            />
+            <Avatar_character
+              char="JS"
+              bg="bg-green-300"
+              textColor="text-green-600"
+            />
           </div>
         </ShowComponent>
       </div>
