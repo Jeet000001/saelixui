@@ -1,4 +1,5 @@
 import Avatar_Card from "@/Components/Avatar/Avatar_Card";
+import Avatar_Status from "@/Components/Avatar/Avatar_Status";
 import Clickable_Avatar from "@/Components/Avatar/Clickable_Avatar";
 import Default_Avatar from "@/Components/Avatar/Default_Avatar";
 import ShowComponent from "@/Components/ShowComponent";
@@ -95,7 +96,13 @@ const ClickableAvatarDemo = () => {
 export default ClickableAvatarDemo;
 `}
         >
-          <Clickable_Avatar src="/myImage.jpeg" alt="Avater" href="https://github.com/Jeet000001" width={45} height={45}/>
+          <Clickable_Avatar
+            src="/myImage.jpeg"
+            alt="Avater"
+            href="https://github.com/Jeet000001"
+            width={45}
+            height={45}
+          />
         </ShowComponent>
         {/* Avatar Card */}
         <ShowComponent
@@ -118,7 +125,36 @@ const AvatarCardDemo = () => {
 export default AvatarCardDemo;
 `}
         >
-          <Avatar_Card src="/myImage.jpeg" name="Jeet" role="Frontend Developer" />
+          <Avatar_Card
+            src="/myImage.jpeg"
+            name="Jeet"
+            role="Frontend Developer"
+          />
+        </ShowComponent>
+        {/* Avatar Status */}
+        <ShowComponent
+          ComponentName="04. Status"
+          installation="npx saelix-ui add avatar-status"
+          ComponentCodeTS={`import Avatar_Status from "@/components/ui/Avatar-status";
+
+const AvatarStatusDemo = () => {
+  return <Avatar_Status src="/ImageLink" />;
+};
+
+export default AvatarStatusDemo;
+
+`}
+          ComponentCodeJS={`import Avatar_Status from "./components/ui/Avatar-status";
+
+const AvatarStatusDemo = () => {
+  return <Avatar_Status src="/ImageLink" />;
+};
+
+export default AvatarStatusDemo;
+
+`}
+        >
+          <Avatar_Status src="/myImage.jpeg" />
         </ShowComponent>
       </div>
     </div>
