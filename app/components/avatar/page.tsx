@@ -1,6 +1,7 @@
 import Avatar_Card from "@/Components/Avatar/Avatar_Card";
 import Avatar_character from "@/Components/Avatar/Avatar_Character";
 import Avatar_Ring from "@/Components/Avatar/Avatar_Ring";
+import Avatar_Stack from "@/Components/Avatar/Avatar_Stack";
 import Avatar_Status from "@/Components/Avatar/Avatar_Status";
 import Clickable_Avatar from "@/Components/Avatar/Clickable_Avatar";
 import Default_Avatar from "@/Components/Avatar/Default_Avatar";
@@ -243,6 +244,62 @@ export default AvatarCharacterDemo;
               textColor="text-green-600"
             />
           </div>
+        </ShowComponent>
+        {/* Avatar Stack */}
+        <ShowComponent
+          ComponentName="07. Group"
+          installation=" npx saelix-ui add avatar-stack"
+          ComponentCodeTS={`import Avatar_Stack from "@/components/ui/Avatar-stack"
+
+const AvatarStackDemo = () => {
+  return (
+    <div>
+      <Avatar_Stack
+      items={[
+    { src: "/my.jpeg" },
+    { char: "JS", bg: "bg-blue-500" },
+    { char: "AB", bg: "bg-red-500" },
+    { char: "XY", bg: "bg-indigo-500" },
+    { char: "RS", bg: "bg-green-500" },
+  ]}
+   />
+    </div>
+  )
+}
+
+export default AvatarStackDemo;
+`}
+          ComponentCodeJS={`import Avatar_Stack from "./components/ui/Avatar-stack"
+
+const AvatarStackDemo = () => {
+  return (
+    <div>
+      <Avatar_Stack
+      items={[
+    { src: "/my.jpeg" },
+    { char: "JS", bg: "bg-blue-500" },
+    { char: "AB", bg: "bg-red-500" },
+    { char: "XY", bg: "bg-indigo-500" },
+    { char: "RS", bg: "bg-green-500" },
+  ]}
+   />
+    </div>
+  )
+}
+
+export default AvatarStackDemo;
+
+`}
+        >
+          <Avatar_Stack
+            items={[
+              { src: "/myImage.jpeg" },
+              { char: "JS", bg: "bg-blue-500" },
+              { char: "AB", bg: "bg-red-500" },
+              { char: "XY", bg: "bg-indigo-500" },
+              { char: "RS", bg: "bg-green-500" },
+            ]}
+          />
         </ShowComponent>
       </div>
     </div>
