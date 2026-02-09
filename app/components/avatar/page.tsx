@@ -1,4 +1,5 @@
 import Avatar_Card from "@/Components/Avatar/Avatar_Card";
+import Avatar_character from "@/Components/Avatar/Avatar_Character";
 import Avatar_Status from "@/Components/Avatar/Avatar_Status";
 import Clickable_Avatar from "@/Components/Avatar/Clickable_Avatar";
 import Default_Avatar from "@/Components/Avatar/Default_Avatar";
@@ -155,6 +156,41 @@ export default AvatarStatusDemo;
 `}
         >
           <Avatar_Status src="/myImage.jpeg" />
+        </ShowComponent>
+        {/* Avatar Character */}
+        <ShowComponent
+          ComponentName="05. Character"
+          installation="npx saelix-ui add avatar-character"
+          ComponentCodeTS={`import Avatar_character from "@/components/ui/Avatar-character";
+
+const AvatarCharacterDemo = () => {
+  <div className="flex gap-5">
+    <Avatar_character char="J" bg="bg-blue-300" textColor="text-blue-600" />
+    <Avatar_character char="S" bg="bg-pink-300" textColor="text-pink-600" />
+    <Avatar_character char="JS" bg="bg-green-300" textColor="text-green-600" />
+  </div>;
+};
+
+export default AvatarCharacterDemo;
+`}
+          ComponentCodeJS={`import Avatar_character from "./components/ui/Avatar-character";
+
+const AvatarCharacterDemo = () => {
+  <div className="flex gap-5">
+    <Avatar_character char="J" bg="bg-blue-300" textColor="text-blue-600" />
+    <Avatar_character char="S" bg="bg-pink-300" textColor="text-pink-600" />
+    <Avatar_character char="JS" bg="bg-green-300" textColor="text-green-600" />
+  </div>;
+};
+
+export default AvatarCharacterDemo;
+`}
+        >
+          <div className="flex gap-5">
+            <Avatar_character char="J" bg="bg-blue-300" textColor="text-blue-600" />
+            <Avatar_character char="S" bg="bg-pink-300" textColor="text-pink-600" />
+            <Avatar_character char="JS" bg="bg-green-300" textColor="text-green-600" />
+          </div>
         </ShowComponent>
       </div>
     </div>
