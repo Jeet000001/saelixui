@@ -1,3 +1,4 @@
+import Clickable_badge from "@/Components/Badge/Clickable_Badge";
 import Destructive_Badge from "@/Components/Badge/Destructive_Badge";
 import Outline_Badge from "@/Components/Badge/Outline_Badge";
 import Primary_Badge from "@/Components/Badge/Primary_Badge";
@@ -137,6 +138,37 @@ export default OutlineBadgeDemo;
 `}
         >
           <Outline_Badge>Outline</Outline_Badge>
+        </ShowComponent>
+        {/* Clickable Badge */}
+        <ShowComponent
+          ComponentName="05. Clickable"
+          installation="npx saelix-ui add clickable-badge"
+          ComponentCodeTS={`import Clickable_Badge from "@/components/ui/Clickable-bridge";
+
+const ClickableBridgeDemo = () => {
+  return (
+    <div>
+      <Clickable_badge url="socialLink" label="LinkedIn" />
+    </div>
+  );
+};
+
+export default ClickableBridgeDemo;
+`}
+          ComponentCodeJS={`import Clickable_Badge from "./components/ui/Clickable-bridge";
+
+const ClickableBridgeDemo = () => {
+  return (
+    <div>
+      <Clickable_badge url="socialLink" label="LinkedIn" />
+    </div>
+  );
+};
+
+export default ClickableBridgeDemo;
+`}
+        >
+          <Clickable_badge url="https://www.linkedin.com/in/jeet-paul-8b4a74310/" label="LinkedIn" />
         </ShowComponent>
       </div>
     </div>
