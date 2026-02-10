@@ -1,3 +1,5 @@
+import Destructive_Badge from "@/Components/Badge/Destructive_Badge";
+import Outline_Badge from "@/Components/Badge/Outline_Badge";
 import Primary_Badge from "@/Components/Badge/Primary_Badge";
 import Secondary_Badge from "@/Components/Badge/Secondary_Badge";
 import ShowComponent from "@/Components/ShowComponent";
@@ -46,7 +48,7 @@ export default PrimaryBadgeDemo;`}
         </ShowComponent>
         {/* Secondary Badge */}
         <ShowComponent
-          ComponentName="01. Secondary"
+          ComponentName="02. Secondary"
           installation="npx saelix-ui add secondary-badge"
           ComponentCodeTS={`import Secondary_Badge from "@/components/ui/Secondary-badge";
 
@@ -74,6 +76,70 @@ export default SecondaryBadgeDemo;
 `}
         >
           <Secondary_Badge>Secondary</Secondary_Badge>
+        </ShowComponent>
+        {/* Destructive Badge */}
+        <ShowComponent
+          ComponentName="03. Destructive"
+          installation="npx saelix-ui add destructive-badge"
+          ComponentCodeTS={`import Destructive_Badge from "@/components/ui/Destructive-badge";
+
+const DestructiveBadgeDemo = () => {
+  return (
+    <div>
+      <Destructive_Badge>Destructive</Destructive_Badge>
+    </div>
+  );
+};
+
+export default DestructiveBadgeDemo;
+`}
+          ComponentCodeJS={`import Destructive_Badge from "@/components/ui/Destructive-badge";
+
+const DestructiveBadgeDemo = () => {
+  return (
+    <div>
+      <Destructive_Badge>Destructive</Destructive_Badge>
+    </div>
+  );
+};
+
+export default DestructiveBadgeDemo;
+
+`}
+        >
+          <Destructive_Badge>Destructive</Destructive_Badge>
+        </ShowComponent>
+        {/* Outline Badge */}
+        <ShowComponent
+          ComponentName="03. Outline"
+          installation="npx saelix-ui add outline-badge"
+          ComponentCodeTS={`import Outline_Badge from "@/components/ui/Outline-badge";
+
+const OutlineBadgeDemo = () => {
+  return (
+    <div>
+      <Outline_Badge>Outline</Outline_Badge>
+    </div>
+  );
+};
+
+export default OutlineBadgeDemo;
+
+`}
+          ComponentCodeJS={`import Outline_Badge from "./components/ui/Outline-badge";
+
+const OutlineBadgeDemo = () => {
+  return (
+    <div>
+      <Outline_Badge>Outline</Outline_Badge>
+    </div>
+  );
+};
+
+export default OutlineBadgeDemo;
+`}
+        >
+          <Outline_Badge>Outline</Outline_Badge>
         </ShowComponent>
       </div>
     </div>
