@@ -93,7 +93,7 @@ const DestructiveBadgeDemo = () => {
 
 export default DestructiveBadgeDemo;
 `}
-          ComponentCodeJS={`import Destructive_Badge from "@/components/ui/Destructive-badge";
+          ComponentCodeJS={`import Destructive_Badge from "./components/ui/Destructive-badge";
 
 const DestructiveBadgeDemo = () => {
   return (
@@ -104,14 +104,13 @@ const DestructiveBadgeDemo = () => {
 };
 
 export default DestructiveBadgeDemo;
-
 `}
         >
           <Destructive_Badge>Destructive</Destructive_Badge>
         </ShowComponent>
         {/* Outline Badge */}
         <ShowComponent
-          ComponentName="03. Outline"
+          ComponentName="04. Outline"
           installation="npx saelix-ui add outline-badge"
           ComponentCodeTS={`import Outline_Badge from "@/components/ui/Outline-badge";
 
@@ -124,7 +123,6 @@ const OutlineBadgeDemo = () => {
 };
 
 export default OutlineBadgeDemo;
-
 `}
           ComponentCodeJS={`import Outline_Badge from "./components/ui/Outline-badge";
 
@@ -135,7 +133,6 @@ const OutlineBadgeDemo = () => {
     </div>
   );
 };
-
 export default OutlineBadgeDemo;
 `}
         >
