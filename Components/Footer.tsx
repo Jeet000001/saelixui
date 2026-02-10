@@ -16,7 +16,7 @@ const Footer = () => {
         {/* Left text */}
         <p className="text-sm text-gray-500 text-center sm:text-left
           dark:text-[#9CA3AF]">
-          © 2026 Stark UI. Crafted with care for modern web experiences.
+          © 2026 Saelix UI. Crafted with care for modern web experiences.
         </p>
 
         {/* Social icons */}
