@@ -1,4 +1,5 @@
 import Primary_Badge from "@/Components/Badge/Primary_Badge";
+import Secondary_Badge from "@/Components/Badge/Secondary_Badge";
 import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
@@ -14,6 +15,7 @@ const page = () => {
         </p>
       </div>
       <div>
+        {/* Primary Badge */}
         <ShowComponent
           ComponentName="01. Primary"
           installation="npx saelix-ui add primary-badge"
@@ -41,6 +43,37 @@ const PrimaryBadgeDemo = () => {
 export default PrimaryBadgeDemo;`}
         >
           <Primary_Badge>Primary</Primary_Badge>
+        </ShowComponent>
+        {/* Secondary Badge */}
+        <ShowComponent
+          ComponentName="01. Secondary"
+          installation="npx saelix-ui add secondary-badge"
+          ComponentCodeTS={`import Secondary_Badge from "@/components/ui/Secondary-badge";
+
+const SecondaryBadgeDemo = () => {
+  return (
+    <div>
+      <Secondary_Badge>Secondary</Secondary_Badge>
+    </div>
+  );
+};
+
+export default SecondaryBadgeDemo;
+`}
+          ComponentCodeJS={`import Secondary_Badge from "./components/ui/Secondary-badge";
+
+const SecondaryBadgeDemo = () => {
+  return (
+    <div>
+      <Secondary_Badge>Secondary</Secondary_Badge>
+    </div>
+  );
+};
+
+export default SecondaryBadgeDemo;
+`}
+        >
+          <Secondary_Badge>Secondary</Secondary_Badge>
         </ShowComponent>
       </div>
     </div>
