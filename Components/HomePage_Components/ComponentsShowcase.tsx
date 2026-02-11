@@ -1,8 +1,7 @@
 "use client";
 
-import Center_Alart from "../Alert/Center_Alert";
-import { CircleAlert } from "lucide-react";
-
+import Avatar_Ring from "../Avatar/Avatar_Ring";
+import Tab_Breadcrumb from "../Breadcrumb/Tab_Breadcrumb";
 
 const ComponentsShowcase = () => {
   return (
@@ -119,7 +118,7 @@ const ComponentsShowcase = () => {
           >
             Pagination
           </div>
-
+          {/* Button */}
           <div
             className="
             col-span-2 row-span-1 rounded-2xl border-2
@@ -153,7 +152,7 @@ const ComponentsShowcase = () => {
               </style>
             </>
           </div>
-
+          {/* Breadcrumb */}
           <div
             className="
             col-span-4 row-span-1 rounded-2xl border-2
@@ -168,14 +167,15 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            <Center_Alart
-      btntext="Delete Account"
-      icon={<CircleAlert />}
-      alartHeading="Are you absolutely sure?"
-      alartDiscription="You're about to permanently delete your account and all associated data. This action cannot be undone."
-    />
+            <Tab_Breadcrumb
+               items={[
+          { label: "Home", href: "/" },
+          { label: "Components", href: "/components" },
+          { label: "Breadcrumb", href: "/breadcrumb" },
+        ]}
+            />
           </div>
-
+          {/* Avatar */}
           <div
             className="
             col-span-2 row-span-1 rounded-2xl border-2
@@ -190,7 +190,7 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            Avatar
+            <Avatar_Ring src="/myImage.jpeg" borderColor="border-green-500" />
           </div>
 
           <div
