@@ -1,5 +1,6 @@
 import Clickable_badge from "@/Components/Badge/Clickable_Badge";
 import Destructive_Badge from "@/Components/Badge/Destructive_Badge";
+import Gradient_Badge from "@/Components/Badge/Gradient_Badge";
 import Outline_Badge from "@/Components/Badge/Outline_Badge";
 import Primary_Badge from "@/Components/Badge/Primary_Badge";
 import Secondary_Badge from "@/Components/Badge/Secondary_Badge";
@@ -169,7 +170,10 @@ const ClickableBridgeDemo = () => {
 export default ClickableBridgeDemo;
 `}
         >
-          <Clickable_badge url="https://www.linkedin.com/in/jeet-paul-8b4a74310/" label="LinkedIn" />
+          <Clickable_badge
+            url="https://www.linkedin.com/in/jeet-paul-8b4a74310/"
+            label="LinkedIn"
+          />
         </ShowComponent>
         {/* Shapes Badge */}
         <ShowComponent
@@ -205,10 +209,41 @@ export default ShapedBadgeDemo;
 `}
         >
           <div className="flex gap-3">
-          <Shaped_Badge>Default</Shaped_Badge>
-          <Shaped_Badge className="rounded">Rounded</Shaped_Badge>
-          <Shaped_Badge className="rounded-full">Rounded Full</Shaped_Badge>
-          </div>        
+            <Shaped_Badge>Default</Shaped_Badge>
+            <Shaped_Badge className="rounded">Rounded</Shaped_Badge>
+            <Shaped_Badge className="rounded-full">Rounded Full</Shaped_Badge>
+          </div>
+        </ShowComponent>
+        {/* Gradient Badge */}
+        <ShowComponent
+          ComponentName="05. Gradient"
+          installation="npx saelix-ui add gradient-badge"
+          ComponentCodeTS={`import Gradient_Badge from "@/components/ui/Gradient-badge";
+
+const GradientBridgeDemo = () => {
+  return (
+    <div>
+      <Gradient_Badge>Gradient</Gradient_Badge>
+    </div>
+  );
+};
+
+export default GradientBridgeDemo;
+`}
+          ComponentCodeJS={`import Gradient_Badge from "./components/ui/Gradient-badge";
+
+const GradientBridgeDemo = () => {
+  return (
+    <div>
+      <Gradient_Badge>Gradient</Gradient_Badge>
+    </div>
+  );
+};
+
+export default GradientBridgeDemo;
+`}
+        >
+          <Gradient_Badge>Gradient</Gradient_Badge>
         </ShowComponent>
       </div>
     </div>
