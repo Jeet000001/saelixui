@@ -1,6 +1,7 @@
 import Clickable_badge from "@/Components/Badge/Clickable_Badge";
 import Destructive_Badge from "@/Components/Badge/Destructive_Badge";
 import Gradient_Badge from "@/Components/Badge/Gradient_Badge";
+import Image_Badge from "@/Components/Badge/Image_Bridge";
 import Outline_Badge from "@/Components/Badge/Outline_Badge";
 import Primary_Badge from "@/Components/Badge/Primary_Badge";
 import Secondary_Badge from "@/Components/Badge/Secondary_Badge";
@@ -245,7 +246,37 @@ export default GradientBridgeDemo;
         >
           <Gradient_Badge>Gradient</Gradient_Badge>
         </ShowComponent>
-        {/*  */}
+        {/* Image Badge */}
+        <ShowComponent
+          ComponentName="07. Image"
+          installation="npx saelix-ui add image-badge"
+          ComponentCodeTS={`import Image_Badge from "@/components/ui/Image-badge"
+
+const ImageBadgeDemo = () => {
+  return (
+    <div>
+      <Image_Badge name="Developer" src="/ImageLink" />
+    </div>
+  )
+}
+
+export default ImageBadgeDemo;
+`}
+          ComponentCodeJS={`import Image_Badge from "./components/ui/Image-badge"
+
+const ImageBadgeDemo = () => {
+  return (
+    <div>
+      <Image_Badge name="Developer" src="/ImageLink" />
+    </div>
+  )
+}
+
+export default ImageBadgeDemo;
+`}
+        >
+          <Image_Badge name="Developer" src="/myImage.jpeg" />
+        </ShowComponent>
       </div>
     </div>
   );
