@@ -19,14 +19,12 @@ const Image_Badge: React.FC<Props> = ({ name, src, className = "" }) => {
       ${className}
       `}
     >
-      {/* Avatar */}
       <img
         src={src}
         alt={name}
         className="size-7 object-cover rounded-full border border-gray-300 dark:border-zinc-600"
       />
 
-      {/* Name */}
       <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
         {name}
       </p>

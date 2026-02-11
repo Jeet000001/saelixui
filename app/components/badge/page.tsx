@@ -6,6 +6,7 @@ import Outline_Badge from "@/Components/Badge/Outline_Badge";
 import Primary_Badge from "@/Components/Badge/Primary_Badge";
 import Secondary_Badge from "@/Components/Badge/Secondary_Badge";
 import Shaped_Badge from "@/Components/Badge/Shaped_Badge";
+import Status_Badge from "@/Components/Badge/Status_Badge";
 import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
@@ -248,7 +249,7 @@ export default GradientBridgeDemo;
         </ShowComponent>
         {/* Image Badge */}
         <ShowComponent
-          ComponentName="07. Image"
+          ComponentName="08. Image"
           installation="npx saelix-ui add image-badge"
           ComponentCodeTS={`import Image_Badge from "@/components/ui/Image-badge"
 
@@ -276,6 +277,47 @@ export default ImageBadgeDemo;
 `}
         >
           <Image_Badge name="Developer" src="/myImage.jpeg" />
+        </ShowComponent>
+        {/* Status Badge */}
+        <ShowComponent
+          ComponentName="09. Status"
+          installation="npx saelix-ui add Status-badge"
+          ComponentCodeTS={`import Status_Badge from "@/components/ui/Status-badge";
+
+const StatusBadgeDemo = () => {
+  return (
+    <div className="flex gap-3">
+      <Status_Badge text="In Progress" color="#f59e0b" />
+      <Status_Badge text="Completed" color="#22c55e" />
+      <Status_Badge text="Failed" color="#ef4444" />
+    </div>
+  );
+};
+
+export default StatusBadgeDemo;
+
+`}
+          ComponentCodeJS={`import Status_Badge from "./components/ui/Status-badge";
+
+const StatusBadgeDemo = () => {
+  return (
+    <div className="flex gap-3">
+      <Status_Badge text="In Progress" color="#f59e0b" />
+      <Status_Badge text="Completed" color="#22c55e" />
+      <Status_Badge text="Failed" color="#ef4444" />
+    </div>
+  );
+};
+
+export default StatusBadgeDemo;
+
+`}
+        >
+          <div className="flex gap-3">
+            <Status_Badge text="In Progress" color="#f59e0b" />
+            <Status_Badge text="Completed" color="#22c55e" />
+            <Status_Badge text="Failed" color="#ef4444" />
+          </div>
         </ShowComponent>
       </div>
     </div>
