@@ -177,7 +177,7 @@ export default ClickableBridgeDemo;
         </ShowComponent>
         {/* Shapes Badge */}
         <ShowComponent
-          ComponentName="05. Shapes"
+          ComponentName="06. Shapes"
           installation="npx saelix-ui add shaped-badge"
           ComponentCodeTS={`import Shaped_Badge from "@/components/ui/Shaped-badge";
 
@@ -216,7 +216,7 @@ export default ShapedBadgeDemo;
         </ShowComponent>
         {/* Gradient Badge */}
         <ShowComponent
-          ComponentName="05. Gradient"
+          ComponentName="07. Gradient"
           installation="npx saelix-ui add gradient-badge"
           ComponentCodeTS={`import Gradient_Badge from "@/components/ui/Gradient-badge";
 
@@ -245,6 +245,7 @@ export default GradientBridgeDemo;
         >
           <Gradient_Badge>Gradient</Gradient_Badge>
         </ShowComponent>
+        {/*  */}
       </div>
     </div>
   );
