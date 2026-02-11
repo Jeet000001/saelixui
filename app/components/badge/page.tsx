@@ -3,6 +3,7 @@ import Destructive_Badge from "@/Components/Badge/Destructive_Badge";
 import Outline_Badge from "@/Components/Badge/Outline_Badge";
 import Primary_Badge from "@/Components/Badge/Primary_Badge";
 import Secondary_Badge from "@/Components/Badge/Secondary_Badge";
+import Shaped_Badge from "@/Components/Badge/Shaped_Badge";
 import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
@@ -169,6 +170,45 @@ export default ClickableBridgeDemo;
 `}
         >
           <Clickable_badge url="https://www.linkedin.com/in/jeet-paul-8b4a74310/" label="LinkedIn" />
+        </ShowComponent>
+        {/* Shapes Badge */}
+        <ShowComponent
+          ComponentName="05. Shapes"
+          installation="npx saelix-ui add shaped-badge"
+          ComponentCodeTS={`import Shaped_Badge from "@/components/ui/Shaped-badge";
+
+const ShapedBadgeDemo = () => {
+  return (
+    <div className="flex gap-4">
+      <Shaped_Badge>None</Shaped_Badge>
+      <Shaped_Badge className="rounded">Rounded</Shaped_Badge>
+      <Shaped_Badge className="rounded-full">Rounded Full</Shaped_Badge>
+    </div>
+  );
+};
+
+export default ShapedBadgeDemo;
+`}
+          ComponentCodeJS={`import Shaped_Badge from "@/components/ui/Shaped-badge";
+
+const ShapedBadgeDemo = () => {
+  return (
+    <div className="flex gap-4">
+      <Shaped_Badge>None</Shaped_Badge>
+      <Shaped_Badge className="rounded">Rounded</Shaped_Badge>
+      <Shaped_Badge className="rounded-full">Rounded Full</Shaped_Badge>
+    </div>
+  );
+};
+
+export default ShapedBadgeDemo;
+`}
+        >
+          <div className="flex gap-3">
+          <Shaped_Badge>Default</Shaped_Badge>
+          <Shaped_Badge className="rounded">Rounded</Shaped_Badge>
+          <Shaped_Badge className="rounded-full">Rounded Full</Shaped_Badge>
+          </div>        
         </ShowComponent>
       </div>
     </div>
