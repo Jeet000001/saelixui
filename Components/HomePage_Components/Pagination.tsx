@@ -9,8 +9,7 @@ const Pagination: React.FC = () => {
 
   return (
     <div className="flex items-center gap-4 text-lg font-medium">
-      
-      {/* Previous */}
+
       <button
         className="flex items-center gap-1 text-gray-700 hover:text-black 
                    dark:text-[#9CA3AF] dark:hover:text-[#E5E7EB]"
@@ -20,7 +19,6 @@ const Pagination: React.FC = () => {
         Previous
       </button>
 
-      {/* Page Numbers */}
       <div className="flex items-center gap-3">
         {pages.map((page) => (
           <button
@@ -40,7 +38,6 @@ const Pagination: React.FC = () => {
         ))}
       </div>
 
-      {/* Next */}
       <button
         className="flex items-center gap-1 text-gray-700 hover:text-black 
                    dark:text-[#9CA3AF] dark:hover:text-[#E5E7EB]"

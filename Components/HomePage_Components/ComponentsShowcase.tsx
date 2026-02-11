@@ -11,7 +11,7 @@ const ComponentsShowcase = () => {
   return (
     <div className="hidden md:block">
       <div className="relative h-screen w-full p-6 overflow-hidden dark:bg-[#0B0F19]">
-        {/* 🔥 TOP BLUR */}
+        {/* TOP BLUR */}
         <div
           className="
             pointer-events-none absolute top-0 left-0 z-20
@@ -23,7 +23,7 @@ const ComponentsShowcase = () => {
           "
         />
 
-        {/* 🔥 BOTTOM BLUR */}
+        {/* BOTTOM BLUR */}
         <div
           className="
             pointer-events-none absolute bottom-0 left-0 z-20

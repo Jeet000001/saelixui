@@ -52,7 +52,6 @@ const Sidebar = () => {
         Components
       </h2>
 
-      {/* 🔍 Search Bar */}
       <div className="relative mb-4">
         <Search
           size={14}
@@ -71,7 +70,6 @@ const Sidebar = () => {
         />
       </div>
 
-      {/* Scrollable list */}
       <ul className="flex-1 overflow-y-auto pr-2 text-sm no-scrollbar">
         <nav className="space-y-1">
           {filteredComponents.length === 0 && (
