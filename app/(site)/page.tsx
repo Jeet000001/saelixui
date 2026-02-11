@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div>
       <HeroSection />
-      <ComponentsShowcase />
+      <ComponentsShowcase  />
       <Why_saelix_ui />
       <Start_building_Section />
     </div>

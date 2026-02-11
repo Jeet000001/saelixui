@@ -33,13 +33,12 @@ export const BoxAccordion = ({ items, allowMultiple = false }: AccordionProps) =
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto border border-gray-300 dark:border-gray-800 rounded-xl overflow-hidden">
+    <div className="w-full max-w-xl mx-auto md:mx-3 border border-gray-300 dark:border-gray-700 rounded-xl overflow-hidden">
       {items.map((item, index) => {
         const open = isOpen(index);
 
         return (
-          <div key={index} className="border-b border-gray-300 dark:border-gray-800 last:border-none">
-            {/* Header */}
+          <div key={index} className="border-b border-gray-300 dark:border-gray-700 last:border-none">
             <button
               onClick={() => toggleItem(index)}
               className="w-full flex justify-between items-center px-5 py-4 text-left font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition"
