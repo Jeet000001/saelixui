@@ -189,7 +189,7 @@ const ShapedBadgeDemo = () => {
 
 export default ShapedBadgeDemo;
 `}
-          ComponentCodeJS={`import Shaped_Badge from "@/components/ui/Shaped-badge";
+          ComponentCodeJS={`import Shaped_Badge from "./components/ui/Shaped-badge";
 
 const ShapedBadgeDemo = () => {
   return (
