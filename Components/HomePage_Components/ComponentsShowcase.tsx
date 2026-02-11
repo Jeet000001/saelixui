@@ -3,6 +3,7 @@
 import { BoxAccordion } from "../Accordion/BoxAccordion";
 import Avatar_Ring from "../Avatar/Avatar_Ring";
 import Tab_Breadcrumb from "../Breadcrumb/Tab_Breadcrumb";
+import Pagination from "./Pagination";
 
 const ComponentsShowcase = () => {
   return (
@@ -50,7 +51,7 @@ const ComponentsShowcase = () => {
           "
           >
             <div className="flex flex-col gap-2 w-75">
-              <label className="text-sm font-medium text-gray-700 dark:text-[#E5E7EB]">
+              <label className="text-sm font-medium text-gray-900 dark:text-[#E5E7EB]">
                 Email
               </label>
               <input
@@ -176,7 +177,7 @@ const ComponentsShowcase = () => {
               ]}
             />
           </div>
-
+          {/* Pagination */}
           <div
             className="
             col-span-4 row-span-1 rounded-2xl border-2
@@ -191,7 +192,7 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            Pagination
+            <Pagination />
           </div>
           {/* Button */}
           <div
