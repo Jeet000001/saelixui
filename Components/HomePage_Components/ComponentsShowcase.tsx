@@ -3,7 +3,9 @@
 import { BoxAccordion } from "../Accordion/BoxAccordion";
 import Avatar_Ring from "../Avatar/Avatar_Ring";
 import Tab_Breadcrumb from "../Breadcrumb/Tab_Breadcrumb";
+import Loader from "./Loder";
 import Pagination from "./Pagination";
+import InvoiceTable from "./Table";
 
 const ComponentsShowcase = () => {
   return (
@@ -141,7 +143,7 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            Table
+            <InvoiceTable />
           </div>
           {/* Accordion */}
           <div
@@ -283,7 +285,7 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            Switch
+            <Loader />
           </div>
         </div>
       </div>
