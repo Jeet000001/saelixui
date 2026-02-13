@@ -123,6 +123,55 @@ export default IconBreadcrumbDemo;
             ]}
           />
         </ShowComponent>
+                {/* Tabs */}
+        <ShowComponent
+          ComponentName="03. Tabs"
+          installation="npx saelix-ui add tabs-breadcrumb"
+          ComponentCodeTS={`import Tab_Breadcrumb from "@/components/ui/Tabs-breadcrumb";
+
+const TabBreadcrumbDemo = () => {
+  return (
+    <div>
+      <Tab_Breadcrumb
+        items={[
+          { label: "Home", href: "/routeLink" },
+          { label: "Docs", href: "/routeLink" },
+          { label: "Components", href: "/routeLink" },
+        ]}
+      />
+    </div>
+  );
+};
+
+export default TabBreadcrumbDemo;
+`}
+          ComponentCodeJS={`import Tab_Breadcrumb from "./components/ui/Tabs-breadcrumb";
+
+const TabBreadcrumbDemo = () => {
+  return (
+    <div>
+      <Tab_Breadcrumb
+        items={[
+          { label: "Home", href: "/routeLink" },
+          { label: "Docs", href: "/routeLink" },
+          { label: "Components", href: "/routeLink" },
+        ]}
+      />
+    </div>
+  );
+};
+
+export default TabBreadcrumbDemo;
+`}
+        >
+          <Tab_Breadcrumb
+            items={[
+              { label: "Home", href: "" },
+              { label: "Docs", href: "" },
+              { label: "Components", href: "" },
+            ]}
+          />
+        </ShowComponent>
       </div>
     </div>
   );
@@ -134,156 +183,108 @@ export default page;
 
 
 
-//       <div>
+      <div>
 
 
-//         {/* Tabs */}
-//         <ShowComponent
-//           ComponentName="03. Tabs"
-//           installation="npx saelix-ui add tabs-breadcrumb"
-//           ComponentCodeTS={`import Tab_Breadcrumb from "@/components/ui/Tabs-breadcrumb";
 
-// const TabBreadcrumbDemo = () => {
-//   return (
-//     <div>
-//       <Tab_Breadcrumb
-//         items={[
-//           { label: "Home", href: "/routeLink" },
-//           { label: "Docs", href: "/routeLink" },
-//           { label: "Components", href: "/routeLink" },
-//         ]}
-//       />
-//     </div>
-//   );
-// };
+        {/* TabOutline */}
+        <ShowComponent
+          ComponentName="04. Outline Tabs"
+          installation="npx saelix-ui add outline-breadcrumb"
+          ComponentCodeTS={`import TabsOutline_Breadcrumb from "@/components/ui/Outline-breadcrumb";
 
-// export default TabBreadcrumbDemo;
-// `}
-//           ComponentCodeJS={`import Tab_Breadcrumb from "./components/ui/Tabs-breadcrumb";
+const TabsOutlineBreadcrumbDemo = () => {
+  return (
+    <div>
+      <TabsOutline_Breadcrumb
+        items={[
+          { label: "Home", href: "/routeLink" },
+          { label: "Docs", href: "/routeLink" },
+          { label: "Components", href: "/routeLink" },
+        ]}
+      />
+    </div>
+  );
+};
 
-// const TabBreadcrumbDemo = () => {
-//   return (
-//     <div>
-//       <Tab_Breadcrumb
-//         items={[
-//           { label: "Home", href: "/routeLink" },
-//           { label: "Docs", href: "/routeLink" },
-//           { label: "Components", href: "/routeLink" },
-//         ]}
-//       />
-//     </div>
-//   );
-// };
+export default TabsOutlineBreadcrumbDemo;
+`}
+          ComponentCodeJS={`import TabsOutline_Breadcrumb from "./components/ui/Outline-breadcrumb";
 
-// export default TabBreadcrumbDemo;
-// `}
-//         >
-//           <Tab_Breadcrumb
-//             items={[
-//               { label: "Home", href: "" },
-//               { label: "Docs", href: "" },
-//               { label: "Components", href: "" },
-//             ]}
-//           />
-//         </ShowComponent>
-//         {/* TabOutline */}
-//         <ShowComponent
-//           ComponentName="04. Outline Tabs"
-//           installation="npx saelix-ui add outline-breadcrumb"
-//           ComponentCodeTS={`import TabsOutline_Breadcrumb from "@/components/ui/Outline-breadcrumb";
+const TabsOutlineBreadcrumbDemo = () => {
+  return (
+    <div>
+      <TabsOutline_Breadcrumb
+        items={[
+          { label: "Home", href: "/routeLink" },
+          { label: "Docs", href: "/routeLink" },
+          { label: "Components", href: "/routeLink" },
+        ]}
+      />
+    </div>
+  );
+};
 
-// const TabsOutlineBreadcrumbDemo = () => {
-//   return (
-//     <div>
-//       <TabsOutline_Breadcrumb
-//         items={[
-//           { label: "Home", href: "/routeLink" },
-//           { label: "Docs", href: "/routeLink" },
-//           { label: "Components", href: "/routeLink" },
-//         ]}
-//       />
-//     </div>
-//   );
-// };
+export default TabsOutlineBreadcrumbDemo;
+`}
+        >
+          <TabsOutline_Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Docs", href: "/components" },
+              { label: "Components", href: "/breadcrumb" },
+            ]}
+          />
+        </ShowComponent>
+        {/* Step Breadcrumb */}
+        <ShowComponent
+          ComponentName="05. Step"
+          installation="npx saelix-ui add step-breadcrumb"
+          ComponentCodeTS={`import Step_Breadcrumb from "@/components/ui/Step-breadcrumb";
+import { Store, Truck, ShoppingCart, Package } from "lucide-react";
 
-// export default TabsOutlineBreadcrumbDemo;
-// `}
-//           ComponentCodeJS={`import TabsOutline_Breadcrumb from "./components/ui/Outline-breadcrumb";
+const StepBreadcrumbDemo = () => {
+  return (
+    <div>
+      <Step_Breadcrumb
+        currentStep={1}
+        shopIcon={<Store size={22} />}
+        deliveryIcon={<Truck size={22} />}
+        cartIcon={<ShoppingCart size={22} />}
+        packageIcon={<Package size={22} />}
+      />
+    </div>
+  );
+};
 
-// const TabsOutlineBreadcrumbDemo = () => {
-//   return (
-//     <div>
-//       <TabsOutline_Breadcrumb
-//         items={[
-//           { label: "Home", href: "/routeLink" },
-//           { label: "Docs", href: "/routeLink" },
-//           { label: "Components", href: "/routeLink" },
-//         ]}
-//       />
-//     </div>
-//   );
-// };
+export default StepBreadcrumbDemo;
+`}
+          ComponentCodeJS={`import Step_Breadcrumb from "@/components/ui/Step-breadcrumb";
+import { Store, Truck, ShoppingCart, Package } from "lucide-react";
 
-// export default TabsOutlineBreadcrumbDemo;
-// `}
-//         >
-//           <TabsOutline_Breadcrumb
-//             items={[
-//               { label: "Home", href: "/" },
-//               { label: "Docs", href: "/components" },
-//               { label: "Components", href: "/breadcrumb" },
-//             ]}
-//           />
-//         </ShowComponent>
-//         {/* Step Breadcrumb */}
-//         <ShowComponent
-//           ComponentName="05. Step"
-//           installation="npx saelix-ui add step-breadcrumb"
-//           ComponentCodeTS={`import Step_Breadcrumb from "@/components/ui/Step-breadcrumb";
-// import { Store, Truck, ShoppingCart, Package } from "lucide-react";
+const StepBreadcrumbDemo = () => {
+  return (
+    <div>
+      <Step_Breadcrumb
+        currentStep={1}
+        shopIcon={<Store size={22} />}
+        deliveryIcon={<Truck size={22} />}
+        cartIcon={<ShoppingCart size={22} />}
+        packageIcon={<Package size={22} />}
+      />
+    </div>
+  );
+};
 
-// const StepBreadcrumbDemo = () => {
-//   return (
-//     <div>
-//       <Step_Breadcrumb
-//         currentStep={1}
-//         shopIcon={<Store size={22} />}
-//         deliveryIcon={<Truck size={22} />}
-//         cartIcon={<ShoppingCart size={22} />}
-//         packageIcon={<Package size={22} />}
-//       />
-//     </div>
-//   );
-// };
-
-// export default StepBreadcrumbDemo;
-// `}
-//           ComponentCodeJS={`import Step_Breadcrumb from "@/components/ui/Step-breadcrumb";
-// import { Store, Truck, ShoppingCart, Package } from "lucide-react";
-
-// const StepBreadcrumbDemo = () => {
-//   return (
-//     <div>
-//       <Step_Breadcrumb
-//         currentStep={1}
-//         shopIcon={<Store size={22} />}
-//         deliveryIcon={<Truck size={22} />}
-//         cartIcon={<ShoppingCart size={22} />}
-//         packageIcon={<Package size={22} />}
-//       />
-//     </div>
-//   );
-// };
-
-// export default StepBreadcrumbDemo;
-// `}
-//         >
-//           <Step_Breadcrumb
-//             currentStep={1}
-//             shopIcon={<Store size={20} />}
-//             deliveryIcon={<Truck size={20} />}
-//             cartIcon={<ShoppingCart size={20} />}
-//             packageIcon={<Package size={20} />}
-//           />
-//         </ShowComponent>
-//       </div>
+export default StepBreadcrumbDemo;
+`}
+        >
+          <Step_Breadcrumb
+            currentStep={1}
+            shopIcon={<Store size={20} />}
+            deliveryIcon={<Truck size={20} />}
+            cartIcon={<ShoppingCart size={20} />}
+            packageIcon={<Package size={20} />}
+          />
+        </ShowComponent>
+      </div>
