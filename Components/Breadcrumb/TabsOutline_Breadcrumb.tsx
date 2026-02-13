@@ -41,7 +41,7 @@ const TabsOutline_Breadcrumb = ({ items, className = "" }: BreadcrumbProps) => {
                     : "dark:text-[#E5E7EB]"
                 }
               >
-                <span className="border border-[#1F2937] dark:border-[#1F2937] px-2 py-0.5 rounded-full dark:bg-[#111827]">
+                <span className="text-white bg-[#1F2937] px-2 py-0.5 rounded-full dark:text-black dark:bg-gray-200">
                   {item.label}
                 </span>
               </span>

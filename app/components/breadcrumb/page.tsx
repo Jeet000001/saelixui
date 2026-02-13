@@ -1,5 +1,6 @@
 import Default_Breadcrumb from "@/Components/Breadcrumb/Default_Breadcrumb";
 import Tab_Breadcrumb from "@/Components/Breadcrumb/Tab_Breadcrumb";
+import TabsOutline_Breadcrumb from "@/Components/Breadcrumb/TabsOutline_Breadcrumb";
 import ShowComponent from "@/Components/ShowComponent";
 import { House } from "lucide-react";
 
@@ -170,6 +171,55 @@ export default TabBreadcrumbDemo;
               { label: "Components", href: "" },
             ]}
           />
+        </ShowComponent>
+        {/* TabOutline */}
+        <ShowComponent
+          ComponentName="04. Outline Tabs"
+          installation="npx saelix-ui add outline-breadcrumb"
+          ComponentCodeTS={`import TabsOutline_Breadcrumb from "@/components/ui/Outline-breadcrumb";
+
+const TabsOutlineBreadcrumbDemo = () => {
+  return (
+    <div>
+      <TabsOutline_Breadcrumb
+        items={[
+          { label: "Home", href: "/routeLink" },
+          { label: "Docs", href: "/routeLink" },
+          { label: "Components", href: "/routeLink" },
+        ]}
+      />
+    </div>
+  );
+};
+
+export default TabsOutlineBreadcrumbDemo;
+`}
+          ComponentCodeJS={`import TabsOutline_Breadcrumb from "./components/ui/Outline-breadcrumb";
+
+const TabsOutlineBreadcrumbDemo = () => {
+  return (
+    <div>
+      <TabsOutline_Breadcrumb
+        items={[
+          { label: "Home", href: "/routeLink" },
+          { label: "Docs", href: "/routeLink" },
+          { label: "Components", href: "/routeLink" },
+        ]}
+      />
+    </div>
+  );
+};
+
+export default TabsOutlineBreadcrumbDemo;
+`}
+        >
+          <TabsOutline_Breadcrumb
+          items={[
+          { label: "Home", href: "/" },
+          { label: "Docs", href: "/components" },
+          { label: "Components", href: "/breadcrumb" },
+        ]}
+      />
         </ShowComponent>
       </div>
     </div>
