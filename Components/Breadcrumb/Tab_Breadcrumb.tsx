@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ChevronsRight } from 'lucide-react';
+import { ChevronsRight } from "lucide-react";
 
 type Item = {
   label: string;
@@ -11,14 +11,14 @@ type BreadcrumbProps = {
   items: Item[];
 };
 
-const Tab_Breadcrumb: React.FC<BreadcrumbProps> = ({ items,}) => {
+const Tab_Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   return (
-    <div className={`flex items-center gap-2`}>
+    <div className="flex items-center gap-2">
       {items.map((item, index) => {
         const isLast = index === items.length - 1;
 
         return (
-          <React.Fragment key={item.href}>
+          <React.Fragment key={`${item.label}-${index}`}>
             <Link href={item.href}>
               <span
                 className={`
@@ -35,7 +35,9 @@ const Tab_Breadcrumb: React.FC<BreadcrumbProps> = ({ items,}) => {
             </Link>
 
             {!isLast && (
-              <span className="text-gray-400 text-lg font-semibold"><ChevronsRight /></span>
+              <span className="text-gray-400 text-lg font-semibold">
+                <ChevronsRight size={18} />
+              </span>
             )}
           </React.Fragment>
         );
