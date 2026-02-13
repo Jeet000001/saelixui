@@ -247,9 +247,9 @@ const ComponentsShowcase = () => {
           >
             <Tab_Breadcrumb
               items={[
-                { label: "Home", href: "/" },
-                { label: "Components", href: "/components" },
-                { label: "Breadcrumb", href: "/breadcrumb" },
+                { label: "Home", href: "" },
+                { label: "Docs", href: "" },
+                { label: "Components", href: "" },
               ]}
             />
           </div>
@@ -270,7 +270,7 @@ const ComponentsShowcase = () => {
           >
             <Avatar_Ring src="/myImage.jpeg" borderColor="border-green-500" />
           </div>
-
+          {/* Loder */}
           <div
             className="
             col-span-2 row-span-1 rounded-2xl border-2

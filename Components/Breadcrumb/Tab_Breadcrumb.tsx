@@ -9,12 +9,11 @@ type Item = {
 
 type BreadcrumbProps = {
   items: Item[];
-  className?: string;
 };
 
-const Tab_Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = "" }) => {
+const Tab_Breadcrumb: React.FC<BreadcrumbProps> = ({ items,}) => {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div className={`flex items-center gap-2`}>
       {items.map((item, index) => {
         const isLast = index === items.length - 1;
 
@@ -35,7 +34,6 @@ const Tab_Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = "" }) =>
               </span>
             </Link>
 
-            {/* Arrow */}
             {!isLast && (
               <span className="text-gray-400 text-lg font-semibold"><ChevronsRight /></span>
             )}
