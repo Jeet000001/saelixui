@@ -69,6 +69,60 @@ export default DefaultBreadcrumbDemo;
             ]}
           />
         </ShowComponent>
+                {/* Icon */}
+        <ShowComponent
+          ComponentName="02. Icon"
+          installation="npx saelix-ui add default-breadcrumb"
+          ComponentCodeTS={`import Breadcrumb from "@/components/ui/Default-breadcrumb";
+import { House } from 'lucide-react';
+
+const IconBreadcrumbDemo = () => {
+  return (
+    <div>
+      <Breadcrumb
+        separator="/"
+        items={[
+          { label: <House />, href: "/routeLink" },
+          { label: "Docs", href: "/routeLink" },
+          { label: "Components", href: "/routeLink" },
+        ]}
+      />
+    </div>
+  );
+};
+
+export default IconBreadcrumbDemo;
+`}
+          ComponentCodeJS={`import Breadcrumb from "./components/ui/Default-breadcrumb";
+import { House } from 'lucide-react';
+
+const IconBreadcrumbDemo = () => {
+  return (
+    <div>
+      <Breadcrumb
+        separator="/"
+        items={[
+          { label: <House />, href: "/routeLink" },
+          { label: "Docs", href: "/routeLink" },
+          { label: "Components", href: "/routeLink" },
+        ]}
+      />
+    </div>
+  );
+};
+
+export default IconBreadcrumbDemo;
+`}
+        >
+          <Default_Breadcrumb
+            separator="/"
+            items={[
+              { label: <House />, href: " " },
+              { label: "Docs", href: " " },
+              { label: "Component", href: " " },
+            ]}
+          />
+        </ShowComponent>
       </div>
     </div>
   );
@@ -82,60 +136,7 @@ export default page;
 
 //       <div>
 
-//         {/* Icon */}
-//         <ShowComponent
-//           ComponentName="02. Icon"
-//           installation="npx saelix-ui add default-breadcrumb"
-//           ComponentCodeTS={`import Breadcrumb from "@/components/ui/Default-breadcrumb";
-// import { House } from 'lucide-react';
 
-// const IconBreadcrumbDemo = () => {
-//   return (
-//     <div>
-//       <Breadcrumb
-//         separator="/"
-//         items={[
-//           { label: <House />, href: "/routeLink" },
-//           { label: "Docs", href: "/routeLink" },
-//           { label: "Components", href: "/routeLink" },
-//         ]}
-//       />
-//     </div>
-//   );
-// };
-
-// export default IconBreadcrumbDemo;
-// `}
-//           ComponentCodeJS={`import Breadcrumb from "./components/ui/Default-breadcrumb";
-// import { House } from 'lucide-react';
-
-// const IconBreadcrumbDemo = () => {
-//   return (
-//     <div>
-//       <Breadcrumb
-//         separator="/"
-//         items={[
-//           { label: <House />, href: "/routeLink" },
-//           { label: "Docs", href: "/routeLink" },
-//           { label: "Components", href: "/routeLink" },
-//         ]}
-//       />
-//     </div>
-//   );
-// };
-
-// export default IconBreadcrumbDemo;
-// `}
-//         >
-//           <Default_Breadcrumb
-//             separator="/"
-//             items={[
-//               { label: <House />, href: " " },
-//               { label: "Docs", href: " " },
-//               { label: "Component", href: " " },
-//             ]}
-//           />
-//         </ShowComponent>
 //         {/* Tabs */}
 //         <ShowComponent
 //           ComponentName="03. Tabs"
