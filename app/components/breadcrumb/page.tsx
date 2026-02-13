@@ -1,8 +1,9 @@
 import Default_Breadcrumb from "@/Components/Breadcrumb/Default_Breadcrumb";
+import Step_Breadcrumb from "@/Components/Breadcrumb/Step_Breadcrums";
 import Tab_Breadcrumb from "@/Components/Breadcrumb/Tab_Breadcrumb";
 import TabsOutline_Breadcrumb from "@/Components/Breadcrumb/TabsOutline_Breadcrumb";
+import { House, Store, Truck, ShoppingCart, Package } from "lucide-react";
 import ShowComponent from "@/Components/ShowComponent";
-import { House } from "lucide-react";
 
 const page = () => {
   return (
@@ -214,12 +215,63 @@ export default TabsOutlineBreadcrumbDemo;
 `}
         >
           <TabsOutline_Breadcrumb
-          items={[
-          { label: "Home", href: "/" },
-          { label: "Docs", href: "/components" },
-          { label: "Components", href: "/breadcrumb" },
-        ]}
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Docs", href: "/components" },
+              { label: "Components", href: "/breadcrumb" },
+            ]}
+          />
+        </ShowComponent>
+        {/* Step Breadcrumb */}
+        <ShowComponent
+          ComponentName="05. Step"
+          installation="npx saelix-ui add step-breadcrumb"
+          ComponentCodeTS={`import Step_Breadcrumb from "@/components/ui/Step-breadcrumb";
+import { Store, Truck, ShoppingCart, Package } from "lucide-react";
+
+const StepBreadcrumbDemo = () => {
+  return (
+    <div>
+      <Step_Breadcrumb
+        currentStep={1}
+        shopIcon={<Store size={22} />}
+        deliveryIcon={<Truck size={22} />}
+        cartIcon={<ShoppingCart size={22} />}
+        packageIcon={<Package size={22} />}
       />
+    </div>
+  );
+};
+
+export default StepBreadcrumbDemo;
+`}
+          ComponentCodeJS={`import Step_Breadcrumb from "@/components/ui/Step-breadcrumb";
+import { Store, Truck, ShoppingCart, Package } from "lucide-react";
+
+const StepBreadcrumbDemo = () => {
+  return (
+    <div>
+      <Step_Breadcrumb
+        currentStep={1}
+        shopIcon={<Store size={22} />}
+        deliveryIcon={<Truck size={22} />}
+        cartIcon={<ShoppingCart size={22} />}
+        packageIcon={<Package size={22} />}
+      />
+    </div>
+  );
+};
+
+export default StepBreadcrumbDemo;
+`}
+        >
+          <Step_Breadcrumb
+            currentStep={1}
+            shopIcon={<Store size={20} />}
+            deliveryIcon={<Truck size={20} />}
+            cartIcon={<ShoppingCart size={20} />}
+            packageIcon={<Package size={20} />}
+          />
         </ShowComponent>
       </div>
     </div>
