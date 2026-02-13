@@ -23,7 +23,7 @@ const ViteInstallation = () => {
   const tailwindcssCommand = "npm install tailwindcss @tailwindcss/vite";
   const importCommand = `@import "tailwindcss";`;
   const initCommand = "npx saelix-ui init";
-  const addCommand = "npx saelix-ui add button";
+  const addCommand = "npx saelix-ui add primary-button";
   const vite_config = `import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
@@ -33,25 +33,29 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
 })
 `;
-  const tsCode = `import { Button } from "@/components/ui/button"
- 
-export default function Home() {
-  return (
-    <div>
-      <Button>Click me</Button>
-    </div>
-  )
-}`;
+  const tsCode = `import Primary_Button from "@/components/ui/Primary-button";
 
-const jsCode =  `js - import { Button } from "@/components/ui/button"
- 
-export default function Home() {
+const page = () => {
   return (
     <div>
-      <Button>Click me</Button>
+      <Primary_Button>click</Primary_Button>
     </div>
-  )
-}`;
+  );
+};
+
+export default page;`;
+
+const jsCode =  `import Primary_Button from "./components/ui/Primary-button";
+
+const page = () => {
+  return (
+    <div>
+      <Primary_Button>click</Primary_Button>
+    </div>
+  );
+};
+
+export default page;`;
 
   return (
     <div className="mx-auto px-6 md:px-40 py-12 space-y-16 dark:bg-[#0B0F19]">
@@ -342,7 +346,7 @@ export default function Home() {
             </button>
           </div>
           <p className="text-gray-700 dark:text-[#E5E7EB] text-shadow-lg">
-            npx saelix-ui add button
+            npx saelix-ui add primary-button
           </p>
         </div>
 
@@ -426,7 +430,7 @@ export default function Home() {
               {configCopy ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
-          <pre className="rounded-xl p-4 text-sm">
+          <pre className="rounded-xl py-4 px-10 text-sm">
             <SyntaxHighlighter
               language="jsx"
               style={theme === "dark" ? oneDark : oneLight}
