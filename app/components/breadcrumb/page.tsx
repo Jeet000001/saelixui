@@ -17,7 +17,7 @@ const page = () => {
         </p>
       </div>
       <div>
-                {/* Default */}
+        {/* Default */}
         <ShowComponent
           ComponentName="01. Default"
           installation="npx saelix-ui add default-breadcrumb"
@@ -69,7 +69,7 @@ export default DefaultBreadcrumbDemo;
             ]}
           />
         </ShowComponent>
-                {/* Icon */}
+        {/* Icon */}
         <ShowComponent
           ComponentName="02. Icon"
           installation="npx saelix-ui add default-breadcrumb"
@@ -123,7 +123,7 @@ export default IconBreadcrumbDemo;
             ]}
           />
         </ShowComponent>
-                {/* Tabs */}
+        {/* Tabs */}
         <ShowComponent
           ComponentName="03. Tabs"
           installation="npx saelix-ui add tabs-breadcrumb"
@@ -172,21 +172,6 @@ export default TabBreadcrumbDemo;
             ]}
           />
         </ShowComponent>
-      </div>
-    </div>
-  );
-};
-
-export default page;
-
-
-
-
-
-      <div>
-
-
-
         {/* TabOutline */}
         <ShowComponent
           ComponentName="04. Outline Tabs"
@@ -288,3 +273,8 @@ export default StepBreadcrumbDemo;
           />
         </ShowComponent>
       </div>
+    </div>
+  );
+};
+
+export default page;
