@@ -126,50 +126,48 @@ export default IconBreadcrumbDemo;
         <ShowComponent
           ComponentName="03. Tabs"
           installation="npx saelix-ui add tabs-breadcrumb"
-          ComponentCodeTS={`import Breadcrumb from "@/components/ui/Default-breadcrumb";
-import { House } from 'lucide-react';
+          ComponentCodeTS={`import Tab_Breadcrumb from "@/components/ui/Tabs-breadcrumb";
 
-const IconBreadcrumbDemo = () => {
+const TabBreadcrumbDemo = () => {
   return (
     <div>
       <Tab_Breadcrumb
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Docs", href: "/components" },
-            { label: "Components", href: "/breadcrumb" },
-          ]}
-          />
+        items={[
+          { label: "Home", href: "" },
+          { label: "Docs", href: "" },
+          { label: "Components", href: "" },
+        ]}
+      />
     </div>
   );
 };
 
-export default IconBreadcrumbDemo;
+export default TabBreadcrumbDemo;
 `}
-          ComponentCodeJS={`import Breadcrumb from "@/components/ui/Default-breadcrumb";
-import { House } from 'lucide-react';
+          ComponentCodeJS={`import Tab_Breadcrumb from "./components/ui/Tabs-breadcrumb";
 
-const IconBreadcrumbDemo = () => {
+const TabBreadcrumbDemo = () => {
   return (
     <div>
       <Tab_Breadcrumb
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Docs", href: "/components" },
-            { label: "Components", href: "/breadcrumb" },
-          ]}
-          />
+        items={[
+          { label: "Home", href: "" },
+          { label: "Docs", href: "" },
+          { label: "Components", href: "" },
+        ]}
+      />
     </div>
   );
 };
 
-export default IconBreadcrumbDemo;
+export default TabBreadcrumbDemo;
 `}
         >
           <Tab_Breadcrumb
             items={[
-              { label: "Home", href: "/" },
-              { label: "Docs", href: "/components" },
-              { label: "Components", href: "/breadcrumb" },
+              { label: "Home", href: "" },
+              { label: "Docs", href: "" },
+              { label: "Components", href: "" },
             ]}
           />
         </ShowComponent>
