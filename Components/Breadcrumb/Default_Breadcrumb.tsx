@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { ChevronRight } from "lucide-react";
 
 export type BreadcrumbItem = {
-  label: string;
+  label: React.ReactNode;
   href?: string;
 };
 
