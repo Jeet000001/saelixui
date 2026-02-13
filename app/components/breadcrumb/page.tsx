@@ -70,7 +70,7 @@ export default DefaultBreadcrumbDemo;
         </ShowComponent>
         {/* Icon */}
         <ShowComponent
-          ComponentName="01. Default"
+          ComponentName="02. Icon"
           installation="npx saelix-ui add default-breadcrumb"
           ComponentCodeTS={`import Breadcrumb from "@/components/ui/Default-breadcrumb";
 import { House } from 'lucide-react';
@@ -92,7 +92,7 @@ const IconBreadcrumbDemo = () => {
 
 export default IconBreadcrumbDemo;
 `}
-          ComponentCodeJS={`import Breadcrumb from "@/components/ui/Default-breadcrumb";
+          ComponentCodeJS={`import Breadcrumb from "./components/ui/Default-breadcrumb";
 import { House } from 'lucide-react';
 
 const IconBreadcrumbDemo = () => {
