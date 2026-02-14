@@ -1,4 +1,5 @@
 import Food_Card from "@/Components/Card/Food_Card";
+import Product_Card from "@/Components/Card/Product_Card";
 import Profile_Card from "@/Components/Card/Profile_Card";
 import Travel_Card from "@/Components/Card/Travel_Card";
 import ShowComponent from "@/Components/ShowComponent";
@@ -165,6 +166,63 @@ export default TravelCardDemo;
             rating={4.8}
             tag1="Romantic Stay"
             tag2="2 Night Trip"
+          />
+        </ShowComponent>
+        {/* Product */}
+        <ShowComponent
+          ComponentName="04. Product"
+          installation="npx saelix-ui add product-card"
+          ComponentCodeTS={`import Product_Card from "@/components/ui/Product-card";
+
+const ProductCardDemo = () => {
+  return (
+    <div>
+      <Product_Card
+        title="AIR FORCE 1"
+        price={3800}
+        image="/nike.avif"
+        brand="Nike"
+        rating={4.56}
+        reviews={125}
+        sizes={[34, 35, 36, 37]}
+      />
+    </div>
+  );
+};
+
+export default ProductCardDemo;
+
+`}
+          ComponentCodeJS={`import Product_Card from "./components/ui/Product-card";
+
+const ProductCardDemo = () => {
+  return (
+    <div>
+      <Product_Card
+        title="AIR FORCE 1"
+        price={3800}
+        image="/nike.avif"
+        brand="Nike"
+        rating={4.56}
+        reviews={125}
+        sizes={[34, 35, 36, 37]}
+      />
+    </div>
+  );
+};
+
+export default ProductCardDemo;
+
+`}
+        >
+          <Product_Card
+            title="AIR FORCE 1"
+            price={200}
+            image="/nike.avif"
+            brand="Nike"
+            rating={4.56}
+            reviews={125}
+            sizes={[34, 35, 36, 37]}
           />
         </ShowComponent>
       </div>
