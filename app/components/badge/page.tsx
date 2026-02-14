@@ -18,7 +18,7 @@ const page = () => {
         </h1>
 
         <p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
-          Renders a button or any element styled to behave like a button.
+          Shows a badge component or similar visual element.
         </p>
       </div>
       <div>
