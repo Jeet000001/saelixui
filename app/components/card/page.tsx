@@ -1,5 +1,6 @@
 import Food_Card from "@/Components/Card/Food_Card";
 import Profile_Card from "@/Components/Card/Profile_Card";
+import Travel_Card from "@/Components/Card/Travel_Card";
 import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
@@ -26,7 +27,7 @@ const ProfileCardDemo = () => {
       <Profile_Card
         name="Jeet Paul"
         role=" who focuses on simplicity & usability."
-        image="/myImage.jpeg"
+        image="/imageLink"
         followers={312}
         views={48}
         verified={true}
@@ -45,7 +46,7 @@ const ProfileCardDemo = () => {
       <Profile_Card
         name="Jeet Paul"
         role=" who focuses on simplicity & usability."
-        image="/myImage.jpeg"
+        image="/imageLink"
         followers={312}
         views={48}
         verified={true}
@@ -69,7 +70,7 @@ export default ProfileCardDemo;`}
         </ShowComponent>
         {/* Food */}
         <ShowComponent
-          ComponentName="01. Food"
+          ComponentName="02. Food"
           installation="npx saelix-ui add food-card"
           ComponentCodeTS={`import Food_Card from "@/components/ui/Food-card";
 
@@ -80,7 +81,7 @@ const FoodCardDemo = () => {
         title="Chicken Biryani"
         description="Authentic Chicken Biryani packed with rich flavors and royal taste."
         price={299}
-        image="/beriyani.webp"
+        image="/imageLink"
       />
     </div>
   );
@@ -96,7 +97,7 @@ const FoodCardDemo = () => {
         title="Chicken Biryani"
         description="Authentic Chicken Biryani packed with rich flavors and royal taste."
         price={299}
-        image="/beriyani.webp"
+        image="/imageLink"
       />
     </div>
   );
@@ -111,7 +112,61 @@ export default FoodCardDemo;`}
             image="/Biryani.webp"
           />
         </ShowComponent>
-        {/*  */}
+        {/* Travel */}
+        <ShowComponent
+          ComponentName="03. Travel"
+          installation="npx saelix-ui add travel-card"
+          ComponentCodeTS={`import Travel_Card from "@/components/ui/Travel-card";
+
+const TravelCardDemo = () => {
+  return (
+    <div>
+      <Travel_Card
+        title="Santorini Sunset Loft"
+        description="Experience a cliffside loft with iconic white walls, blue domes, and magical sunset views."
+        image="/imageLink"
+        price={890}
+        rating={4.8}
+        tag1="Romantic Stay"
+        tag2="2 Night Trip"
+      />
+    </div>
+  );
+};
+
+export default TravelCardDemo;
+`}
+          ComponentCodeJS={`import Travel_Card from "@/components/ui/Travel-card";
+
+const TravelCardDemo = () => {
+  return (
+    <div>
+      <Travel_Card
+        title="Santorini Sunset Loft"
+        description="Experience a cliffside loft with iconic white walls, blue domes, and magical sunset views."
+        image="/imageLink"
+        price={890}
+        rating={4.8}
+        tag1="Romantic Stay"
+        tag2="2 Night Trip"
+      />
+    </div>
+  );
+};
+
+export default TravelCardDemo;
+`}
+        >
+          <Travel_Card
+            title="Santorini Sunset Loft"
+            description="Experience a cliffside loft with iconic white walls, blue domes, and magical sunset views."
+            image="/hotel.jpg"
+            price={1000}
+            rating={4.8}
+            tag1="Romantic Stay"
+            tag2="2 Night Trip"
+          />
+        </ShowComponent>
       </div>
     </div>
   );
