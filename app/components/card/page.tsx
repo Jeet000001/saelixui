@@ -136,7 +136,7 @@ const TravelCardDemo = () => {
 
 export default TravelCardDemo;
 `}
-          ComponentCodeJS={`import Travel_Card from "@/components/ui/Travel-card";
+          ComponentCodeJS={`import Travel_Card from "./components/ui/Travel-card";
 
 const TravelCardDemo = () => {
   return (
