@@ -1,3 +1,4 @@
+import Course_Card from "@/Components/Card/Course_Card";
 import Food_Card from "@/Components/Card/Food_Card";
 import Product_Card from "@/Components/Card/Product_Card";
 import Profile_Card from "@/Components/Card/Profile_Card";
@@ -223,6 +224,61 @@ export default ProductCardDemo;
             rating={4.56}
             reviews={125}
             sizes={[34, 35, 36, 37]}
+          />
+        </ShowComponent>
+        {/* course */}
+        <ShowComponent
+          ComponentName="05. Course"
+          installation="npx saelix-ui add course-card"
+          ComponentCodeTS={`import Course_Card from "@/components/ui/Course-card";
+
+const CourseCardDemo = () => {
+  return (
+    <div>
+      <Course_Card
+        title="Frontend Development"
+        instructor="Jeet Paul"
+        description="Learn how to craft beautiful user interfaces and responsive websites using modern frontend technologies."
+        image="/course.jpg"
+        rating={4.1}
+        reviews={146}
+        price={2999}
+      />
+    </div>
+  );
+};
+
+export default CourseCardDemo;
+`}
+          ComponentCodeJS={`import Course_Card from "./components/ui/Course-card";
+
+const CourseCardDemo = () => {
+  return (
+    <div>
+      <Course_Card
+        title="Frontend Development"
+        instructor="Jeet Paul"
+        description="Learn how to craft beautiful user interfaces and responsive websites using modern frontend technologies."
+        image="/course.jpg"
+        rating={4.1}
+        reviews={146}
+        price={2999}
+      />
+    </div>
+  );
+};
+
+export default CourseCardDemo;
+`}
+        >
+          <Course_Card
+            title="Frontend Development"
+            instructor="Jeet Paul"
+            description="Learn how to craft beautiful user interfaces and responsive websites using modern frontend technologies."
+            image="/course.webp"
+            rating={4.1}
+            reviews={146}
+            price={2999}
           />
         </ShowComponent>
       </div>
