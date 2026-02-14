@@ -181,7 +181,7 @@ const ProductCardDemo = () => {
       <Product_Card
         title="AIR FORCE 1"
         price={3800}
-        image="/nike.avif"
+        image="/imageLink"
         brand="Nike"
         rating={4.56}
         reviews={125}
@@ -202,7 +202,7 @@ const ProductCardDemo = () => {
       <Product_Card
         title="AIR FORCE 1"
         price={3800}
-        image="/nike.avif"
+        image="/imageLink"
         brand="Nike"
         rating={4.56}
         reviews={125}
@@ -239,7 +239,7 @@ const CourseCardDemo = () => {
         title="Frontend Development"
         instructor="Jeet Paul"
         description="Learn how to craft beautiful user interfaces and responsive websites using modern frontend technologies."
-        image="/course.jpg"
+        image="/imageLink"
         rating={4.1}
         reviews={146}
         price={2999}
@@ -259,7 +259,7 @@ const CourseCardDemo = () => {
         title="Frontend Development"
         instructor="Jeet Paul"
         description="Learn how to craft beautiful user interfaces and responsive websites using modern frontend technologies."
-        image="/course.jpg"
+        image="/imageLink"
         rating={4.1}
         reviews={146}
         price={2999}
