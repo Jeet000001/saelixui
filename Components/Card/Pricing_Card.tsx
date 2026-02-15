@@ -63,7 +63,7 @@ const Pricing_Card: React.FC<PricingCardProps> = ({
         <button
           className="
           mt-6 w-full bg-gray-200 text-black py-3 rounded-full text-sm font-semibold
-          hover:bg-black hover:text-white
+          hover:bg-gray-300
           dark:bg-[#3B82F6] dark:text-white
           dark:hover:bg-[#2563EB]
           transition-all duration-300 active:scale-95
