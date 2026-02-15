@@ -343,7 +343,7 @@ export default PricingCardDemo;
         </ShowComponent>
         {/* Testimonial */}
         <ShowComponent
-          ComponentName="06. Testimonial"
+          ComponentName="07. Testimonial"
           installation="npx saelix-ui add testimonial-card"
           ComponentCodeTS={`import Testimonial_Card from "@/components/ui/Testimonial-card";
 
