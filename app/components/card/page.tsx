@@ -364,7 +364,7 @@ const TestimonialCardDemo = () => {
 
 export default TestimonialCardDemo;
 `}
-          ComponentCodeJS={`import Testimonial_Card from "@/components/ui/Testimonial-card";
+          ComponentCodeJS={`import Testimonial_Card from "./components/ui/Testimonial-card";
 
 const TestimonialCardDemo = () => {
   return (
