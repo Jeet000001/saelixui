@@ -3,6 +3,7 @@ import Food_Card from "@/Components/Card/Food_Card";
 import Pricing_Card from "@/Components/Card/Pricing_Card";
 import Product_Card from "@/Components/Card/Product_Card";
 import Profile_Card from "@/Components/Card/Profile_Card";
+import Testimonial_Card from "@/Components/Card/Testimonial_Card";
 import Travel_Card from "@/Components/Card/Travel_Card";
 import ShowComponent from "@/Components/ShowComponent";
 
@@ -229,8 +230,8 @@ export default ProductCardDemo;
         </ShowComponent>
         {/* course */}
         <ShowComponent
-          ComponentName="05. Course"
-          installation="npx saelix-ui add course-card"
+          ComponentName="05. Testimonial"
+          installation="npx saelix-ui add testimonial-card"
           ComponentCodeTS={`import Course_Card from "@/components/ui/Course-card";
 
 const CourseCardDemo = () => {
@@ -338,6 +339,58 @@ export default PricingCardDemo;
               "1 Day transaction clearing",
               "Priority customer support",
             ]}
+          />
+        </ShowComponent>
+        {/* Testimonial */}
+        <ShowComponent
+          ComponentName="06. Testimonial"
+          installation="npx saelix-ui add testimonial-card"
+          ComponentCodeTS={`import Testimonial_Card from "@/components/ui/Testimonial-card";
+
+const TestimonialCardDemo = () => {
+  return (
+    <div>
+      <Testimonial_Card
+        name="Sam Harper"
+        role="Frontend Developer"
+        image="/imageLink"
+        rating={5}
+        review="This component library made my development workflow faster and cleaner than ever before.
+                Beautiful, reusable UI components that feel modern, flexible, and truly developer-friendly."
+      />
+    </div>
+  );
+};
+
+export default TestimonialCardDemo;
+`}
+          ComponentCodeJS={`import Testimonial_Card from "@/components/ui/Testimonial-card";
+
+const TestimonialCardDemo = () => {
+  return (
+    <div>
+      <Testimonial_Card
+        name="Sam Harper"
+        role="Frontend Developer"
+        image="/imageLink"
+        rating={5}
+        review="This component library made my development workflow faster and cleaner than ever before.
+                Beautiful, reusable UI components that feel modern, flexible, and truly developer-friendly."
+      />
+    </div>
+  );
+};
+
+export default TestimonialCardDemo;
+`}
+        >
+          <Testimonial_Card
+            name="Sam Harper"
+            role="Frontend Developer"
+            image="/profile.avif"
+            rating={5}
+            review="This component library made my development workflow faster and cleaner than ever before.
+Beautiful, reusable UI components that feel modern, flexible, and truly developer-friendly."
           />
         </ShowComponent>
       </div>
