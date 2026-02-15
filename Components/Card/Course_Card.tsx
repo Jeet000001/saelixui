@@ -28,10 +28,10 @@ const Course_Card: React.FC<CourseCardProps> = ({
       w-[320px] rounded-2xl overflow-hidden
       bg-[#111]
       dark:bg-[#111827]
-      dark:border border-transparent dark:border-[#1F2937]
+      border border-gray-300 dark:border-[#1F2937]
       shadow-lg dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
       hover:shadow-2xl
-      transition-all duration-300 hover:scale-[1.02]
+      transition-all duration-300 hover:scale-102
       ${className}
     `}
     >

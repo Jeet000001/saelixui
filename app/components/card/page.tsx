@@ -1,5 +1,6 @@
 import Course_Card from "@/Components/Card/Course_Card";
 import Food_Card from "@/Components/Card/Food_Card";
+import Pricing_Card from "@/Components/Card/Pricing_Card";
 import Product_Card from "@/Components/Card/Product_Card";
 import Profile_Card from "@/Components/Card/Profile_Card";
 import Travel_Card from "@/Components/Card/Travel_Card";
@@ -279,6 +280,64 @@ export default CourseCardDemo;
             rating={4.1}
             reviews={146}
             price={2999}
+          />
+        </ShowComponent>
+        {/* Pricing */}
+        <ShowComponent
+          ComponentName="06. Pricing"
+          installation="npx saelix-ui add pricing-card"
+          ComponentCodeTS={`import Pricing_Card from "@/components/ui/Pricing-card";
+
+const PricingCardDemo = () => {
+  return (
+    <div>
+      <Pricing_Card
+        plan="Enterprise"
+        price={180}
+        features={[
+          "AI advisor full time",
+          "Unlimited auto tracking",
+          "1 Day transaction clearing",
+          "Priority customer support",
+        ]}
+      />
+    </div>
+  );
+};
+
+export default PricingCardDemo;
+`}
+          ComponentCodeJS={`import Pricing_Card from "./components/ui/Pricing-card";
+
+const PricingCardDemo = () => {
+  return (
+    <div>
+      <Pricing_Card
+        plan="Enterprise"
+        price={180}
+        features={[
+          "AI advisor full time",
+          "Unlimited auto tracking",
+          "1 Day transaction clearing",
+          "Priority customer support",
+        ]}
+      />
+    </div>
+  );
+};
+
+export default PricingCardDemo;
+`}
+        >
+          <Pricing_Card
+            plan="Enterprise"
+            price={180}
+            features={[
+              "AI advisor full time",
+              "Unlimited auto tracking",
+              "1 Day transaction clearing",
+              "Priority customer support",
+            ]}
           />
         </ShowComponent>
       </div>
