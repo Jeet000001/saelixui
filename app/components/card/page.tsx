@@ -3,6 +3,7 @@ import Food_Card from "@/Components/Card/Food_Card";
 import Pricing_Card from "@/Components/Card/Pricing_Card";
 import Product_Card from "@/Components/Card/Product_Card";
 import Profile_Card from "@/Components/Card/Profile_Card";
+import Signup_Card from "@/Components/Card/Signup_Card";
 import Testimonial_Card from "@/Components/Card/Testimonial_Card";
 import Travel_Card from "@/Components/Card/Travel_Card";
 import ShowComponent from "@/Components/ShowComponent";
@@ -392,6 +393,37 @@ export default TestimonialCardDemo;
             review="This component library made my development workflow faster and cleaner than ever before.
 Beautiful, reusable UI components that feel modern, flexible, and truly developer-friendly."
           />
+        </ShowComponent>
+        {/* Signup */}
+        <ShowComponent
+          ComponentName="08. SignUp"
+          installation="npx saelix-ui add signup-card"
+          ComponentCodeTS={`import Signup_Card from "@/components/ui/Signup-card";
+
+const SignUpCardDemo = () => {
+  return (
+    <div>
+      <Signup_Card />
+    </div>
+  );
+};
+
+export default SignUpCardDemo;
+`}
+          ComponentCodeJS={`import Signup_Card from "./components/ui/Signup-card";
+
+const SignUpCardDemo = () => {
+  return (
+    <div>
+      <Signup_Card />
+    </div>
+  );
+};
+
+export default SignUpCardDemo;
+`}
+        >
+          <Signup_Card />
         </ShowComponent>
       </div>
     </div>
