@@ -1,5 +1,6 @@
 import Course_Card from "@/Components/Card/Course_Card";
 import Food_Card from "@/Components/Card/Food_Card";
+import Login_Card from "@/Components/Card/LogIn_Card";
 import Pricing_Card from "@/Components/Card/Pricing_Card";
 import Product_Card from "@/Components/Card/Product_Card";
 import Profile_Card from "@/Components/Card/Profile_Card";
@@ -424,6 +425,37 @@ export default SignUpCardDemo;
 `}
         >
           <Signup_Card />
+        </ShowComponent>
+        {/* Login */}
+        <ShowComponent
+          ComponentName="09. Login"
+          installation="npx saelix-ui add login-card"
+          ComponentCodeTS={`import Login_Card from "@/components/ui/Login-card";
+
+const LoginCardDemo = () => {
+  return (
+    <div>
+      <Login_Card />
+    </div>
+  );
+};
+
+export default LoginCardDemo;
+`}
+          ComponentCodeJS={`import Login_Card from "./components/ui/Login-card";
+
+const LoginCardDemo = () => {
+  return (
+    <div>
+      <Login_Card />
+    </div>
+  );
+};
+
+export default LoginCardDemo;
+`}
+        >
+          <Login_Card />
         </ShowComponent>
       </div>
     </div>
