@@ -1,4 +1,5 @@
-import React from "react";
+import Default_Carousel from "@/Components/Carousel/Default_Carousel";
+import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
   return (
@@ -11,7 +12,36 @@ const page = () => {
           Displays content in a compact and organized format.
         </p>
       </div>
-      <div></div>
+      <div>
+        <ShowComponent
+          ComponentName="01. Default"
+          installation="npx saelix-ui add default-carousel"
+          ComponentCodeTS={`import Default_Carousel from "@/components/ui/Default-carousel"
+
+const DefaultCarouselDemo = () => {
+  return (
+    <div>
+      <Default_Carousel />
+    </div>
+  )
+}
+
+export default DefaultCarouselDemo;`}
+          ComponentCodeJS={`import Default_Carousel from "./components/ui/Default-carousel"
+
+const DefaultCarouselDemo = () => {
+  return (
+    <div>
+      <Default_Carousel />
+    </div>
+  )
+}
+
+export default DefaultCarouselDemo;`}
+        >
+          <Default_Carousel />
+        </ShowComponent>
+      </div>
     </div>
   );
 };
