@@ -10,7 +10,8 @@ const page = () => {
           Carousel
         </h1>
         <p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
-          Displays content in a compact and organized format.
+          Responsive carousel with smooth animations and swipe
+          functionality.
         </p>
       </div>
       <div>
