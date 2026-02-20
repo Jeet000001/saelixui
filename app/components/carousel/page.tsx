@@ -1,4 +1,5 @@
 import Default_Carousel from "@/Components/Carousel/Default_Carousel";
+import Vertical_Carousel from "@/Components/Carousel/Vertical_Carousel";
 import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
@@ -13,6 +14,7 @@ const page = () => {
         </p>
       </div>
       <div>
+        {/* default */}
         <ShowComponent
           ComponentName="01. Default"
           installation="npx saelix-ui add default-carousel"
@@ -26,7 +28,7 @@ const DefaultCarouselDemo = () => {
   )
 }
 
-export default DefaultCarouselDemo;`}
+export default DefaultCarouselDemo`}
           ComponentCodeJS={`import Default_Carousel from "./components/ui/Default-carousel"
 
 const DefaultCarouselDemo = () => {
@@ -37,9 +39,38 @@ const DefaultCarouselDemo = () => {
   )
 }
 
-export default DefaultCarouselDemo;`}
+export default DefaultCarouselDemo`}
         >
           <Default_Carousel />
+        </ShowComponent>
+        {/* vertical */}
+        <ShowComponent
+          ComponentName="02. Vertical"
+          installation=" npx saelix-ui add vertical-carousel"
+          ComponentCodeTS={`import Vertical_Carousel from '@/components/ui/Vertical-carousel'
+
+const verticalCarouselDemo = () => {
+  return (
+    <div>
+      <Vertical_Carousel />
+    </div>
+  )
+}
+
+export default verticalCarouselDemo`}
+          ComponentCodeJS={`import Vertical_Carousel from './components/ui/Vertical-carousel'
+
+const verticalCarouselDemo = () => {
+  return (
+    <div>
+      <Vertical_Carousel />
+    </div>
+  )
+}
+
+export default verticalCarouselDemo`}
+        >
+          <Vertical_Carousel />
         </ShowComponent>
       </div>
     </div>
