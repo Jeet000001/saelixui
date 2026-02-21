@@ -18,7 +18,7 @@ import {
   TextCursorInput,
   RectangleEllipsis,
   Menu,
-  X
+  X,
 } from "lucide-react";
 
 const components = [
@@ -32,9 +32,9 @@ const components = [
   { name: "Carousel", Icon: <GalleryThumbnails size={16} />, href: "/components/carousel" },
   { name: "Collapsible", Icon: <ChevronsDown size={16} />, href: "/components/collapsible" },
   { name: "Checkbox", Icon: <CircleCheck size={16} />, href: "/components/checkbox" },
-  { name: "Dropdown Menu", Icon: <ChevronDown size={16}/>, href: "/components/dropdown_menu" },
-  { name: "Input", Icon: <TextCursorInput size={16}/>, href: "/components/input" },
-  { name: "Input OTP", Icon: <RectangleEllipsis size={16}/>, href: "/components/input_OTP" },
+  { name: "Dropdown Menu", Icon: <ChevronDown size={16} />, href: "/components/dropdown_menu" },
+  { name: "Input", Icon: <TextCursorInput size={16} />, href: "/components/input" },
+  { name: "Input OTP", Icon: <RectangleEllipsis size={16} />, href: "/components/input_OTP" },
 ];
 
 const Sidebar = () => {
@@ -46,75 +46,78 @@ const Sidebar = () => {
     item.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  // Prevent body scroll when drawer open
+  // Lock body scroll when drawer open
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = open ? "hidden" : "auto";
   }, [open]);
 
   return (
     <>
-      {/* ================= Desktop Sidebar ================= */}
-      <aside className="hidden md:flex h-screen w-64 flex-col border-r border-gray-200 p-4
-        dark:bg-[#0B0F19] dark:border-[#1F2937]">
-
+      {/* ================= DESKTOP SIDEBAR ================= */}
+      <aside className="hidden md:flex h-screen w-64 flex-col border-r border-gray-200 p-4 dark:bg-[#0B0F19] dark:border-[#1F2937]">
         <h2 className="mb-3 text-sm font-semibold uppercase text-gray-500 dark:text-[#9CA3AF]">
           Components
         </h2>
 
         <SearchInput search={search} setSearch={setSearch} />
 
-        <ComponentList
-          filteredComponents={filteredComponents}
-          pathname={pathname}
-        />
+        <div className="flex-1 overflow-y-auto pr-2">
+          <ComponentList
+            filteredComponents={filteredComponents}
+            pathname={pathname}
+          />
+        </div>
       </aside>
 
-      {/* ================= Mobile Bottom Button ================= */}
+      {/* ================= MOBILE BUTTON ================= */}
       <div className="md:hidden fixed bottom-3 left-0 w-full z-40 flex justify-center">
         <button
           onClick={() => setOpen(true)}
           className="w-80 flex items-center justify-center gap-2 py-3 rounded-full
-          bg-black text-white dark:bg-[#111827]"
+          bg-black text-white dark:bg-[#111827] shadow-lg"
         >
-          
-          <Menu size={18} />
-          Open Menu
+          <span className="flex items-center gap-35">
+          All Components
+          <ChevronDown size={18} />
+          </span>
         </button>
       </div>
 
-      {/* ================= Mobile Drawer ================= */}
+      {/* ================= MOBILE DRAWER ================= */}
       {open && (
         <>
-          {/* Backdrop Blur */}
+          {/* Backdrop */}
           <div
             onClick={() => setOpen(false)}
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
           />
 
           {/* Drawer */}
           <div className="fixed bottom-0 left-0 w-full h-[80%] bg-white dark:bg-[#0B0F19]
-            rounded-t-2xl z-50 p-4 overflow-y-auto transition-transform duration-300">
+            rounded-t-2xl z-50 flex flex-col shadow-2xl">
 
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-sm font-semibold uppercase text-gray-500 dark:text-[#9CA3AF]">
-                Components
-              </h2>
-              <button onClick={() => setOpen(false)}>
-                <X size={18} />
-              </button>
+            {/* ===== Fixed Header + Search ===== */}
+            <div className="p-4 border-b border-gray-200 dark:border-[#1F2937]">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-sm font-semibold uppercase text-gray-500 dark:text-[#9CA3AF]">
+                  Components
+                </h2>
+                <button onClick={() => setOpen(false)}>
+                  <X size={18} />
+                </button>
+              </div>
+
+              <SearchInput search={search} setSearch={setSearch} />
             </div>
 
-            <SearchInput search={search} setSearch={setSearch} />
-
-            <ComponentList
-              filteredComponents={filteredComponents}
-              pathname={pathname}
-              closeDrawer={() => setOpen(false)}
-            />
+            {/* ===== Scrollable List ===== */}
+            <div className="flex-1 overflow-y-auto p-4 pt-2">
+              <ComponentList
+                filteredComponents={filteredComponents}
+                pathname={pathname}
+                closeDrawer={() => setOpen(false)}
+              />
+            </div>
           </div>
         </>
       )}
@@ -124,10 +127,10 @@ const Sidebar = () => {
 
 export default Sidebar;
 
-/* ================= Reusable Components ================= */
+/* ================= SEARCH INPUT ================= */
 
 const SearchInput = ({ search, setSearch }: any) => (
-  <div className="relative mb-4">
+  <div className="relative">
     <Search
       size={14}
       className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -144,6 +147,8 @@ const SearchInput = ({ search, setSearch }: any) => (
     />
   </div>
 );
+
+/* ================= COMPONENT LIST ================= */
 
 const ComponentList = ({ filteredComponents, pathname, closeDrawer }: any) => (
   <nav className="space-y-1 text-sm">
