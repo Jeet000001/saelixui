@@ -16,19 +16,20 @@ const NavigationBar = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-40 w-full bg-white/70 backdrop-blur-md shadow-lg
+      <nav
+        className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-md shadow-lg
         dark:bg-[#0B0F19] 
-        dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
-        
+        dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+      >
         <div className="flex items-center justify-between px-8 py-3 md:px-25 md:py-3">
-          
-          {/* Logo */}
           <Link
             href="/"
             className="flex items-center gap-2 md:gap-3 transition duration-500 hover:scale-105"
           >
-            <div className="flex size-9 items-center justify-center rounded-lg bg-black shadow-2xl
-              dark:bg-[#111827] dark:border dark:border-[#1F2937] md:size-10">
+            <div
+              className="flex size-9 items-center justify-center rounded-lg bg-black shadow-2xl
+              dark:bg-[#111827] dark:border dark:border-[#1F2937] md:size-10"
+            >
               <Image
                 src="/letter-s (2).png"
                 alt="Logo"
@@ -41,7 +42,6 @@ const NavigationBar = () => {
             </h1>
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden items-center gap-8 md:flex">
             {NavMenu.map((menu) => (
               <Link
@@ -51,7 +51,6 @@ const NavigationBar = () => {
                   hover:text-gray-900
                   after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0
                   after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full
-                  
                   dark:text-[#9CA3AF] dark:hover:text-[#E5E7EB]
                   dark:after:bg-[#E5E7EB]"
               >
@@ -60,7 +59,6 @@ const NavigationBar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(!open)}
             className="flex flex-col gap-1.5 rounded-md bg-gray-700 p-2 transition hover:bg-gray-800
@@ -84,30 +82,38 @@ const NavigationBar = () => {
             />
           </button>
         </div>
-
-        {/* Mobile Dropdown */}
-        <div
-          className={`overflow-hidden transition-all duration-300 md:hidden ${
-            open ? "max-h-72" : "max-h-0"
-          }`}
-        >
-          <div className="mx-4 mb-4 rounded-lg bg-white
-            dark:bg-[#111827] dark:border dark:border-[#1F2937]">
-            {NavMenu.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                onClick={() => setOpen(false)}
-                className="block px-4 py-3 text-sm font-medium text-gray-700 transition hover:bg-gray-100
-                  dark:text-[#9CA3AF] dark:hover:text-[#E5E7EB]
-                  dark:hover:bg-[#1F2937]"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </div>
       </nav>
+
+      <div
+        onClick={() => setOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/30 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+          open ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      />
+
+      <div
+        className={`fixed top-18 left-0 w-full z-50 transform transition-all duration-300 md:hidden ${
+          open ? "translate-y-0 opacity-100" : "-translate-y-5 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div
+          className="mx-4 rounded-lg bg-white shadow-xl
+            dark:bg-[#111827] dark:border dark:border-[#1F2937]"
+        >
+          {NavMenu.map((item) => (
+            <Link
+              key={item.name}
+              href={item.path}
+              onClick={() => setOpen(false)}
+              className="block px-4 py-3 text-sm font-medium text-gray-700 transition hover:bg-gray-100
+                dark:text-[#9CA3AF] dark:hover:text-[#E5E7EB]
+                dark:hover:bg-[#1F2937]"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </div>
 
       <ThemeToggle />
     </>
