@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
   MousePointerClick,
@@ -16,7 +16,9 @@ import {
   Search,
   ChevronDown,
   TextCursorInput,
-  RectangleEllipsis
+  RectangleEllipsis,
+  Menu,
+  X
 } from "lucide-react";
 
 const components = [
@@ -32,75 +34,144 @@ const components = [
   { name: "Checkbox", Icon: <CircleCheck size={16} />, href: "/components/checkbox" },
   { name: "Dropdown Menu", Icon: <ChevronDown size={16}/>, href: "/components/dropdown_menu" },
   { name: "Input", Icon: <TextCursorInput size={16}/>, href: "/components/input" },
-  { name: "Input OTP", Icon: <RectangleEllipsis  size={16}/>, href: "/components/input_OTP" },
+  { name: "Input OTP", Icon: <RectangleEllipsis size={16}/>, href: "/components/input_OTP" },
 ];
 
 const Sidebar = () => {
   const pathname = usePathname();
   const [search, setSearch] = useState("");
+  const [open, setOpen] = useState(false);
 
   const filteredComponents = components.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
 
+  // Prevent body scroll when drawer open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [open]);
+
   return (
-    <aside className="flex h-screen w-64 flex-col border-r border-gray-200 p-4
-      dark:bg-[#0B0F19] dark:border-[#1F2937]
-      dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+    <>
+      {/* ================= Desktop Sidebar ================= */}
+      <aside className="hidden md:flex h-screen w-64 flex-col border-r border-gray-200 p-4
+        dark:bg-[#0B0F19] dark:border-[#1F2937]">
 
-      <h2 className="mb-3 text-sm font-semibold uppercase text-gray-500 dark:text-[#9CA3AF]">
-        Components
-      </h2>
+        <h2 className="mb-3 text-sm font-semibold uppercase text-gray-500 dark:text-[#9CA3AF]">
+          Components
+        </h2>
 
-      <div className="relative mb-4">
-        <Search
-          size={14}
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+        <SearchInput search={search} setSearch={setSearch} />
+
+        <ComponentList
+          filteredComponents={filteredComponents}
+          pathname={pathname}
         />
-        <input
-          type="text"
-          placeholder="Search components..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="w-full rounded-md border px-9 py-1.5 text-sm
-            bg-white text-gray-900
-            focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-blue-500
-            dark:bg-[#020617] dark:border-[#1F2937] dark:text-white
-            dark:placeholder:text-gray-400"
-        />
+      </aside>
+
+      {/* ================= Mobile Bottom Button ================= */}
+      <div className="md:hidden fixed bottom-3 left-0 w-full z-40 flex justify-center">
+        <button
+          onClick={() => setOpen(true)}
+          className="w-80 flex items-center justify-center gap-2 py-3 rounded-full
+          bg-black text-white dark:bg-[#111827]"
+        >
+          
+          <Menu size={18} />
+          Open Menu
+        </button>
       </div>
 
-      <ul className="flex-1 overflow-y-auto pr-2 text-sm no-scrollbar">
-        <nav className="space-y-1">
-          {filteredComponents.length === 0 && (
-            <p className="px-3 py-2 text-xs text-gray-500">
-              No components found
-            </p>
-          )}
+      {/* ================= Mobile Drawer ================= */}
+      {open && (
+        <>
+          {/* Backdrop Blur */}
+          <div
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition"
+          />
 
-          {filteredComponents.map((item) => {
-            const active = pathname === item.href;
+          {/* Drawer */}
+          <div className="fixed bottom-0 left-0 w-full h-[80%] bg-white dark:bg-[#0B0F19]
+            rounded-t-2xl z-50 p-4 overflow-y-auto transition-transform duration-300">
 
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`flex items-center gap-2 rounded-md px-3 py-2 transition
-                  ${
-                    active
-                      ? "bg-gray-900 text-white dark:bg-[#3B82F6]"
-                      : "text-gray-700 hover:bg-gray-100 dark:text-[#E5E7EB] dark:hover:bg-[#111827]"
-                  }`}
-              >
-                {item.Icon}
-                <span>{item.name}</span>
-              </Link>
-            );
-          })}
-        </nav>
-      </ul>
-    </aside>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-sm font-semibold uppercase text-gray-500 dark:text-[#9CA3AF]">
+                Components
+              </h2>
+              <button onClick={() => setOpen(false)}>
+                <X size={18} />
+              </button>
+            </div>
+
+            <SearchInput search={search} setSearch={setSearch} />
+
+            <ComponentList
+              filteredComponents={filteredComponents}
+              pathname={pathname}
+              closeDrawer={() => setOpen(false)}
+            />
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
 export default Sidebar;
+
+/* ================= Reusable Components ================= */
+
+const SearchInput = ({ search, setSearch }: any) => (
+  <div className="relative mb-4">
+    <Search
+      size={14}
+      className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+    />
+    <input
+      type="text"
+      placeholder="Search components..."
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      className="w-full rounded-md border px-9 py-1.5 text-sm
+        bg-white text-gray-900
+        focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-blue-500
+        dark:bg-[#020617] dark:border-[#1F2937] dark:text-white"
+    />
+  </div>
+);
+
+const ComponentList = ({ filteredComponents, pathname, closeDrawer }: any) => (
+  <nav className="space-y-1 text-sm">
+    {filteredComponents.length === 0 && (
+      <p className="px-3 py-2 text-xs text-gray-500">
+        No components found
+      </p>
+    )}
+
+    {filteredComponents.map((item: any) => {
+      const active = pathname === item.href;
+
+      return (
+        <Link
+          key={item.name}
+          href={item.href}
+          onClick={closeDrawer}
+          className={`flex items-center gap-2 rounded-md px-3 py-2 transition
+            ${
+              active
+                ? "bg-gray-900 text-white dark:bg-[#3B82F6]"
+                : "text-gray-700 hover:bg-gray-100 dark:text-[#E5E7EB] dark:hover:bg-[#111827]"
+            }`}
+        >
+          {item.Icon}
+          <span>{item.name}</span>
+        </Link>
+      );
+    })}
+  </nav>
+);
