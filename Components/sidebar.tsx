@@ -99,7 +99,6 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* DESKTOP SIDEBAR */}
       <aside
         className="hidden md:flex h-screen w-64 flex-col p-4
         bg-[#0B0F19] border-r border-[#1F2937]"
@@ -118,7 +117,6 @@ const Sidebar = () => {
         </div>
       </aside>
 
-      {/* MOBILE BUTTON */}
       <div className="md:hidden fixed bottom-3 left-0 w-full z-40 flex justify-center">
         <button
           onClick={() => setOpen(true)}
@@ -134,14 +132,12 @@ const Sidebar = () => {
         </button>
       </div>
 
-      {/* BACKDROP */}
       <div
         onClick={() => setOpen(false)}
         className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300
         ${open ? "opacity-100 visible" : "opacity-0 invisible"}`}
       />
 
-      {/* MOBILE DRAWER */}
       <div
         className={`fixed bottom-0 left-0 w-full h-[80%]
         bg-[#0B0F19]
@@ -181,8 +177,6 @@ const Sidebar = () => {
 
 export default Sidebar;
 
-/* SEARCH INPUT */
-
 const SearchInput = ({ search, setSearch }: any) => (
   <div className="relative mb-3">
     <Search
@@ -204,8 +198,6 @@ const SearchInput = ({ search, setSearch }: any) => (
     />
   </div>
 );
-
-/* COMPONENT LIST */
 
 const ComponentList = ({ filteredComponents, pathname, closeDrawer }: any) => (
   <nav className="space-y-1 text-sm">
