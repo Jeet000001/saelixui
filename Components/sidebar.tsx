@@ -17,7 +17,6 @@ import {
   ChevronDown,
   TextCursorInput,
   RectangleEllipsis,
-  Menu,
   X,
 } from "lucide-react";
 
@@ -73,54 +72,52 @@ const Sidebar = () => {
       <div className="md:hidden fixed bottom-3 left-0 w-full z-40 flex justify-center">
         <button
           onClick={() => setOpen(true)}
-          className="w-80 flex items-center justify-center gap-2 py-3 rounded-full
+          className="w-80 flex items-center justify-between px-5 py-3 rounded-full
           bg-black text-white dark:bg-[#111827] shadow-lg"
         >
-          <span className="flex items-center gap-35">
-          All Components
+          <span>All Components</span>
           <ChevronDown size={18} />
-          </span>
         </button>
       </div>
 
+      {/* ================= MOBILE BACKDROP ================= */}
+      <div
+        onClick={() => setOpen(false)}
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity duration-300
+        ${open ? "opacity-100 visible" : "opacity-0 invisible"}`}
+      />
+
       {/* ================= MOBILE DRAWER ================= */}
-      {open && (
-        <>
-          {/* Backdrop */}
-          <div
-            onClick={() => setOpen(false)}
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
-          />
-
-          {/* Drawer */}
-          <div className="fixed bottom-0 left-0 w-full h-[80%] bg-white dark:bg-[#0B0F19]
-            rounded-t-2xl z-50 flex flex-col shadow-2xl">
-
-            {/* ===== Fixed Header + Search ===== */}
-            <div className="p-4 border-b border-gray-200 dark:border-[#1F2937]">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-sm font-semibold uppercase text-gray-500 dark:text-[#9CA3AF]">
-                  Components
-                </h2>
-                <button onClick={() => setOpen(false)}>
-                  <X size={18} />
-                </button>
-              </div>
-
-              <SearchInput search={search} setSearch={setSearch} />
-            </div>
-
-            {/* ===== Scrollable List ===== */}
-            <div className="flex-1 overflow-y-auto p-4 pt-2">
-              <ComponentList
-                filteredComponents={filteredComponents}
-                pathname={pathname}
-                closeDrawer={() => setOpen(false)}
-              />
-            </div>
+      <div
+        className={`fixed bottom-0 left-0 w-full h-[80%]
+        bg-white dark:bg-[#0B0F19]
+        rounded-t-2xl z-50 flex flex-col shadow-2xl
+        transform transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+        ${open ? "translate-y-0" : "translate-y-full"}`}
+      >
+        {/* ===== Fixed Header + Search ===== */}
+        <div className="p-4 border-b border-gray-200 dark:border-[#1F2937]">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-sm font-semibold uppercase text-gray-500 dark:text-[#9CA3AF]">
+              Components
+            </h2>
+            <button onClick={() => setOpen(false)}>
+              <X size={18} />
+            </button>
           </div>
-        </>
-      )}
+
+          <SearchInput search={search} setSearch={setSearch} />
+        </div>
+
+        {/* ===== Scrollable List ===== */}
+        <div className="flex-1 overflow-y-auto p-4 pt-2">
+          <ComponentList
+            filteredComponents={filteredComponents}
+            pathname={pathname}
+            closeDrawer={() => setOpen(false)}
+          />
+        </div>
+      </div>
     </>
   );
 };
