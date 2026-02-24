@@ -3,6 +3,7 @@
 import { BoxAccordion } from "../Accordion/BoxAccordion";
 import Avatar_Ring from "../Avatar/Avatar_Ring";
 import Tab_Breadcrumb from "../Breadcrumb/Tab_Breadcrumb";
+import Pricing_Card from "../Card/Pricing_Card";
 import Loader from "./Loder";
 import Pagination from "./Pagination";
 import InvoiceTable from "./Table";
@@ -294,7 +295,7 @@ const ComponentsShowcase = () => {
           {/* input */}
           <div
             className="
-            col-span-10 row-span-2 rounded-2xl border-2
+            col-span-10 row-span-3 rounded-2xl border-2
             bg-gray-50 border-gray-200 shadow-md
             flex items-center justify-center text-lg font-medium
             hover:scale-105 transition duration-400 active:scale-95
@@ -306,7 +307,16 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            card
+            <Pricing_Card
+              plan="Enterprise"
+              price={180}
+              features={[
+                "AI advisor full time",
+                "Unlimited auto tracking",
+                "1 Day transaction clearing",
+                "Priority customer support",
+              ]}
+            />
           </div>
           {/* button */}
           <div
@@ -376,7 +386,7 @@ const ComponentsShowcase = () => {
           >
             <Pagination />
           </div>
-          {/* Pagination */}
+          {/* Avatar */}
           <div
             className="
             col-span-5 row-span-1 rounded-2xl border-2
@@ -391,9 +401,9 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            avatar
+            <Avatar_Ring src="/myImage.jpeg" borderColor="border-blue-500" />
           </div>
-          {/* Button */}
+          {/* dropdown */}
           <div
             className="
             col-span-5 row-span-1 rounded-2xl border-2
@@ -408,24 +418,7 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-              drop down
-          </div>
-          {/* Breadcrumb */}
-          <div
-            className="
-            col-span-10 row-span-1 rounded-2xl border-2
-            bg-gray-50 border-gray-200 shadow-md
-            flex items-center justify-center
-            hover:scale-105 transition duration-400 active:scale-95
-
-            dark:bg-[#111827]
-            dark:border-[#1F2937]
-            dark:text-[#E5E7EB]
-            dark:hover:border-[#294268]
-            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
-          "
-          >
-            OTP
+            drop down
           </div>
         </div>
       </div>
