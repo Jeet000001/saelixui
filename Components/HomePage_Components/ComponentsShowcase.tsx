@@ -9,7 +9,7 @@ import InvoiceTable from "./Table";
 
 const ComponentsShowcase = () => {
   return (
-    <div className="">
+    <div>
       <div className="relative h-screen w-full p-6 overflow-hidden dark:bg-[#0B0F19]">
         {/* TOP BLUR */}
         <div
@@ -290,7 +290,7 @@ const ComponentsShowcase = () => {
         </div>
 
         {/* mobile */}
-        <div className="relative z-0 grid h-full w-full grid-cols-10 grid-rows-4 gap-4">
+        <div className="relative z-0 grid h-full w-full grid-cols-10 grid-rows-6 gap-4">
           {/* input */}
           <div
             className="
@@ -362,58 +362,7 @@ const ComponentsShowcase = () => {
           {/* Pagination */}
           <div
             className="
-            col-span-4 row-span-1 rounded-2xl border-2
-            bg-gray-50 border-gray-200 shadow-md
-            flex items-center justify-center
-            hover:scale-105 transition duration-400 active:scale-95
-
-            dark:bg-[#111827]
-            dark:border-[#1F2937]
-            dark:text-[#E5E7EB]
-            dark:hover:border-[#294268]
-            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
-          "
-          >
-            Pagination
-          </div>
-          {/* Button */}
-          <div
-            className="
-            col-span-2 row-span-1 rounded-2xl border-2
-            bg-gray-50 border-gray-200 shadow-md
-            flex items-center justify-center
-            hover:scale-105 transition duration-400 active:scale-95
-
-            dark:bg-[#111827]
-            dark:border-[#1F2937]
-            dark:text-[#E5E7EB]
-            dark:hover:border-[#294268]
-            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
-          "
-          >
-              button
-          </div>
-          {/* Breadcrumb */}
-          <div
-            className="
-            col-span-4 row-span-1 rounded-2xl border-2
-            bg-gray-50 border-gray-200 shadow-md
-            flex items-center justify-center
-            hover:scale-105 transition duration-400 active:scale-95
-
-            dark:bg-[#111827]
-            dark:border-[#1F2937]
-            dark:text-[#E5E7EB]
-            dark:hover:border-[#294268]
-            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
-          "
-          >
-            breadcramb
-          </div>
-          {/* Avatar */}
-          <div
-            className="
-            col-span-2 row-span-1 rounded-2xl border-2
+            col-span-5 row-span-1 rounded-2xl border-2
             bg-gray-50 border-gray-200 shadow-md
             flex items-center justify-center
             hover:scale-105 transition duration-400 active:scale-95
@@ -427,10 +376,10 @@ const ComponentsShowcase = () => {
           >
             avatar
           </div>
-          {/* Loder */}
+          {/* Button */}
           <div
             className="
-            col-span-2 row-span-1 rounded-2xl border-2
+            col-span-5 row-span-1 rounded-2xl border-2
             bg-gray-50 border-gray-200 shadow-md
             flex items-center justify-center
             hover:scale-105 transition duration-400 active:scale-95
@@ -442,7 +391,24 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            loder
+              drop down
+          </div>
+          {/* Breadcrumb */}
+          <div
+            className="
+            col-span-10 row-span-1 rounded-2xl border-2
+            bg-gray-50 border-gray-200 shadow-md
+            flex items-center justify-center
+            hover:scale-105 transition duration-400 active:scale-95
+
+            dark:bg-[#111827]
+            dark:border-[#1F2937]
+            dark:text-[#E5E7EB]
+            dark:hover:border-[#294268]
+            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
+          "
+          >
+            OTP
           </div>
         </div>
       </div>
