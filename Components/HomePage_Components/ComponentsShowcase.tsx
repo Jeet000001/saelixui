@@ -308,7 +308,7 @@ const ComponentsShowcase = () => {
           >
             card
           </div>
-          {/* Card */}
+          {/* button */}
           <div
             className="
             col-span-5 row-span-1 rounded-2xl border-2
@@ -323,7 +323,24 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_12px_35px_rgba(0,0,0,0.65)]
           "
           >
-            button
+            <>
+              <button
+                className="px-5 py-2 rounded-md text-white text-shadow-lg
+        bg-linear-to-r from-blue-600 via-blue-400 to-indigo-600 
+      hover:from-blue-500 hover:via-blue-300 hover:to-indigo-500
+        bg-size-[200%_200%] animate-[gradientMove_2s_ease_infinite]
+        transition-transform duration-300 active:scale-95 ${className}"
+              >
+                Button
+              </button>
+              <style>
+                {`@keyframes gradientMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }`}
+              </style>
+            </>
           </div>
           {/* Table */}
           <div
