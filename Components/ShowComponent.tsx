@@ -149,8 +149,8 @@ export default function ShowComponent({
               </div>
 
               {/* Code */}
-              <div className="pb-4 pt-0 ">
-                <pre className="py-4 px-10 text-sm overflow-x-auto no-scrollbar">
+              <div className="p-4 pt-0 ">
+                <pre className="py-4 px-5 md:px-10 text-sm overflow-x-auto no-scrollbar">
                   <SyntaxHighlighter
                     language={activeTab === "ts" ? "tsx" : "jsx"}
                     style={theme === "dark" ? oneDark : oneLight}
