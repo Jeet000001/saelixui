@@ -345,7 +345,7 @@ const ComponentsShowcase = () => {
           {/* Accordion */}
           <div
             className="
-            col-span-3 row-span-2 rounded-2xl border-2
+            col-span-10 row-span-1 rounded-2xl border-2
             bg-gray-50 border-gray-200 shadow-md
             flex items-center justify-center
             hover:scale-105 transition duration-400 active:scale-95
@@ -357,7 +357,7 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            Accordian
+            pagination
           </div>
           {/* Pagination */}
           <div
