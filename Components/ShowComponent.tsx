@@ -31,7 +31,7 @@ export default function ShowComponent({
   const ComponentCode = activeTab === "ts" ? ComponentCodeTS : ComponentCodeJS;
 
   return (
-    <div className="flex justify-center items-start px-10 py-3 ">
+    <div className="flex justify-center items-start px-4 sm:px-6 md:px-10 py-4">
       {/* Card */}
       <div className="w-full max-w-3xl rounded-xl border border-gray-200 bg-white shadow-sm
         dark:bg-[#111827] dark:border-[#1F2937] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
@@ -52,7 +52,7 @@ export default function ShowComponent({
         </div>
 
         {/* Preview */}
-        <div className="flex justify-center items-center py-16 dark:text-[#E5E7EB]">
+        <div className="flex justify-center items-center py-10 sm:py-16 px-4 dark:text-[#E5E7EB]">
           {children}
         </div>
       </div>
