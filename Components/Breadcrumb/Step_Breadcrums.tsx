@@ -15,6 +15,7 @@ const Step_Breadcrumb: React.FC<Props> = ({
   deliveryIcon,
   cartIcon,
   packageIcon,
+  className = "",
 }) => {
   const steps = [
     { id: 1, icon: shopIcon },
@@ -24,7 +25,7 @@ const Step_Breadcrumb: React.FC<Props> = ({
   ];
 
   return (
-    <div>
+    <div className={`w-full flex justify-center px-4 ${className}`}>
       <div className="flex items-center w-full max-w-3xl">
         {steps.map((step, index) => {
           const isActive = currentStep === step.id;
@@ -32,13 +33,17 @@ const Step_Breadcrumb: React.FC<Props> = ({
 
           return (
             <React.Fragment key={step.id}>
-              <div className="flex flex-col items-center">
+              
+              {/* Step Circle */}
+              <div className="flex flex-col items-center flex-shrink-0">
                 <div
                   className={`
-                  w-12 h-12 flex items-center justify-center rounded-full border transition
+                  w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12
+                  flex items-center justify-center
+                  rounded-full border transition-all duration-300
                   ${
                     isActive
-                      ? "bg-black text-white border-black"
+                      ? "bg-black text-white border-black scale-105"
                       : isCompleted
                       ? "bg-gray-800 text-white border-gray-800"
                       : "bg-gray-200 text-gray-500 border-gray-300"
@@ -49,11 +54,13 @@ const Step_Breadcrumb: React.FC<Props> = ({
                 </div>
               </div>
 
+              {/* Connector Line */}
               {index !== steps.length - 1 && (
                 <div
-                  className={`w-20 h-0.5 mx-2 ${
-                    currentStep > step.id ? "bg-black" : "bg-gray-300"
-                  }`}
+                  className={`
+                  flex-1 h-0.5 mx-2 sm:mx-3 md:mx-4 transition-all duration-300
+                  ${currentStep > step.id ? "bg-black" : "bg-gray-300"}
+                `}
                 />
               )}
             </React.Fragment>
