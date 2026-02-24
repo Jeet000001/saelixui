@@ -342,7 +342,7 @@ const ComponentsShowcase = () => {
               </style>
             </>
           </div>
-          {/* Table */}
+          {/* Loder */}
           <div
             className="
             col-span-5 row-span-1 rounded-2xl border-2
@@ -357,7 +357,7 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            loder
+            <Loader />
           </div>
           {/* Accordion */}
           <div
