@@ -9,7 +9,7 @@ import InvoiceTable from "./Table";
 
 const ComponentsShowcase = () => {
   return (
-    <div className="hidden md:block">
+    <div className="">
       <div className="relative h-screen w-full p-6 overflow-hidden dark:bg-[#0B0F19]">
         {/* TOP BLUR */}
         <div
@@ -36,7 +36,7 @@ const ComponentsShowcase = () => {
         />
 
         {/* BENTO GRID */}
-        <div className="relative z-0 grid h-full w-full grid-cols-10 grid-rows-4 gap-4">
+        <div className="hidden md:grid relative z-0  h-full w-full grid-cols-10 grid-rows-4 gap-4">
           {/* input */}
           <div
             className="
@@ -286,6 +286,163 @@ const ComponentsShowcase = () => {
           "
           >
             <Loader />
+          </div>
+        </div>
+
+        {/* mobile */}
+        <div className="relative z-0 grid h-full w-full grid-cols-10 grid-rows-4 gap-4">
+          {/* input */}
+          <div
+            className="
+            col-span-10 row-span-2 rounded-2xl border-2
+            bg-gray-50 border-gray-200 shadow-md
+            flex items-center justify-center text-lg font-medium
+            hover:scale-105 transition duration-400 active:scale-95
+
+            dark:bg-[#111827]
+            dark:border-[#1F2937]
+            dark:text-[#E5E7EB]
+            dark:hover:border-[#294268]
+            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
+          "
+          >
+            card
+          </div>
+          {/* Card */}
+          <div
+            className="
+            col-span-5 row-span-1 rounded-2xl border-2
+            bg-gray-50 border-gray-200 shadow-md
+            flex items-center justify-center text-2xl font-semibold
+            hover:scale-105 transition duration-400 active:scale-95
+
+            dark:bg-[#111827]
+            dark:border-[#1F2937]
+            dark:text-[#E5E7EB]
+            dark:hover:border-[#294268]
+            dark:shadow-[0_12px_35px_rgba(0,0,0,0.65)]
+          "
+          >
+            button
+          </div>
+          {/* Table */}
+          <div
+            className="
+            col-span-5 row-span-1 rounded-2xl border-2
+            bg-gray-50 border-gray-200 shadow-md
+            flex items-center justify-center
+            hover:scale-105 transition duration-400 active:scale-95
+
+            dark:bg-[#111827]
+            dark:border-[#1F2937]
+            dark:text-[#E5E7EB]
+            dark:hover:border-[#294268]
+            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
+          "
+          >
+            loder
+          </div>
+          {/* Accordion */}
+          <div
+            className="
+            col-span-3 row-span-2 rounded-2xl border-2
+            bg-gray-50 border-gray-200 shadow-md
+            flex items-center justify-center
+            hover:scale-105 transition duration-400 active:scale-95
+
+            dark:bg-[#111827]
+            dark:border-[#1F2937]
+            dark:text-[#E5E7EB]
+            dark:hover:border-[#294268]
+            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
+          "
+          >
+            Accordian
+          </div>
+          {/* Pagination */}
+          <div
+            className="
+            col-span-4 row-span-1 rounded-2xl border-2
+            bg-gray-50 border-gray-200 shadow-md
+            flex items-center justify-center
+            hover:scale-105 transition duration-400 active:scale-95
+
+            dark:bg-[#111827]
+            dark:border-[#1F2937]
+            dark:text-[#E5E7EB]
+            dark:hover:border-[#294268]
+            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
+          "
+          >
+            Pagination
+          </div>
+          {/* Button */}
+          <div
+            className="
+            col-span-2 row-span-1 rounded-2xl border-2
+            bg-gray-50 border-gray-200 shadow-md
+            flex items-center justify-center
+            hover:scale-105 transition duration-400 active:scale-95
+
+            dark:bg-[#111827]
+            dark:border-[#1F2937]
+            dark:text-[#E5E7EB]
+            dark:hover:border-[#294268]
+            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
+          "
+          >
+              button
+          </div>
+          {/* Breadcrumb */}
+          <div
+            className="
+            col-span-4 row-span-1 rounded-2xl border-2
+            bg-gray-50 border-gray-200 shadow-md
+            flex items-center justify-center
+            hover:scale-105 transition duration-400 active:scale-95
+
+            dark:bg-[#111827]
+            dark:border-[#1F2937]
+            dark:text-[#E5E7EB]
+            dark:hover:border-[#294268]
+            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
+          "
+          >
+            breadcramb
+          </div>
+          {/* Avatar */}
+          <div
+            className="
+            col-span-2 row-span-1 rounded-2xl border-2
+            bg-gray-50 border-gray-200 shadow-md
+            flex items-center justify-center
+            hover:scale-105 transition duration-400 active:scale-95
+
+            dark:bg-[#111827]
+            dark:border-[#1F2937]
+            dark:text-[#E5E7EB]
+            dark:hover:border-[#294268]
+            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
+          "
+          >
+            avatar
+          </div>
+          {/* Loder */}
+          <div
+            className="
+            col-span-2 row-span-1 rounded-2xl border-2
+            bg-gray-50 border-gray-200 shadow-md
+            flex items-center justify-center
+            hover:scale-105 transition duration-400 active:scale-95
+
+            dark:bg-[#111827]
+            dark:border-[#1F2937]
+            dark:text-[#E5E7EB]
+            dark:hover:border-[#294268]
+            dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
+          "
+          >
+            loder
           </div>
         </div>
       </div>
