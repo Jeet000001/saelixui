@@ -291,7 +291,7 @@ const ComponentsShowcase = () => {
         </div>
 
         {/* mobile */}
-        <div className="relative z-0 grid h-full w-full grid-cols-10 grid-rows-6 gap-4">
+        <div className="md:hidden relative z-0 grid h-full w-full grid-cols-10 grid-rows-6 gap-4">
           {/* input */}
           <div
             className="
