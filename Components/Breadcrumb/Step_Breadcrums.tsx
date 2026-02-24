@@ -33,9 +33,8 @@ const Step_Breadcrumb: React.FC<Props> = ({
 
           return (
             <React.Fragment key={step.id}>
-              
-              {/* Step Circle */}
-              <div className="flex flex-col items-center flex-shrink-0">
+
+              <div className="flex flex-col items-center shrink-0">
                 <div
                   className={`
                   w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12
@@ -54,7 +53,6 @@ const Step_Breadcrumb: React.FC<Props> = ({
                 </div>
               </div>
 
-              {/* Connector Line */}
               {index !== steps.length - 1 && (
                 <div
                   className={`

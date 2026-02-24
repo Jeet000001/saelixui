@@ -12,14 +12,12 @@ const Footer = () => {
       "
     >
       <div className="max-w-7xl mx-auto px-4 py-6 md:px-10 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        
-        {/* Left text */}
+
         <p className="text-sm text-gray-500 text-center sm:text-left
           dark:text-[#9CA3AF]">
           © 2026 Saelix UI. Crafted with care for modern web experiences.
         </p>
 
-        {/* Social icons */}
         <div className="flex items-center gap-4">
           
           <a
