@@ -359,7 +359,7 @@ const ComponentsShowcase = () => {
           >
             <Loader />
           </div>
-          {/* Accordion */}
+          {/* pagination */}
           <div
             className="
             col-span-10 row-span-1 rounded-2xl border-2
@@ -374,7 +374,7 @@ const ComponentsShowcase = () => {
             dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
           "
           >
-            pagination
+            <Pagination />
           </div>
           {/* Pagination */}
           <div
