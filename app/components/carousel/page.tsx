@@ -149,7 +149,7 @@ const PaginationCarouselDemo = () => {
 
 export default PaginationCarouselDemo;
 `}
-          ComponentCodeJS={`import Pagination_Carousel from "@/components/ui/Pagination-carousel";
+          ComponentCodeJS={`import Pagination_Carousel from "./components/ui/Pagination-carousel";
 
 const PaginationCarouselDemo = () => {
   return (
