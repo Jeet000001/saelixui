@@ -11,7 +11,14 @@ import InvoiceTable from "./Table";
 const ComponentsShowcase = () => {
   return (
     <div>
-      <div className="relative h-screen w-full p-6 overflow-hidden dark:bg-[#0B0F19]">
+      <div
+        className="relative overflow-hidden
+        rounded-2xl 
+        flex items-center justify-center p-4
+        transition-all duration-300 hover:shadow-xl
+        dark:border-[#1F2937]
+        dark:text-[#E5E7EB] dark:bg-[#0B0F19]"
+      >
         {/* TOP BLUR */}
         <div
           className="
@@ -37,7 +44,7 @@ const ComponentsShowcase = () => {
         />
 
         {/* BENTO GRID */}
-        <div className="hidden md:grid relative z-0  h-full w-full grid-cols-10 grid-rows-4 gap-4">
+        <div className="hidden sm:hidden md:hidden lg:grid relative z-0  h-full w-full grid-cols-10 grid-rows-4 gap-4">
           {/* input */}
           <div
             className="
@@ -197,7 +204,6 @@ const ComponentsShowcase = () => {
           >
             <Pagination />
           </div>
-          {/* Button */}
           <div
             className="
             col-span-2 row-span-1 rounded-2xl border-2
@@ -290,9 +296,9 @@ const ComponentsShowcase = () => {
           </div>
         </div>
 
-        {/* mobile */}
-        <div className="md:hidden relative z-0 grid h-full w-full grid-cols-10 grid-rows-6 gap-4">
-          {/* input */}
+        {/* ----- mobile view ----- */}
+        <div className=" relative z-0 grid h-full w-full grid-cols-10 grid-rows-6 gap-4">
+          {/* card */}
           <div
             className="
             col-span-10 row-span-3 rounded-2xl border-2
@@ -308,13 +314,13 @@ const ComponentsShowcase = () => {
           "
           >
             <Pricing_Card
+              className="my-3"
               plan="Enterprise"
               price={180}
               features={[
                 "AI advisor full time",
                 "Unlimited auto tracking",
                 "1 Day transaction clearing",
-                "Priority customer support",
               ]}
             />
           </div>
