@@ -1,4 +1,5 @@
 import Default_Carousel from "@/Components/Carousel/Default_Carousel";
+import MultiCard_Carousel from "@/Components/Carousel/Multiple_Carousel";
 import Vertical_Carousel from "@/Components/Carousel/Vertical_Carousel";
 import ShowComponent from "@/Components/ShowComponent";
 
@@ -10,8 +11,7 @@ const page = () => {
           Carousel
         </h1>
         <p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
-          Responsive carousel with smooth animations and swipe
-          functionality.
+          Responsive carousel with smooth animations and swipe functionality.
         </p>
       </div>
       <div>
@@ -72,6 +72,35 @@ const verticalCarouselDemo = () => {
 export default verticalCarouselDemo`}
         >
           <Vertical_Carousel />
+        </ShowComponent>
+        {/* Multi Card */}
+        <ShowComponent
+          ComponentName="03. Multiple slides"
+          installation="npx saelix-ui add multiple-slides-carousel"
+          ComponentCodeTS={`import Multiple_Sliders_Carousel from "@/components/Carousel"
+
+const MultipleSliders_CarouselDemo = () => {
+  return (
+    <div>
+      <Multiple_Sliders_Carousel />
+    </div>
+  )
+}
+
+export default MultipleSliders_CarouselDemo`}
+          ComponentCodeJS={`import Multiple_Sliders_Carousel from "./components/Carousel"
+
+const MultipleSliders_CarouselDemo = () => {
+  return (
+    <div>
+      <Multiple_Sliders_Carousel />
+    </div>
+  )
+}
+
+export default MultipleSliders_CarouselDemo`}
+        >
+          <MultiCard_Carousel />
         </ShowComponent>
       </div>
     </div>
