@@ -1,5 +1,6 @@
 import Default_Carousel from "@/Components/Carousel/Default_Carousel";
 import MultiCard_Carousel from "@/Components/Carousel/Multiple_Carousel";
+import Pagination_Carousel from "@/Components/Carousel/Pagination_Carousel";
 import Status_Carousel from "@/Components/Carousel/Slides_Status_Carousel";
 import Vertical_Carousel from "@/Components/Carousel/Vertical_Carousel";
 import ShowComponent from "@/Components/ShowComponent";
@@ -131,6 +132,37 @@ const SlideStatusCarouselDemo = () => {
 export default SlideStatusCarouselDemo`}
         >
           <Status_Carousel />
+        </ShowComponent>
+        {/* Pagination */}
+        <ShowComponent
+          ComponentName="05. Pagination"
+          installation="npx saelix-ui add pagination-carousel"
+          ComponentCodeTS={`import Pagination_Carousel from "@/components/ui/Pagination-carousel";
+
+const PaginationCarouselDemo = () => {
+  return (
+    <div>
+      <Pagination_Carousel />
+    </div>
+  );
+};
+
+export default PaginationCarouselDemo;
+`}
+          ComponentCodeJS={`import Pagination_Carousel from "@/components/ui/Pagination-carousel";
+
+const PaginationCarouselDemo = () => {
+  return (
+    <div>
+      <Pagination_Carousel />
+    </div>
+  );
+};
+
+export default PaginationCarouselDemo;
+`}
+        >
+          <Pagination_Carousel />
         </ShowComponent>
       </div>
     </div>
