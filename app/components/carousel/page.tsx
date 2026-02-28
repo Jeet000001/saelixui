@@ -105,7 +105,7 @@ export default MultipleSliders_CarouselDemo`}
         </ShowComponent>
         {/* Slide Status */}
         <ShowComponent
-          ComponentName="03. Slides Status"
+          ComponentName="04. Slides Status"
           installation="npx saelix-ui add slides-status-carousel"
           ComponentCodeTS={`import Slide_Status_Carousel from "@/components/ui/Slides-status-carousel"
 
