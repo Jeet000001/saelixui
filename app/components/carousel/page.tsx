@@ -1,5 +1,6 @@
 import Default_Carousel from "@/Components/Carousel/Default_Carousel";
 import MultiCard_Carousel from "@/Components/Carousel/Multiple_Carousel";
+import Status_Carousel from "@/Components/Carousel/Slides_Status_Carousel";
 import Vertical_Carousel from "@/Components/Carousel/Vertical_Carousel";
 import ShowComponent from "@/Components/ShowComponent";
 
@@ -75,11 +76,11 @@ export default verticalCarouselDemo`}
         </ShowComponent>
         {/* Multi Card */}
         <ShowComponent
-          ComponentName="03. Multiple slides"
+          ComponentName="03. Multiple Slides"
           installation="npx saelix-ui add multiple-slides-carousel"
           ComponentCodeTS={`import Multiple_Sliders_Carousel from "@/components/Carousel"
 
-const MultipleSliders_CarouselDemo = () => {
+const MultipleSlidersCarouselDemo = () => {
   return (
     <div>
       <Multiple_Sliders_Carousel />
@@ -87,7 +88,7 @@ const MultipleSliders_CarouselDemo = () => {
   )
 }
 
-export default MultipleSliders_CarouselDemo`}
+export default MultipleSlidersCarouselDemo`}
           ComponentCodeJS={`import Multiple_Sliders_Carousel from "./components/Carousel"
 
 const MultipleSliders_CarouselDemo = () => {
@@ -101,6 +102,35 @@ const MultipleSliders_CarouselDemo = () => {
 export default MultipleSliders_CarouselDemo`}
         >
           <MultiCard_Carousel />
+        </ShowComponent>
+        {/* Slide Status */}
+        <ShowComponent
+          ComponentName="03. Slides Status"
+          installation="npx saelix-ui add slides-status-carousel"
+          ComponentCodeTS={`import Slide_Status_Carousel from "@/components/ui/Slides-status-carousel"
+
+const SlideStatusCarouselDemo = () => {
+  return (
+    <div>
+      <Slide_Status_Carousel />
+    </div>
+  )
+}
+
+export default SlideStatusCarouselDemo`}
+          ComponentCodeJS={`import Slide_Status_Carousel from "./components/ui/Slides-status-carousel"
+
+const SlideStatusCarouselDemo = () => {
+  return (
+    <div>
+      <Slide_Status_Carousel />
+    </div>
+  )
+}
+
+export default SlideStatusCarouselDemo`}
+        >
+          <Status_Carousel />
         </ShowComponent>
       </div>
     </div>
