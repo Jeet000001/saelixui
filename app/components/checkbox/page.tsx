@@ -1,11 +1,11 @@
-import Default_Checkbox from '@/Components/CheckBox/Default_Checkbox'
-import ShowComponent from '@/Components/ShowComponent'
-import React from 'react'
+import Default_Checkbox from "@/Components/CheckBox/Default_Checkbox";
+import ShowComponent from "@/Components/ShowComponent";
+import React from "react";
 
 const page = () => {
   return (
     <div>
-        <div className="ml-26 mb-5">
+      <div className="ml-26 mb-5">
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
           Checkbox
         </h1>
@@ -70,11 +70,14 @@ const DefaultCheckboxDemo = () => {
 
 export default DefaultCheckboxDemo`}
         >
-          <Default_Checkbox label="Accept terms and conditions" disabled={true} />
+          <Default_Checkbox
+            label="Accept terms and conditions"
+            disabled={true}
+          />
         </ShowComponent>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
