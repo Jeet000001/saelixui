@@ -1,3 +1,5 @@
+import Default_Checkbox from '@/Components/CheckBox/Default_Checkbox'
+import ShowComponent from '@/Components/ShowComponent'
 import React from 'react'
 
 const page = () => {
@@ -12,7 +14,64 @@ const page = () => {
         </p>
       </div>
       <div>
+        {/* default */}
+        <ShowComponent
+          ComponentName="01. Default"
+          installation="npx saelix-ui add default-checkbox"
+          ComponentCodeTS={`import Default_Checkbox from "@/components/ui/Default-checkbox";
 
+const DefaultCheckboxDemo = () => {
+  return (
+    <div>
+      <Default_Checkbox label="Accept terms and conditions" />
+    </div>
+  );
+};
+
+export default DefaultCheckboxDemo`}
+          ComponentCodeJS={`import Default_Checkbox from "./components/ui/Default-checkbox";
+
+const DefaultCheckboxDemo = () => {
+  return (
+    <div>
+      <Default_Checkbox label="Accept terms and conditions" />
+    </div>
+  );
+};
+
+export default DefaultCheckboxDemo`}
+        >
+          <Default_Checkbox label="Accept terms and conditions" />
+        </ShowComponent>
+        {/* disabled */}
+        <ShowComponent
+          ComponentName="02. Disabled"
+          installation="npx saelix-ui add default-checkbox"
+          ComponentCodeTS={`import Default_Checkbox from "@/components/ui/Default-checkbox";
+
+const DefaultCheckboxDemo = () => {
+  return (
+    <div>
+      <Default_Checkbox label="Accept terms and conditions" disabled={true} />
+    </div>
+  );
+};
+
+export default DefaultCheckboxDemo`}
+          ComponentCodeJS={`import Default_Checkbox from "./components/ui/Default-checkbox";
+
+const DefaultCheckboxDemo = () => {
+  return (
+    <div>
+      <Default_Checkbox label="Accept terms and conditions" disabled={true} />
+    </div>
+  );
+};
+
+export default DefaultCheckboxDemo`}
+        >
+          <Default_Checkbox label="Accept terms and conditions" disabled={true} />
+        </ShowComponent>
       </div>
     </div>
   )
