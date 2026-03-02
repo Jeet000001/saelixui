@@ -1,6 +1,5 @@
 import Default_Checkbox from "@/Components/CheckBox/Default_Checkbox";
 import ShowComponent from "@/Components/ShowComponent";
-import React from "react";
 
 const page = () => {
   return (
