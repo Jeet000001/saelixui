@@ -1,4 +1,5 @@
 import Default_Checkbox from "@/Components/CheckBox/Default_Checkbox";
+import Horizontal_Group from "@/Components/CheckBox/Horizontal_Group_Checkbox";
 import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
@@ -73,6 +74,65 @@ export default DefaultCheckboxDemo`}
             label="Accept terms and conditions"
             disabled={true}
           />
+        </ShowComponent>
+        {/* Horizontal */}
+        <ShowComponent
+          ComponentName="02. Horizontal Group"
+          installation="npx saelix-ui add horizontal-group-checkbox"
+          ComponentCodeTS={`import Horizontal_Group, { CheckboxOption } from "@/components/ui/Horizontal-group-checkbox";
+import { useState } from "react";
+
+const options: CheckboxOption[] = [
+  { id: "frontend", label: "Frontend" },
+  { id: "backend", label: "Backend" },
+  { id: "database", label: "Database" },
+  { id: "devops", label: "DevOps" },
+];
+
+const HorizontalGroupDemo = () => {
+  const [selectedTech, setSelectedTech] = useState<string[]>([""]);
+  return (
+    <div>
+      <Horizontal_Group
+        title="Skills"
+        options={options}
+        selected={selectedTech}
+        onChange={setSelectedTech}
+      />
+    </div>
+  );
+};
+
+export default HorizontalGroupDemo
+`}
+          ComponentCodeJS={`import Horizontal_Group, { CheckboxOption } from "./components/ui/Horizontal-group-checkbox";
+import { useState } from "react";
+
+const options: CheckboxOption[] = [
+  { id: "frontend", label: "Frontend" },
+  { id: "backend", label: "Backend" },
+  { id: "database", label: "Database" },
+  { id: "devops", label: "DevOps" },
+];
+
+const HorizontalGroupDemo = () => {
+  const [selectedTech, setSelectedTech] = useState<string[]>([""]);
+  return (
+    <div>
+      <Horizontal_Group
+        title="Skills"
+        options={options}
+        selected={selectedTech}
+        onChange={setSelectedTech}
+      />
+    </div>
+  );
+};
+
+export default HorizontalGroupDemo
+`}
+        >
+          <Horizontal_Group />
         </ShowComponent>
       </div>
     </div>
