@@ -29,7 +29,6 @@ const components = [
   { name: "Button", Icon: <MousePointerClick size={16} />, href: "/components/button" },
   { name: "Card", Icon: <SquareChartGantt size={16} />, href: "/components/card" },
   { name: "Carousel", Icon: <GalleryThumbnails size={16} />, href: "/components/carousel" },
-  { name: "Collapsible", Icon: <ChevronsDown size={16} />, href: "/components/collapsible" },
   { name: "Checkbox", Icon: <CircleCheck size={16} />, href: "/components/checkbox" },
   { name: "Dropdown Menu", Icon: <ChevronDown size={16} />, href: "/components/dropdown_menu" },
   { name: "Input", Icon: <TextCursorInput size={16} />, href: "/components/input" },
