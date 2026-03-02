@@ -1,5 +1,6 @@
 import Default_Checkbox from "@/Components/CheckBox/Default_Checkbox";
 import Horizontal_Group from "@/Components/CheckBox/Horizontal_Group_Checkbox";
+import Vertical_Group from "@/Components/CheckBox/Vertical_Group_Checkbox";
 import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
@@ -133,6 +134,65 @@ export default HorizontalGroupDemo
 `}
         >
           <Horizontal_Group />
+        </ShowComponent>
+        {/* Vertical */}
+        <ShowComponent
+          ComponentName="04. Vertical Group"
+          installation="npx saelix-ui add vertical-group-checkbox"
+          ComponentCodeTS={`import React, { useState } from "react";
+import { Laptop, Smartphone, Headphones, Watch } from "lucide-react";
+import Vertical_Group, { IconCheckboxOption } from "@/components/ui/Vertical-group-checkbox";
+
+const options: IconCheckboxOption[] = [
+  { id: "laptop", label: "Laptop", icon: <Laptop size={20} /> },
+  { id: "phone", label: "Smartphone", icon: <Smartphone size={20} /> },
+  { id: "headphones", label: "Headphones", icon: <Headphones size={20} /> },
+  { id: "watch", label: "Smartwatch", icon: <Watch size={20} /> },
+];
+
+const VerticalGroupDemo = () => {
+  const [selected, setSelected] = useState<string[]>([]);
+
+  return (
+    <Vertical_Group
+      options={options}
+      selected={selected}
+      onChange={setSelected}
+    />
+  );
+};
+
+export default VerticalGroupDemo;
+
+`}
+          ComponentCodeJS={`import React, { useState } from "react";
+import { Laptop, Smartphone, Headphones, Watch } from "lucide-react";
+import Vertical_Group, { IconCheckboxOption } from "./components/ui/Vertical-group-checkbox";
+
+const options: IconCheckboxOption[] = [
+  { id: "laptop", label: "Laptop", icon: <Laptop size={20} /> },
+  { id: "phone", label: "Smartphone", icon: <Smartphone size={20} /> },
+  { id: "headphones", label: "Headphones", icon: <Headphones size={20} /> },
+  { id: "watch", label: "Smartwatch", icon: <Watch size={20} /> },
+];
+
+const VerticalGroupDemo = () => {
+  const [selected, setSelected] = useState<string[]>([]);
+
+  return (
+    <Vertical_Group
+      options={options}
+      selected={selected}
+      onChange={setSelected}
+    />
+  );
+};
+
+export default VerticalGroupDemo;
+
+`}
+        >
+          <Vertical_Group />
         </ShowComponent>
       </div>
     </div>
