@@ -77,7 +77,7 @@ export default DefaultCheckboxDemo`}
         </ShowComponent>
         {/* Horizontal */}
         <ShowComponent
-          ComponentName="02. Horizontal Group"
+          ComponentName="03. Horizontal Group"
           installation="npx saelix-ui add horizontal-group-checkbox"
           ComponentCodeTS={`import Horizontal_Group, { CheckboxOption } from "@/components/ui/Horizontal-group-checkbox";
 import { useState } from "react";
