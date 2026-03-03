@@ -54,7 +54,6 @@ const Login_Card: React.FC = () => {
           </span>
         </p>
 
-        {/* Email */}
         <div className="relative mb-4">
           <Mail
             className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-[#9CA3AF]"
@@ -82,7 +81,6 @@ const Login_Card: React.FC = () => {
           />
         </div>
 
-        {/* Password */}
         <div className="relative mb-6">
           <Lock
             className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-[#9CA3AF]"
@@ -123,7 +121,6 @@ const Login_Card: React.FC = () => {
           </button>
         </div>
 
-        {/* Login Button */}
         <button
           type="submit"
           className="w-full 
@@ -141,7 +138,6 @@ const Login_Card: React.FC = () => {
           Login
         </button>
 
-        {/* Divider */}
         <div className="flex items-center gap-3 mb-6">
           <div className="flex-1 h-[1px] bg-gray-200 dark:bg-[#1F2937]" />
           <span className="text-gray-500 dark:text-[#9CA3AF] text-sm">
@@ -150,7 +146,6 @@ const Login_Card: React.FC = () => {
           <div className="flex-1 h-[1px] bg-gray-200 dark:bg-[#1F2937]" />
         </div>
 
-        {/* Social Buttons */}
         <div className="flex gap-3">
           {["85906", "17935", "62856"].map((id) => (
             <button

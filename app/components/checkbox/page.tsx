@@ -1,5 +1,6 @@
 import Default_Checkbox from "@/Components/CheckBox/Default_Checkbox";
 import Horizontal_Group from "@/Components/CheckBox/Horizontal_Group_Checkbox";
+import Icon_Checkbox from "@/Components/CheckBox/Icon_Checkbox";
 import Vertical_Group from "@/Components/CheckBox/Vertical_Group_Checkbox";
 import ShowComponent from "@/Components/ShowComponent";
 
@@ -163,7 +164,6 @@ const VerticalGroupDemo = () => {
 };
 
 export default VerticalGroupDemo;
-
 `}
           ComponentCodeJS={`import React, { useState } from "react";
 import { Laptop, Smartphone, Headphones, Watch } from "lucide-react";
@@ -189,10 +189,102 @@ const VerticalGroupDemo = () => {
 };
 
 export default VerticalGroupDemo;
-
 `}
         >
           <Vertical_Group />
+        </ShowComponent>
+        {/* Icon */}
+        <ShowComponent
+          ComponentName="05. Icon"
+          installation="npx saelix-ui add icon-checkbox"
+          ComponentCodeTS={`import React, { useState } from "react";
+import { Heart, Bookmark, Star, ThumbsUp, Bell } from "lucide-react";
+import Icon_Checkbox, { ToggleIconItem } from "@/components/ui/Icon-checkbox";
+
+const items: ToggleIconItem[] = [
+  {
+    id: "heart",
+    outline: <Heart size={28} strokeWidth={2} />,
+    filled: <Heart size={28} fill="red" stroke="red" />,
+  },
+  {
+    id: "bookmark",
+    outline: <Bookmark size={28} strokeWidth={2} />,
+    filled: <Bookmark size={28} fill="black" stroke="black" />,
+  },
+  {
+    id: "star",
+    outline: <Star size={28} strokeWidth={2} />,
+    filled: <Star size={28} fill="#FACC15" stroke="#FACC15" />,
+  },
+  {
+    id: "like",
+    outline: <ThumbsUp size={28} strokeWidth={2} />,
+    filled: <ThumbsUp size={28} fill="blue" stroke="black" />,
+  },
+  {
+    id: "bell",
+    outline: <Bell size={28} strokeWidth={2} />,
+    filled: <Bell size={28} fill="#FACC15" stroke="#FACC15" />,
+  },
+];
+
+const IconCheckboxDemo = () => {
+  const [selected, setSelected] = useState<string[]>(["heart", "bell"]);
+  return (
+    <div>
+      <Icon_Checkbox items={items} selected={selected} onChange={setSelected} />
+    </div>
+  );
+};
+
+export default IconCheckboxDemo;
+`}
+          ComponentCodeJS={`import React, { useState } from "react";
+import { Heart, Bookmark, Star, ThumbsUp, Bell } from "lucide-react";
+import Icon_Checkbox, { ToggleIconItem } from "./components/ui/Icon-checkbox";
+
+const items: ToggleIconItem[] = [
+  {
+    id: "heart",
+    outline: <Heart size={28} strokeWidth={2} />,
+    filled: <Heart size={28} fill="red" stroke="red" />,
+  },
+  {
+    id: "bookmark",
+    outline: <Bookmark size={28} strokeWidth={2} />,
+    filled: <Bookmark size={28} fill="black" stroke="black" />,
+  },
+  {
+    id: "star",
+    outline: <Star size={28} strokeWidth={2} />,
+    filled: <Star size={28} fill="#FACC15" stroke="#FACC15" />,
+  },
+  {
+    id: "like",
+    outline: <ThumbsUp size={28} strokeWidth={2} />,
+    filled: <ThumbsUp size={28} fill="blue" stroke="black" />,
+  },
+  {
+    id: "bell",
+    outline: <Bell size={28} strokeWidth={2} />,
+    filled: <Bell size={28} fill="#FACC15" stroke="#FACC15" />,
+  },
+];
+
+const IconCheckboxDemo = () => {
+  const [selected, setSelected] = useState<string[]>(["heart", "bell"]);
+  return (
+    <div>
+      <Icon_Checkbox items={items} selected={selected} onChange={setSelected} />
+    </div>
+  );
+};
+
+export default IconCheckboxDemo;
+`}
+        >
+          <Icon_Checkbox />
         </ShowComponent>
       </div>
     </div>
