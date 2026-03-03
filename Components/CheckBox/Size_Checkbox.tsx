@@ -1,10 +1,13 @@
 "use client";
+
 import React, { useState } from "react";
 
-const Size_Checkbox = () => {
-  const sizes = ["XS", "M", "L", "XL", "XXL"];
+const sizes = ["XS", "M", "L", "XL", "XXL"] as const;
 
-  const [selected, setSelected] = useState<string>("M");
+type Size = (typeof sizes)[number];
+
+const Size_Checkbox: React.FC = () => {
+  const [selected, setSelected] = useState<Size>("M");
 
   return (
     <div className="space-y-4 p-6">
