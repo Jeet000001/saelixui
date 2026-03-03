@@ -1,6 +1,7 @@
 import Default_Checkbox from "@/Components/CheckBox/Default_Checkbox";
 import Horizontal_Group from "@/Components/CheckBox/Horizontal_Group_Checkbox";
 import Icon_Checkbox from "@/Components/CheckBox/Icon_Checkbox";
+import Size_Checkbox from "@/Components/CheckBox/Size_Checkbox";
 import Vertical_Group from "@/Components/CheckBox/Vertical_Group_Checkbox";
 import ShowComponent from "@/Components/ShowComponent";
 
@@ -285,6 +286,65 @@ export default IconCheckboxDemo;
 `}
         >
           <Icon_Checkbox />
+        </ShowComponent>
+        {/* size */}
+        <ShowComponent
+          ComponentName="05. Size"
+          installation="npx saelix-ui add size-checkbox"
+          ComponentCodeTS={`import React, { useState } from "react";
+import Size_Selector, { SizeOption } from "@/components/ui/Size-checkbox";
+
+const sizes: SizeOption[] = [
+  { id: "xs", label: "XS" },
+  { id: "m", label: "M" },
+  { id: "l", label: "L" },
+  { id: "xl", label: "XL" },
+  { id: "xxl", label: "XXL" },
+];
+
+const SizeCheckboxDemo = () => {
+  const [selectedSizes, setSelectedSizes] = useState<string[]>(["m", "l"]);
+
+  return (
+    <Size_Selector
+      title="Select Size"
+      options={sizes}
+      selected={selectedSizes}
+      onChange={setSelectedSizes}
+    />
+  );
+};
+
+export default SizeCheckboxDemo;
+`}
+          ComponentCodeJS={`import React, { useState } from "react";
+import Size_Selector, { SizeOption } from "./components/ui/Size-checkbox";
+
+const sizes: SizeOption[] = [
+  { id: "xs", label: "XS" },
+  { id: "m", label: "M" },
+  { id: "l", label: "L" },
+  { id: "xl", label: "XL" },
+  { id: "xxl", label: "XXL" },
+];
+
+const SizeCheckboxDemo = () => {
+  const [selectedSizes, setSelectedSizes] = useState<string[]>(["m", "l"]);
+
+  return (
+    <Size_Selector
+      title="Select Size"
+      options={sizes}
+      selected={selectedSizes}
+      onChange={setSelectedSizes}
+    />
+  );
+};
+
+export default SizeCheckboxDemo;
+`}
+        >
+          <Size_Checkbox />
         </ShowComponent>
       </div>
     </div>
