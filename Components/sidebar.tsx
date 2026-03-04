@@ -30,7 +30,7 @@ const components = [
   { name: "Card", Icon: <SquareChartGantt size={16} />, href: "/components/card" },
   { name: "Carousel", Icon: <GalleryThumbnails size={16} />, href: "/components/carousel" },
   { name: "Checkbox", Icon: <CircleCheck size={16} />, href: "/components/checkbox" },
-  { name: "Dropdown Menu", Icon: <ChevronDown size={16} />, href: "/components/dropdown_menu" },
+  { name: "Dropdown", Icon: <ChevronDown size={16} />, href: "/components/dropdown" },
   { name: "Input", Icon: <TextCursorInput size={16} />, href: "/components/input" },
   { name: "Input OTP", Icon: <RectangleEllipsis size={16} />, href: "/components/input_OTP" },
 ];

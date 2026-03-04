@@ -289,7 +289,7 @@ export default IconCheckboxDemo;
         </ShowComponent>
         {/* size */}
         <ShowComponent
-          ComponentName="05. Size"
+          ComponentName="06. Size"
           installation="npx saelix-ui add size-checkbox"
           ComponentCodeTS={`import React, { useState } from "react";
 import Size_Selector, { SizeOption } from "@/components/ui/Size-checkbox";
