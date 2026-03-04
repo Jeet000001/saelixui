@@ -1,4 +1,5 @@
-import React from "react";
+import Default_Dropdown from "@/Components/Dropdown/Default_Dropdown";
+import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
   return (
@@ -13,7 +14,57 @@ const page = () => {
         </p>
       </div>
       <div>
-        
+        {/* default */}
+        <ShowComponent
+          ComponentName="01. Default"
+          installation="npx saelix-ui add default-dropdown"
+          ComponentCodeTS={`import Default_Dropdown from "@/components/ui/Default-dropdown";
+
+const DefaultDropdownDemo = () => {
+  const menuItems = [
+    { label: "Profile" },
+    { label: "Settings" },
+    { label: "Logout" },
+  ];
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen transition-colors duration-300">
+      <Default_Dropdown
+        buttonLabel="Open Menu"
+        headerTitle="My Account"
+        menuItems={menuItems}
+      />
+    </div>
+  );
+};
+
+export default DefaultDropdownDemo;
+`}
+          ComponentCodeJS={`import Default_Dropdown from "./components/ui/Default-dropdown";
+
+const DefaultDropdownDemo = () => {
+  const menuItems = [
+    { label: "Profile" },
+    { label: "Settings" },
+    { label: "Logout" },
+  ];
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen transition-colors duration-300">
+      <Default_Dropdown
+        buttonLabel="Open Menu"
+        headerTitle="My Account"
+        menuItems={menuItems}
+      />
+    </div>
+  );
+};
+
+export default DefaultDropdownDemo;
+`}
+        >
+            <Default_Dropdown />
+        </ShowComponent>
       </div>
     </div>
   );
