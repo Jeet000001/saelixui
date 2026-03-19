@@ -6,13 +6,14 @@ import ShowComponent from "@/Components/ShowComponent";
 const accordion_page = () => {
   return (
     <div>
-      <div className="ml-26 mb-5">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <div className="px-4 sm:px-6 md:px-10 lg:px-26 mb-5">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
           Accordion
         </h1>
 
-        <p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
-          A stacked set of interactive headings that toggle their content panels.
+        <p className="mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
+          A stacked set of interactive headings that toggle their content
+          panels.
         </p>
       </div>
       <div>
@@ -162,7 +163,7 @@ export default boxAccordion;
                 content: "Works smoothly on mobile, tablet, and desktop.",
               },
             ]}
-          /> 
+          />
         </ShowComponent>
         {/* Outline Accordion */}
         <ShowComponent
@@ -221,24 +222,23 @@ export default OutlineAccordion;
 
 `}
         >
-          <OutlineAccordion 
-          items={[
-          {
-            title: "Is it accessible?",
-            content:
-              "Yes. It follows accessibility best practices and keyboard navigation."
-          },
-          {
-            title: "Is it styled?",
-            content:
-              "Yes. Clean modern UI with rounded cards."
-          },
-          {
-            title: "Is it animated?",
-            content:
-              "Yes. Smooth open close animation."
-          }
-        ]}/>
+          <OutlineAccordion
+            items={[
+              {
+                title: "Is it accessible?",
+                content:
+                  "Yes. It follows accessibility best practices and keyboard navigation.",
+              },
+              {
+                title: "Is it styled?",
+                content: "Yes. Clean modern UI with rounded cards.",
+              },
+              {
+                title: "Is it animated?",
+                content: "Yes. Smooth open close animation.",
+              },
+            ]}
+          />
         </ShowComponent>
       </div>
     </div>
