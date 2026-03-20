@@ -16,7 +16,10 @@ const NavigationBar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) =>
+    path === "/"
+      ? pathname === "/"
+      : pathname === path || pathname.startsWith(path + "/");
 
   return (
     <>
@@ -34,7 +37,6 @@ const NavigationBar = () => {
         "
       >
         <div className="flex items-center justify-between px-5 py-3 sm:px-8 md:px-14 lg:px-24">
-
           {/* ── Logo ── */}
           <Link
             href="/"
@@ -47,7 +49,12 @@ const NavigationBar = () => {
                 dark:bg-[#111827] dark:border dark:border-[#1F2937]
               "
             >
-              <Image src="/letter-s (2).png" alt="Logo" width={28} height={28} />
+              <Image
+                src="/letter-s (2).png"
+                alt="Logo"
+                width={28}
+                height={28}
+              />
             </div>
             <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900 dark:text-[#E5E7EB]">
               Saelix{" "}
@@ -57,35 +64,39 @@ const NavigationBar = () => {
 
           {/* ── Desktop menu ── */}
           <div className="hidden md:flex items-center gap-1">
-            {NavMenu.map((menu) => (
-              <Link
-                key={menu.name}
-                href={menu.path}
-                className={`
-                  relative px-4 py-2 text-sm font-medium
-                  transition-all duration-200
-                  after:absolute after:left-4 after:right-4 after:-bottom-0.5 after:h-0.5
-                  after:rounded-full after:transition-all after:duration-300
-                  ${
-                    isActive(menu.path)
-                      ? `text-neutral-900 after:w-[calc(100%-2rem)] after:opacity-100 after:bg-neutral-900
-                         dark:text-[#E5E7EB] dark:after:bg-[#3B82F6]`
-                      : `text-neutral-500 hover:text-neutral-900
-                         after:w-0 after:opacity-0 after:bg-neutral-900
-                         hover:after:w-[calc(100%-2rem)] hover:after:opacity-100
-                         dark:text-[#6B7280] dark:hover:text-[#E5E7EB]
-                         dark:after:bg-[#3B82F6]`
-                  }
-                `}
-              >
-                {menu.name}
-              </Link>
-            ))}
+            {NavMenu.map((menu) => {
+              const active = isActive(menu.path);
+              return (
+                <Link
+                  key={menu.name}
+                  href={menu.path}
+                  className={`
+                    relative px-4 py-2 text-sm font-medium rounded-lg
+                    transition-all duration-200
+                    after:absolute after:left-4 after:right-4 after:-bottom-0.5
+                    after:h-0.5 after:rounded-full
+                    after:bg-neutral-900 dark:after:bg-[#3B82F6]
+                    after:transition-all after:duration-300 after:ease-out
+                    after:origin-left
+                    ${
+                      active
+                        ? `text-neutral-900 dark:text-[#E5E7EB]
+                           bg-neutral-100 dark:bg-[#1a2744]
+                           after:scale-x-0 after:opacity-0`
+                        : `text-neutral-500 hover:text-neutral-900
+                           dark:text-[#6B7280] dark:hover:text-[#E5E7EB]
+                           after:scale-x-0 after:opacity-0
+                           hover:after:scale-x-100 hover:after:opacity-100`
+                    }
+                  `}
+                >
+                  {menu.name}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* ── Right side: CTA + hamburger ── */}
           <div className="flex items-center gap-3">
-            {/* CTA button — desktop only */}
             <Link
               href="/documentation"
               className="
@@ -104,12 +115,11 @@ const NavigationBar = () => {
               Get Started
             </Link>
 
-            {/* Hamburger — mobile only */}
             <button
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
               className="
-                relative flex flex-col gap-[5px] items-center justify-center
+                relative flex flex-col gap-1.25 items-center justify-center
                 w-9 h-9 rounded-lg
                 bg-neutral-100 hover:bg-neutral-200
                 transition-colors duration-200
@@ -119,18 +129,18 @@ const NavigationBar = () => {
               "
             >
               <span
-                className={`block h-[2px] w-5 rounded-full bg-neutral-700 dark:bg-[#E5E7EB] transition-all duration-300 ${
-                  open ? "translate-y-[7px] rotate-45" : ""
+                className={`block h-0.5 w-5 rounded-full bg-neutral-700 dark:bg-[#E5E7EB] transition-all duration-300 ${
+                  open ? "translate-y-1.75 rotate-45" : ""
                 }`}
               />
               <span
-                className={`block h-[2px] w-5 rounded-full bg-neutral-700 dark:bg-[#E5E7EB] transition-all duration-300 ${
+                className={`block h-0.5 w-5 rounded-full bg-neutral-700 dark:bg-[#E5E7EB] transition-all duration-300 ${
                   open ? "opacity-0 scale-x-0" : ""
                 }`}
               />
               <span
-                className={`block h-[2px] w-5 rounded-full bg-neutral-700 dark:bg-[#E5E7EB] transition-all duration-300 ${
-                  open ? "-translate-y-[7px] -rotate-45" : ""
+                className={`block h-0.5 w-5 rounded-full bg-neutral-700 dark:bg-[#E5E7EB] transition-all duration-300 ${
+                  open ? "-translate-y-1.75 -rotate-45" : ""
                 }`}
               />
             </button>
@@ -138,7 +148,6 @@ const NavigationBar = () => {
         </div>
       </nav>
 
-      {/* ── Mobile backdrop ── */}
       <div
         onClick={() => setOpen(false)}
         className={`
@@ -148,10 +157,9 @@ const NavigationBar = () => {
         `}
       />
 
-      {/* ── Mobile dropdown ── */}
       <div
         className={`
-          fixed top-[65px] left-0 w-full z-50
+          fixed top-16.25 left-0 w-full z-50
           transform transition-all duration-300 ease-out
           md:hidden
           ${open ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0 pointer-events-none"}
@@ -166,38 +174,39 @@ const NavigationBar = () => {
             dark:shadow-[0_20px_60px_rgba(0,0,0,0.7)]
           "
         >
-          {/* Nav links */}
           <div className="p-2 flex flex-col gap-1">
-            {NavMenu.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                onClick={() => setOpen(false)}
-                className={`
-                  flex items-center justify-between
-                  px-4 py-3 rounded-xl text-sm font-medium
-                  transition-all duration-200
-                  ${
-                    isActive(item.path)
-                      ? `bg-neutral-100 text-neutral-900
-                         dark:bg-[#1F2937] dark:text-[#E5E7EB]`
-                      : `text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900
-                         dark:text-[#9CA3AF] dark:hover:bg-[#1F2937]/60 dark:hover:text-[#E5E7EB]`
-                  }
-                `}
-              >
-                <span>{item.name}</span>
-                {isActive(item.path) && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-[#3B82F6]" />
-                )}
-              </Link>
-            ))}
+            {NavMenu.map((item) => {
+              const active = isActive(item.path);
+              return (
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  onClick={() => setOpen(false)}
+                  className={`
+                    relative flex items-center justify-between
+                    px-4 py-3 rounded-xl text-sm font-medium
+                    transition-all duration-200 overflow-hidden
+                    ${
+                      active
+                        ? `text-neutral-900 bg-neutral-100
+                           dark:text-[#E5E7EB] dark:bg-[#1a2744]`
+                        : `text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50
+                           dark:text-[#9CA3AF] dark:hover:text-[#E5E7EB] dark:hover:bg-[#1F2937]/60`
+                    }
+                  `}
+                >
+                  {active && (
+                    <span className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-blue-500 dark:bg-[#3B82F6]" />
+                  )}
+
+                  <span className={active ? "pl-2" : ""}>{item.name}</span>
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Divider */}
           <div className="mx-4 h-px bg-neutral-100 dark:bg-[#1F2937]" />
 
-          {/* CTA row */}
           <div className="p-3">
             <Link
               href="/documentation"
