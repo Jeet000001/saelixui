@@ -24,7 +24,7 @@ const HeroSection = () => {
   return (
     <main
       className="
-        relative min-h-screen w-full
+        relative lg:min-h-screen w-full
         flex flex-col items-center justify-center
         gap-4 sm:gap-5 md:gap-6
         px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32
