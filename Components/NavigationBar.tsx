@@ -196,7 +196,7 @@ const NavigationBar = () => {
                   `}
                 >
                   {active && (
-                    <span className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-blue-500 dark:bg-[#3B82F6]" />
+                    <span className="absolute left-0 top-2 bottom-2 w-0.75 rounded-full bg-blue-500 dark:bg-[#3B82F6]" />
                   )}
 
                   <span className={active ? "pl-2" : ""}>{item.name}</span>
