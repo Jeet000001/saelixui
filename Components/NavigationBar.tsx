@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggleButton";
 
 const NavigationBar = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const NavMenu = [
     { name: "Components", path: "/components" },
@@ -14,104 +16,203 @@ const NavigationBar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
+  const isActive = (path: string) => pathname === path;
+
   return (
     <>
       <nav
-        className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-md shadow-lg
-        dark:bg-[#0B0F19] 
-        dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+        className="
+          sticky top-0 z-50 w-full
+          border-b
+          bg-white/80 backdrop-blur-xl
+          border-neutral-200/80
+          shadow-[0_1px_20px_rgba(0,0,0,0.06)]
+
+          dark:bg-[#0B0F19]/85
+          dark:border-[#1F2937]
+          dark:shadow-[0_1px_30px_rgba(0,0,0,0.5)]
+        "
       >
-        <div className="flex items-center justify-between px-8 py-3 md:px-25 md:py-3">
+        <div className="flex items-center justify-between px-5 py-3 sm:px-8 md:px-14 lg:px-24">
+
+          {/* ── Logo ── */}
           <Link
             href="/"
-            className="flex items-center gap-2 md:gap-3 transition duration-500 hover:scale-105"
+            className="flex items-center gap-2.5 transition-all duration-300 hover:opacity-80"
           >
             <div
-              className="flex size-9 items-center justify-center rounded-lg bg-black shadow-2xl
-              dark:bg-[#111827] dark:border dark:border-[#1F2937] md:size-10"
+              className="
+                flex size-8 sm:size-9 items-center justify-center
+                rounded-lg bg-neutral-900 shadow-lg
+                dark:bg-[#111827] dark:border dark:border-[#1F2937]
+              "
             >
-              <Image
-                src="/letter-s (2).png"
-                alt="Logo"
-                width={30}
-                height={30}
-              />
+              <Image src="/letter-s (2).png" alt="Logo" width={28} height={28} />
             </div>
-            <h1 className="text-xl font-bold md:text-2xl text-gray-900 dark:text-[#E5E7EB]">
-              Saelix UI
-            </h1>
+            <span className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900 dark:text-[#E5E7EB]">
+              Saelix{" "}
+              <span className="text-blue-600 dark:text-[#3B82F6]">UI</span>
+            </span>
           </Link>
 
-          <div className="hidden items-center gap-8 md:flex">
+          {/* ── Desktop menu ── */}
+          <div className="hidden md:flex items-center gap-1">
             {NavMenu.map((menu) => (
               <Link
                 key={menu.name}
                 href={menu.path}
-                className="relative text-sm font-medium text-gray-600 transition
-                  hover:text-gray-900
-                  after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0
-                  after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-full
-                  dark:text-[#9CA3AF] dark:hover:text-[#E5E7EB]
-                  dark:after:bg-[#E5E7EB]"
+                className={`
+                  relative px-4 py-2 text-sm font-medium
+                  transition-all duration-200
+                  after:absolute after:left-4 after:right-4 after:-bottom-0.5 after:h-0.5
+                  after:rounded-full after:transition-all after:duration-300
+                  ${
+                    isActive(menu.path)
+                      ? `text-neutral-900 after:w-[calc(100%-2rem)] after:opacity-100 after:bg-neutral-900
+                         dark:text-[#E5E7EB] dark:after:bg-[#3B82F6]`
+                      : `text-neutral-500 hover:text-neutral-900
+                         after:w-0 after:opacity-0 after:bg-neutral-900
+                         hover:after:w-[calc(100%-2rem)] hover:after:opacity-100
+                         dark:text-[#6B7280] dark:hover:text-[#E5E7EB]
+                         dark:after:bg-[#3B82F6]`
+                  }
+                `}
               >
                 {menu.name}
               </Link>
             ))}
           </div>
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="flex flex-col gap-1.5 rounded-md bg-gray-700 p-2 transition hover:bg-gray-800
-              dark:bg-[#111827] dark:border dark:border-[#1F2937]
-              dark:hover:bg-[#1F2937] md:hidden"
-          >
-            <span
-              className={`h-0.5 w-5 bg-gray-300 transition ${
-                open ? "translate-y-2 rotate-45" : ""
-              } dark:bg-[#E5E7EB]`}
-            />
-            <span
-              className={`h-0.5 w-5 bg-gray-300 transition ${
-                open ? "opacity-0" : ""
-              } dark:bg-[#E5E7EB]`}
-            />
-            <span
-              className={`h-0.5 w-5 bg-gray-300 transition ${
-                open ? "-translate-y-2 -rotate-45" : ""
-              } dark:bg-[#E5E7EB]`}
-            />
-          </button>
+          {/* ── Right side: CTA + hamburger ── */}
+          <div className="flex items-center gap-3">
+            {/* CTA button — desktop only */}
+            <Link
+              href="/documentation"
+              className="
+                hidden md:inline-flex items-center gap-1.5
+                px-4 py-2 rounded-lg text-sm font-semibold
+                bg-neutral-900 text-white
+                hover:bg-neutral-700
+                transition-all duration-200
+                shadow-sm active:scale-95
+
+                dark:bg-[#3B82F6] dark:text-white
+                dark:hover:bg-[#2563EB]
+                dark:shadow-[0_0_20px_rgba(59,130,246,0.25)]
+              "
+            >
+              Get Started
+            </Link>
+
+            {/* Hamburger — mobile only */}
+            <button
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
+              className="
+                relative flex flex-col gap-[5px] items-center justify-center
+                w-9 h-9 rounded-lg
+                bg-neutral-100 hover:bg-neutral-200
+                transition-colors duration-200
+                dark:bg-[#111827] dark:border dark:border-[#1F2937]
+                dark:hover:bg-[#1F2937]
+                md:hidden
+              "
+            >
+              <span
+                className={`block h-[2px] w-5 rounded-full bg-neutral-700 dark:bg-[#E5E7EB] transition-all duration-300 ${
+                  open ? "translate-y-[7px] rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`block h-[2px] w-5 rounded-full bg-neutral-700 dark:bg-[#E5E7EB] transition-all duration-300 ${
+                  open ? "opacity-0 scale-x-0" : ""
+                }`}
+              />
+              <span
+                className={`block h-[2px] w-5 rounded-full bg-neutral-700 dark:bg-[#E5E7EB] transition-all duration-300 ${
+                  open ? "-translate-y-[7px] -rotate-45" : ""
+                }`}
+              />
+            </button>
+          </div>
         </div>
       </nav>
 
+      {/* ── Mobile backdrop ── */}
       <div
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-40 bg-black/30 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
-          open ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`
+          fixed inset-0 z-40 bg-black/20 backdrop-blur-sm
+          transition-opacity duration-300 md:hidden
+          ${open ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}
+        `}
       />
 
+      {/* ── Mobile dropdown ── */}
       <div
-        className={`fixed top-18 left-0 w-full z-50 transform transition-all duration-300 md:hidden ${
-          open ? "translate-y-0 opacity-100" : "-translate-y-5 opacity-0 pointer-events-none"
-        }`}
+        className={`
+          fixed top-[65px] left-0 w-full z-50
+          transform transition-all duration-300 ease-out
+          md:hidden
+          ${open ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0 pointer-events-none"}
+        `}
       >
         <div
-          className="mx-4 rounded-lg bg-white shadow-xl
-            dark:bg-[#111827] dark:border dark:border-[#1F2937]"
+          className="
+            mx-3 sm:mx-5 rounded-2xl overflow-hidden
+            border shadow-2xl
+            bg-white border-neutral-200
+            dark:bg-[#111827] dark:border-[#1F2937]
+            dark:shadow-[0_20px_60px_rgba(0,0,0,0.7)]
+          "
         >
-          {NavMenu.map((item) => (
+          {/* Nav links */}
+          <div className="p-2 flex flex-col gap-1">
+            {NavMenu.map((item) => (
+              <Link
+                key={item.name}
+                href={item.path}
+                onClick={() => setOpen(false)}
+                className={`
+                  flex items-center justify-between
+                  px-4 py-3 rounded-xl text-sm font-medium
+                  transition-all duration-200
+                  ${
+                    isActive(item.path)
+                      ? `bg-neutral-100 text-neutral-900
+                         dark:bg-[#1F2937] dark:text-[#E5E7EB]`
+                      : `text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900
+                         dark:text-[#9CA3AF] dark:hover:bg-[#1F2937]/60 dark:hover:text-[#E5E7EB]`
+                  }
+                `}
+              >
+                <span>{item.name}</span>
+                {isActive(item.path) && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-[#3B82F6]" />
+                )}
+              </Link>
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div className="mx-4 h-px bg-neutral-100 dark:bg-[#1F2937]" />
+
+          {/* CTA row */}
+          <div className="p-3">
             <Link
-              key={item.name}
-              href={item.path}
+              href="/documentation"
               onClick={() => setOpen(false)}
-              className="block px-4 py-3 text-sm font-medium text-gray-700 transition hover:bg-gray-100
-                dark:text-[#9CA3AF] dark:hover:text-[#E5E7EB]
-                dark:hover:bg-[#1F2937]"
+              className="
+                flex items-center justify-center w-full
+                py-2.5 rounded-xl text-sm font-semibold
+                bg-neutral-900 text-white hover:bg-neutral-700
+                transition-colors duration-200 active:scale-95
+                dark:bg-[#3B82F6] dark:hover:bg-[#2563EB]
+              "
             >
-              {item.name}
+              Get Started
             </Link>
-          ))}
+          </div>
         </div>
       </div>
 
