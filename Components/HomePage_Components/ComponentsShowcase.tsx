@@ -15,7 +15,7 @@ const ComponentsShowcase = () => {
         className="relative overflow-hidden
         rounded-2xl 
         flex items-center justify-center p-4
-        transition-all duration-300 hover:shadow-xl
+        transition-all duration-300
         dark:border-[#1F2937]
         dark:text-[#E5E7EB] dark:bg-[#0B0F19]"
       >
