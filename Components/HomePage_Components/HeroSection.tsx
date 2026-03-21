@@ -40,13 +40,8 @@ const HeroSection = () => {
         bg-white dark:bg-[#0B0F19]
       "
     >
-      {/* Dark mode radial glow */}
       <div className="pointer-events-none absolute inset-0 -z-10 dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(59,130,246,0.14),transparent)]" />
-
-      {/* Subtle grid pattern — dark mode */}
-      <div className="pointer-events-none absolute inset-0 -z-10 opacity-0 dark:opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-[size:48px_48px]" />
-
-      {/* ── Badge ── */}
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-0 dark:opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-size-[48px_48px]" />
       <div className="
         inline-flex items-center gap-2
         px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium
@@ -59,7 +54,6 @@ const HeroSection = () => {
         50+ Open Source Components
       </div>
 
-      {/* ── Heading ── */}
       <h1 className="
         w-full
         max-w-[16rem] sm:max-w-lg md:max-w-3xl lg:max-w-5xl
@@ -69,12 +63,11 @@ const HeroSection = () => {
       ">
         UI components that make
         <br />
-        {/* "your site" + animated word on same line, word starts right after */}
         <span className="">your site </span>
         <span className="inline-block w-[7ch] overflow-hidden align-bottom">
           <span className={`
             inline-block text-transparent bg-clip-text
-            bg-gradient-to-b from-neutral-900 to-neutral-400
+            bg-linear-to-b from-neutral-900 to-neutral-400
             dark:from-[#3B82F6] dark:to-[#93c5fd]
             transition-all duration-500 ease-in-out
             ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
@@ -84,7 +77,6 @@ const HeroSection = () => {
         </span>
       </h1>
 
-      {/* ── Description ── */}
       <p className="
         max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl
         text-sm sm:text-base md:text-lg
@@ -94,10 +86,8 @@ const HeroSection = () => {
         and ship beautiful interfaces in minutes. No bloat, just components that work.
       </p>
 
-      {/* ── CTA Group ── */}
       <div className="flex flex-col sm:flex-row items-center gap-3 mt-1 w-full max-w-xs sm:max-w-none sm:w-auto">
 
-        {/* Copy command button */}
         <button
           onClick={handleCopy}
           className="
@@ -116,7 +106,6 @@ const HeroSection = () => {
             dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)]
           "
         >
-          <span className="text-blue-500 dark:text-[#3B82F6] select-none">$</span>
           <span className="flex-1 text-left sm:text-center">npx saelix-ui init</span>
           <span className="
             flex items-center justify-center w-6 h-6 rounded-md
@@ -131,9 +120,8 @@ const HeroSection = () => {
           </span>
         </button>
 
-        {/* Docs link */}
         <Link
-          href="/documentation"
+          href="/components"
           className="
             group w-full sm:w-auto
             inline-flex items-center justify-center gap-2
@@ -146,24 +134,10 @@ const HeroSection = () => {
             dark:shadow-[0_8px_30px_rgba(59,130,246,0.3)]
           "
         >
-          Get Started
+          Browse Components
           <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform shrink-0" />
         </Link>
       </div>
-
-      {/* ── Copied toast ── */}
-      <div className={`
-        fixed bottom-6 left-1/2 -translate-x-1/2 z-50
-        inline-flex items-center gap-2 px-4 py-2.5
-        rounded-xl text-xs font-medium
-        bg-neutral-900 text-white dark:bg-[#111827] dark:border dark:border-[#1F2937]
-        shadow-xl transition-all duration-300
-        ${copied ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"}
-      `}>
-        <Check className="w-3.5 h-3.5 text-green-400" />
-        Copied to clipboard!
-      </div>
-
     </main>
   );
 };
