@@ -23,7 +23,7 @@ function Tile({
         rounded-2xl border
         flex items-center justify-center
         transition-all duration-300
-        hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.98]
+        hover:-translate-y-1.5 active:scale-[0.98]
 
         bg-white/80 border-neutral-200/80
         shadow-[0_2px_12px_rgba(0,0,0,0.06)]
