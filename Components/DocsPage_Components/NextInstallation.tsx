@@ -76,15 +76,13 @@ function Step({
 }) {
   return (
     <div className="flex gap-3 sm:gap-4">
-      {/* Left: number + line */}
       <div className="flex flex-col items-center">
         <div className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-blue-200 bg-blue-50 dark:border-[#1a2744] dark:bg-[#111827] shrink-0">
           <span className="text-xs font-bold text-blue-600 dark:text-[#3B82F6]">{number}</span>
         </div>
-        <div className="flex-1 w-px bg-neutral-100 dark:bg-[#1F2937] mt-2 mb-1 min-h-[1rem]" />
+        <div className="flex-1 w-px bg-neutral-100 dark:bg-[#1F2937] mt-2 mb-1 min-h-4" />
       </div>
 
-      {/* Right: content */}
       <div className="flex-1 pb-6 sm:pb-8 space-y-3 sm:space-y-4 min-w-0">
         <div className="flex items-center gap-2 -mt-0.5">
           <Icon className="w-4 h-4 text-blue-500 dark:text-[#3B82F6] shrink-0" />
@@ -98,7 +96,6 @@ function Step({
   );
 }
 
-/* ── Main ── */
 const NextInstallation = () => {
   const { theme } = useTheme();
   const [isTs, setIsTs] = useState(true);
@@ -138,8 +135,6 @@ export default Page;`;
       py-8 sm:py-12
       dark:bg-[#0B0F19] min-h-screen
     ">
-
-      {/* ── Page header ── */}
       <div className="mb-8 sm:mb-10 pb-6 sm:pb-8 border-b border-neutral-100 dark:border-[#1F2937]">
         <div className="flex items-center gap-2 mb-3">
           <Link
@@ -155,7 +150,7 @@ export default Page;`;
         <h1 className="
           text-2xl sm:text-3xl font-bold
           text-transparent bg-clip-text
-          bg-gradient-to-b from-neutral-900 to-neutral-500
+          bg-linear-to-b from-neutral-900 to-neutral-500
           dark:from-[#E5E7EB] dark:to-[#9CA3AF]
           mb-2
         ">
@@ -166,10 +161,7 @@ export default Page;`;
         </p>
       </div>
 
-      {/* ── Steps ── */}
       <div>
-
-        {/* Step 1 — Init */}
         <Step number={1} icon={Terminal} title="Initialize Saelix UI">
           <p className="text-sm text-neutral-500 dark:text-[#6B7280]">
             Run the init command in your Next.js project root. This sets up the required config files and folder structure.
@@ -177,7 +169,6 @@ export default Page;`;
           <CommandBlock command={initCommand} />
         </Step>
 
-        {/* Step 2 — Add component */}
         <Step number={2} icon={Package} title="Add a Component">
           <p className="text-sm text-neutral-500 dark:text-[#6B7280]">
             Use the <code className="px-1.5 py-0.5 rounded-md text-xs bg-neutral-100 dark:bg-[#111827] dark:text-[#E5E7EB] font-mono">add</code> command
@@ -186,7 +177,6 @@ export default Page;`;
           </p>
           <CommandBlock command={addCommand} />
 
-          {/* Info box */}
           <div className="
             flex gap-2.5 p-3.5 rounded-xl border text-xs
             bg-blue-50/60 border-blue-100 text-blue-700
@@ -202,27 +192,23 @@ export default Page;`;
           </div>
         </Step>
 
-        {/* Step 3 — Use it */}
         <Step number={3} icon={Code2} title="Import & Use">
           <p className="text-sm text-neutral-500 dark:text-[#6B7280]">
             Import the component into your page and start using it — no extra configuration needed.
           </p>
 
-          {/* Code preview */}
           <div className="
             overflow-hidden rounded-xl border
             bg-white border-neutral-200
             dark:bg-[#0d1117] dark:border-[#1F2937]
             shadow-sm dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)]
           ">
-            {/* Toolbar */}
             <div className="
               flex items-center justify-between
               px-4 py-2.5 border-b
               bg-neutral-50 border-neutral-200
               dark:bg-[#111827] dark:border-[#1F2937]
             ">
-              {/* Left: lang selector + filename */}
               <div className="relative flex items-center gap-2.5">
                 <button
                   onClick={() => setOpenLang(!openLang)}
@@ -246,7 +232,6 @@ export default Page;`;
                   {isTs ? "app/page.tsx" : "app/page.jsx"}
                 </span>
 
-                {/* Dropdown */}
                 {openLang && (
                   <div className="
                     absolute top-8 left-0 z-20 w-20
@@ -272,7 +257,6 @@ export default Page;`;
                 )}
               </div>
 
-              {/* Right: copy */}
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(isTs ? tsCode : jsCode);
@@ -293,7 +277,6 @@ export default Page;`;
               </button>
             </div>
 
-            {/* Code */}
             <div className="overflow-x-auto">
               <SyntaxHighlighter
                 language={isTs ? "tsx" : "jsx"}
@@ -315,7 +298,6 @@ export default Page;`;
 
       </div>
 
-      {/* ── What's next ── */}
       <div className="
         mt-2 p-5 rounded-2xl border
         bg-neutral-50 border-neutral-200
