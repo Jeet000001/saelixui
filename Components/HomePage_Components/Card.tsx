@@ -25,7 +25,6 @@ const Card: React.FC<CardProps> = ({ image, title, description }) => {
         dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
       "
     >
-      {/* Icon */}
       <div
         className="
           mb-4 flex items-center justify-center
@@ -50,7 +49,6 @@ const Card: React.FC<CardProps> = ({ image, title, description }) => {
         />
       </div>
 
-      {/* Content */}
       <div className="space-y-1.5 sm:space-y-2">
         <h2 className="text-base sm:text-lg font-semibold text-neutral-900 dark:text-[#E5E7EB]">
           {title}
