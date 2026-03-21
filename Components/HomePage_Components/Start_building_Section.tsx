@@ -6,7 +6,7 @@ import { ArrowRight, BookOpen, Layers } from "lucide-react";
 const StartBuildingSection = () => {
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#0B0F19]">
-      <div className="relative z-10 flex flex-col items-center text-center px-5 sm:px-8 py-16 sm:py-20 md:py-24">
+      <div className="relative z-10 flex flex-col items-center text-center px-5 sm:px-8 pb-16 sm:py-20 md:pb-24">
         <div
           className="
           mb-5 inline-flex items-center gap-2
