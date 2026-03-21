@@ -7,7 +7,6 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
-/* ── Reusable: copy command block ── */
 function CommandBlock({
   command,
   label,
@@ -39,7 +38,6 @@ function CommandBlock({
       ">
         <div className="flex items-center gap-2.5 min-w-0">
           <Terminal className="w-3.5 h-3.5 text-neutral-400 dark:text-[#4B5563] shrink-0" />
-          <span className="text-blue-600 dark:text-[#3B82F6] select-none shrink-0">$</span>
           <span className="truncate">{command}</span>
         </div>
         <button
@@ -62,7 +60,6 @@ function CommandBlock({
   );
 }
 
-/* ── Reusable: step ── */
 function Step({
   number,
   icon: Icon,
@@ -182,7 +179,6 @@ export default Page;`;
             bg-blue-50/60 border-blue-100 text-blue-700
             dark:bg-[#111827] dark:border-[#1a2744] dark:text-[#93c5fd]
           ">
-            <span className="shrink-0 mt-0.5">💡</span>
             <span>
               Replace <code className="font-mono">primary-button</code> with any component name from the{" "}
               <Link href="/components" className="underline underline-offset-2 hover:opacity-80">
