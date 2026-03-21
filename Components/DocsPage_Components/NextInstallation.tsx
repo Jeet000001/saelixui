@@ -1,227 +1,383 @@
 "use client";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Copy, Check, ChevronDown } from "lucide-react";
+import {
+  oneLight,
+  oneDark,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
+import {
+  Copy,
+  Check,
+  ChevronDown,
+  Terminal,
+  Package,
+  Code2,
+  ArrowRight,
+} from "lucide-react";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
+
+function CommandBlock({ command, label }: { command: string; label?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(command);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="space-y-1.5">
+      {label && (
+        <p className="text-xs text-neutral-400 dark:text-[#4B5563] font-mono">
+          {label}
+        </p>
+      )}
+      <div
+        className="
+        group flex items-center justify-between gap-3
+        rounded-xl border px-4 py-3
+        font-mono text-sm
+        bg-neutral-50 border-neutral-200 text-neutral-800
+        dark:bg-[#0d1117] dark:border-[#1F2937] dark:text-[#E5E7EB]
+        shadow-sm dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)]
+        transition-colors duration-200
+      "
+      >
+        <div className="flex items-center gap-2.5 min-w-0">
+          <Terminal className="w-3.5 h-3.5 text-neutral-400 dark:text-[#4B5563] shrink-0" />
+          <span className="text-blue-600 dark:text-[#3B82F6] select-none shrink-0">
+            $
+          </span>
+          <span className="truncate">{command}</span>
+        </div>
+        <button
+          onClick={handleCopy}
+          aria-label="Copy command"
+          className="
+            flex items-center justify-center w-7 h-7 rounded-lg shrink-0
+            bg-neutral-200 hover:bg-neutral-300
+            dark:bg-[#1F2937] dark:hover:bg-[#294268]
+            transition-all duration-200 active:scale-90
+          "
+        >
+          {copied ? (
+            <Check className="w-3.5 h-3.5 text-green-500" />
+          ) : (
+            <Copy className="w-3.5 h-3.5 text-neutral-500 dark:text-[#9CA3AF]" />
+          )}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function Step({
+  number,
+  icon: Icon,
+  title,
+  children,
+}: {
+  number: number;
+  icon: React.ElementType;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex gap-4">
+      <div className="flex flex-col items-center">
+        <div className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-blue-200 bg-blue-50 dark:border-[#1a2744] dark:bg-[#111827] shrink-0">
+          <span className="text-xs font-bold text-blue-600 dark:text-[#3B82F6]">
+            {number}
+          </span>
+        </div>
+        <div className="flex-1 w-px bg-neutral-100 dark:bg-[#1F2937] mt-2 mb-1 min-h-4" />
+      </div>
+
+      <div className="flex-1 pb-8 space-y-4">
+        <div className="flex items-center gap-2 -mt-0.5">
+          <Icon className="w-4 h-4 text-blue-500 dark:text-[#3B82F6]" />
+          <h3 className="font-semibold text-base text-neutral-800 dark:text-[#E5E7EB]">
+            {title}
+          </h3>
+        </div>
+        {children}
+      </div>
+    </div>
+  );
+}
 
 const NextInstallation = () => {
   const { theme } = useTheme();
-
   const [isTs, setIsTs] = useState(true);
   const [openLang, setOpenLang] = useState(false);
+  const [codeCopied, setCodeCopied] = useState(false);
 
-  const [initCommandCopy, setinitCommandCopy] = useState(false);
-  const [addCommandCopy, setAddCommandCopy] = useState(false);
-  const [codeCopy, setCodeCopy] = useState(false);
-
-  const initCommand = "npx saelix-ui init";
+  const initCommand = "npx saelix-ui@latest init";
   const addCommand = "npx saelix-ui add primary-button";
 
   const jsCode = `import Primary_Button from "./components/ui/Primary-button";
 
-const page = () => {
+const Page = () => {
   return (
     <div>
-      <Primary_Button>click</Primary_Button>
+      <Primary_Button>Click me</Primary_Button>
     </div>
   );
 };
 
-export default page;`;
+export default Page;`;
 
   const tsCode = `import Primary_Button from "@/components/ui/Primary-button";
 
-const page = () => {
+const Page = () => {
   return (
     <div>
-      <Primary_Button>click</Primary_Button>
+      <Primary_Button>Click me</Primary_Button>
     </div>
   );
 };
 
-export default page;`;
+export default Page;`;
 
   return (
-    <div className="mx-auto px-6 md:px-40 py-12 space-y-16 dark:bg-[#0B0F19]">
-      {/* Header */}
-      <section className="space-y-4">
-        <h2 className="group inline-block text-3xl font-bold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500 dark:from-[#E5E7EB] dark:to-[#9CA3AF]">
-          Next.js
-        </h2>
-
-        <p className="text-gray-500 dark:text-[#9CA3AF]">
-          Install and configure saelix ui for Next.js.
-        </p>
-      </section>
-
-      {/* Create project */}
-      <section className="space-y-4">
-        <h2 className="group relative inline-block text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500 dark:from-[#E5E7EB] dark:to-[#9CA3AF]">
-          Create project
-          <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-700 dark:bg-[#1F2937] transition-all duration-300 group-hover:w-full" />
-        </h2>
-
-        <p className="text-gray-600 dark:text-[#9CA3AF]">
-          Use the init command to either spin up a fresh Next.js project or
-          configure an existing one :
-        </p>
-
-        <div
-          className="relative rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm transition-all duration-300 hover:scale-105
-                        dark:border-[#1F2937] dark:bg-[#111827] dark:text-[#E5E7EB] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
-        >
-          <div className="absolute top-2 right-2">
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(initCommand);
-                setinitCommandCopy(true);
-                setTimeout(() => setinitCommandCopy(false), 2000);
-              }}
-              className="flex items-center gap-1 rounded-md px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition active:scale-90
-                         dark:text-[#E5E7EB] dark:hover:bg-[#1F2937] cursor-pointer"
-            >
-              {initCommandCopy ? <Check size={14} /> : <Copy size={14} />}
-            </button>
-          </div>
-          <p className="text-gray-700 dark:text-[#E5E7EB]">
-            npx saelix-ui init
-          </p>
-        </div>
-      </section>
-
-      {/* Add components */}
-      <section className="space-y-4">
-        <h2 className="group relative inline-block text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-black to-gray-500 dark:from-[#E5E7EB] dark:to-[#9CA3AF]">
-          Add Components
-          <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-700 dark:bg-[#1F2937] transition-all duration-300 group-hover:w-full" />
-        </h2>
-
-        <p className="text-gray-600 dark:text-[#9CA3AF]">
-          You’re all set to begin adding components to your project :
-        </p>
-
-        <div
-          className="relative rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-sm text-gray-800 shadow-sm transition-all duration-300 hover:scale-105
-                        dark:border-[#1F2937] dark:bg-[#111827] dark:text-[#E5E7EB] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
-        >
-          <div className="absolute top-2 right-2">
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(addCommand);
-                setAddCommandCopy(true);
-                setTimeout(() => setAddCommandCopy(false), 2000);
-              }}
-              className="flex items-center gap-1 rounded-md px-2 py-1 text-xs text-gray-800 hover:bg-gray-100 transition active:scale-90
-                         dark:text-[#E5E7EB] dark:hover:bg-[#1F2937] cursor-pointer"
-            >
-              {addCommandCopy ? <Check size={14} /> : <Copy size={14} />}
-            </button>
-          </div>
-          <p className="text-gray-700 dark:text-[#E5E7EB]">
-            npx saelix-ui add primary-button
-          </p>
+    <div
+      className="
+      mx-auto px-5 sm:px-8 md:px-16 lg:px-32 xl:px-40
+      py-10 sm:py-14
+      dark:bg-[#0B0F19] min-h-screen
+    "
+    >
+      <div className="mb-10 pb-8 border-b border-neutral-100 dark:border-[#1F2937]">
+        <div className="flex items-center gap-2 mb-3">
+          <Link
+            href="/documentation"
+            className="text-xs text-neutral-400 dark:text-[#4B5563] hover:text-neutral-600 dark:hover:text-[#9CA3AF] transition-colors"
+          >
+            Documentation
+          </Link>
+          <ArrowRight className="w-3 h-3 text-neutral-300 dark:text-[#374151]" />
+          <span className="text-xs text-neutral-500 dark:text-[#9CA3AF]">
+            Next.js
+          </span>
         </div>
 
-        {/* Code Preview */}
-        <div
-          className="relative overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm transition-all duration-300 hover:scale-105
-                        dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+        <h1
+          className="
+          text-2xl sm:text-3xl font-bold
+          text-transparent bg-clip-text
+          bg-linear-to-b from-neutral-900 to-neutral-500
+          dark:from-[#E5E7EB] dark:to-[#9CA3AF]
+          mb-2
+        "
         >
-          <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2 dark:border-[#1F2937]">
-            <div className="relative flex items-center gap-2 text-xs">
-              <button
-                onClick={() => setOpenLang(!openLang)}
-                className="
-    min-w-13
-    flex items-center justify-between
-    gap-1
-    rounded-sm
-    px-2
-    py-0.5
-    bg-gray-900
-    text-white
-    leading-none
-    dark:bg-[#3B82F6]
-  "
+          Next.js Installation
+        </h1>
+        <p className="text-sm sm:text-base text-neutral-500 dark:text-[#9CA3AF] max-w-xl">
+          Set up Saelix UI in your Next.js project in under 2 minutes — from
+          init to your first component.
+        </p>
+      </div>
+
+      <div>
+        <Step number={1} icon={Terminal} title="Initialize Saelix UI">
+          <p className="text-sm text-neutral-500 dark:text-[#6B7280]">
+            Run the init command in your Next.js project root. This sets up the
+            required config files and folder structure.
+          </p>
+          <CommandBlock command={initCommand} />
+        </Step>
+
+        <Step number={2} icon={Package} title="Add a Component">
+          <p className="text-sm text-neutral-500 dark:text-[#6B7280]">
+            Use the{" "}
+            <code className="px-1.5 py-0.5 rounded-md text-xs bg-neutral-100 dark:bg-[#111827] dark:text-[#E5E7EB] font-mono">
+              add
+            </code>{" "}
+            command to pull any component directly into your project. The source
+            file will be placed in{" "}
+            <code className="px-1.5 py-0.5 rounded-md text-xs bg-neutral-100 dark:bg-[#111827] dark:text-[#E5E7EB] font-mono">
+              components/ui/
+            </code>
+            .
+          </p>
+          <CommandBlock command={addCommand} />
+
+          <div
+            className="
+            flex gap-2.5 p-3.5 rounded-xl border text-xs
+            bg-blue-50/60 border-blue-100 text-blue-700
+            dark:bg-[#111827] dark:border-[#1a2744] dark:text-[#93c5fd]
+          "
+          >
+            <span className="shrink-0 mt-0.5">💡</span>
+            <span>
+              Replace <code className="font-mono">primary-button</code> with any
+              component name from the{" "}
+              <Link
+                href="/components"
+                className="underline underline-offset-2 hover:opacity-80"
               >
-                <span className="leading-none">{isTs ? "TS" : "JS"}</span>
+                component library
+              </Link>
+              .
+            </span>
+          </div>
+        </Step>
 
-                {/* Divider */}
-                <span className="h-3 w-px bg-white/40 dark:bg-white/60" />
+        <Step number={3} icon={Code2} title="Import & Use">
+          <p className="text-sm text-neutral-500 dark:text-[#6B7280]">
+            Import the component into your page and start using it — no extra
+            configuration needed.
+          </p>
 
-                <ChevronDown
-                  size={14}
-                  className={`shrink-0 transition-transform duration-200 ${openLang ? "rotate-180" : "rotate-0"
-                    }`}
-                />
-              </button>
-
-              <span className="text-slate-400">
-                {isTs ? "app/page.tsx" : "app/page.jsx"}
-              </span>
-
-              {openLang && (
-                <div
-                  className="absolute top-6 left-0 z-20 w-20 rounded-md border border-gray-200 bg-white shadow-md
-                                dark:border-[#1F2937] dark:bg-[#111827]"
+          <div
+            className="
+            overflow-hidden rounded-xl border
+            bg-white border-neutral-200
+            dark:bg-[#0d1117] dark:border-[#1F2937]
+            shadow-sm dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)]
+          "
+          >
+            <div
+              className="
+              flex items-center justify-between
+              px-4 py-2.5 border-b
+              bg-neutral-50 border-neutral-200
+              dark:bg-[#111827] dark:border-[#1F2937]
+            "
+            >
+              <div className="relative flex items-center gap-2.5">
+                <button
+                  onClick={() => setOpenLang(!openLang)}
+                  className="
+                    flex items-center gap-1.5 px-2.5 py-1 rounded-lg
+                    text-xs font-semibold
+                    bg-neutral-900 text-white
+                    dark:bg-[#3B82F6] dark:text-white
+                    transition-colors
+                  "
                 >
-                  <button
-                    onClick={() => {
-                      setIsTs(false);
-                      setOpenLang(false);
-                    }}
-                    className="block w-full px-3 py-1 text-left text-sm hover:bg-gray-100 dark:hover:bg-[#1F2937]"
+                  {isTs ? "TS" : "JS"}
+                  <span className="w-px h-3 bg-white/30" />
+                  <ChevronDown
+                    size={12}
+                    className={`transition-transform duration-200 ${openLang ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                <span className="text-xs text-neutral-400 dark:text-[#4B5563] font-mono">
+                  {isTs ? "app/page.tsx" : "app/page.jsx"}
+                </span>
+                {openLang && (
+                  <div
+                    className="
+                    absolute top-8 left-0 z-20 w-20
+                    rounded-lg border overflow-hidden
+                    bg-white border-neutral-200 shadow-lg
+                    dark:bg-[#111827] dark:border-[#1F2937]
+                  "
                   >
-                    JS
-                  </button>
-                  <button
-                    onClick={() => {
-                      setIsTs(true);
-                      setOpenLang(false);
-                    }}
-                    className="block w-full px-3 py-1 text-left text-sm hover:bg-gray-100 dark:hover:bg-[#1F2937]"
-                  >
-                    TS
-                  </button>
-                </div>
-              )}
+                    {["JS", "TS"].map((lang) => (
+                      <button
+                        key={lang}
+                        onClick={() => {
+                          setIsTs(lang === "TS");
+                          setOpenLang(false);
+                        }}
+                        className="
+                          block w-full px-3 py-2 text-left text-xs font-medium
+                          text-neutral-700 hover:bg-neutral-50
+                          dark:text-[#9CA3AF] dark:hover:bg-[#1F2937]
+                          transition-colors
+                        "
+                      >
+                        {lang}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(isTs ? tsCode : jsCode);
+                  setCodeCopied(true);
+                  setTimeout(() => setCodeCopied(false), 2000);
+                }}
+                className="
+                  flex items-center justify-center w-7 h-7 rounded-lg
+                  bg-neutral-200 hover:bg-neutral-300
+                  dark:bg-[#1F2937] dark:hover:bg-[#294268]
+                  transition-all duration-200 active:scale-90
+                "
+              >
+                {codeCopied ? (
+                  <Check className="w-3.5 h-3.5 text-green-500" />
+                ) : (
+                  <Copy className="w-3.5 h-3.5 text-neutral-500 dark:text-[#9CA3AF]" />
+                )}
+              </button>
             </div>
 
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(isTs ? tsCode : jsCode);
-                setCodeCopy(true);
-                setTimeout(() => setCodeCopy(false), 2000);
-              }}
-              className="rounded-md p-1 text-gray-800 dark:text-[#E5E7EB]"
-            >
-              {codeCopy ? <Check size={14} /> : <Copy size={14} />}
-            </button>
-          </div>
-
-          <pre className="py-4 px-10 text-sm overflow-x-auto bg-gray-100 text-gray-900 dark:bg-[#0f172a] dark:text-gray-100">
-            <SyntaxHighlighter
-              language={isTs ? "tsx" : "jsx"}
-              style={theme === "dark" ? oneDark : oneLight}
-              customStyle={{
-                background: "transparent",
-                margin: 0,
-                padding: 0,
-              }}
-              codeTagProps={{
-                style: {
+            <div className="overflow-x-auto">
+              <SyntaxHighlighter
+                language={isTs ? "tsx" : "jsx"}
+                style={theme === "dark" ? oneDark : oneLight}
+                customStyle={{
                   background: "transparent",
-                },
-              }}
-            >
-              {isTs ? tsCode : jsCode}
-            </SyntaxHighlighter>
-          </pre>
+                  margin: 0,
+                  padding: "1.25rem 1.5rem",
+                  fontSize: "0.8rem",
+                  lineHeight: "1.6",
+                }}
+                codeTagProps={{ style: { background: "transparent" } }}
+              >
+                {isTs ? tsCode : jsCode}
+              </SyntaxHighlighter>
+            </div>
+          </div>
+        </Step>
+      </div>
+
+      <div
+        className="
+        mt-2 p-5 rounded-2xl border
+        bg-neutral-50 border-neutral-200
+        dark:bg-[#111827] dark:border-[#1F2937]
+        space-y-3
+      "
+      >
+        <p className="text-sm font-semibold text-neutral-700 dark:text-[#E5E7EB]">
+          What's next?
+        </p>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <Link
+            href="/components"
+            className="
+              flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium
+              bg-neutral-900 text-white hover:bg-neutral-700
+              dark:bg-[#266ad8] dark:hover:bg-[#0051ff]
+              transition-colors duration-200
+            "
+          >
+            Browse Components
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+          <Link
+            href="/documentation"
+            className="
+              flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium
+              border border-neutral-200 text-neutral-600 hover:bg-neutral-100
+              dark:border-[#1F2937] dark:text-[#9CA3AF] dark:hover:bg-[#1F2937]
+              transition-colors duration-200
+            "
+          >
+            Read Full Docs
+          </Link>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
