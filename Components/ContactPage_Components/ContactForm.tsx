@@ -1,11 +1,17 @@
 "use client";
 
-import { Send, Loader2, User, Mail, FileText, MessageSquare } from "lucide-react";
+import {
+  Send,
+  Loader2,
+  User,
+  Mail,
+  FileText,
+  MessageSquare,
+} from "lucide-react";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
-/* ── Reusable Input ── */
 const Input = ({
   label,
   name,
@@ -46,7 +52,6 @@ const Input = ({
   </div>
 );
 
-/* ── Main ── */
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const form = useRef<HTMLFormElement | null>(null);
@@ -56,7 +61,12 @@ const ContactForm = () => {
     if (!form.current) return;
     setLoading(true);
     emailjs
-      .sendForm("service_hya09by", "template_bc4h0md", form.current, "HqPux1QUAuYq1cBT4")
+      .sendForm(
+        "service_hya09by",
+        "template_bc4h0md",
+        form.current,
+        "HqPux1QUAuYq1cBT4",
+      )
       .then(() => {
         toast.success("Message sent successfully!");
         form.current?.reset();
@@ -67,17 +77,23 @@ const ContactForm = () => {
 
   return (
     <form ref={form} onSubmit={handleSubmit} className="space-y-5">
-
-      {/* Name + Email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <Input label="Name" name="name" placeholder="Your name" icon={User} />
-        <Input label="Email" name="email" type="email" placeholder="you@email.com" icon={Mail} />
+        <Input label="Name" name="name" placeholder="John Doe" icon={User} />
+        <Input
+          label="Email"
+          name="email"
+          type="email"
+          placeholder="john@example.com"
+          icon={Mail}
+        />
       </div>
 
-      {/* Subject */}
-      <Input label="Subject" name="subject" placeholder="What's this about?" icon={FileText} />
-
-      {/* Message */}
+      <Input
+        label="Subject"
+        name="subject"
+        placeholder="Bug report, feature request, collaboration..."
+        icon={FileText}
+      />
       <div className="space-y-1.5">
         <label className="block text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-[#6B7280]">
           Message
@@ -88,7 +104,7 @@ const ContactForm = () => {
             name="message"
             required
             rows={5}
-            placeholder="Tell me your thoughts..."
+            placeholder="Share your thoughts, ideas, or questions — we read every message."
             className="
               w-full rounded-xl pl-10 pr-4 py-2.5
               text-sm text-neutral-800 dark:text-[#E5E7EB]
@@ -103,8 +119,6 @@ const ContactForm = () => {
           />
         </div>
       </div>
-
-      {/* Submit */}
       <button
         type="submit"
         disabled={loading}
@@ -131,7 +145,6 @@ const ContactForm = () => {
           </>
         )}
       </button>
-
     </form>
   );
 };
