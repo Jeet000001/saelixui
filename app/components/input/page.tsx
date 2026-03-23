@@ -1,4 +1,5 @@
 import Default_input from "@/Components/Input/Default_Input";
+import Disabled_input from "@/Components/Input/Disabled-Input";
 import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
@@ -44,6 +45,38 @@ export default DefaultInputDemo;
 `}
         >
           <Default_input />
+        </ShowComponent>
+        {/* diabled */}
+        <ShowComponent
+          ComponentName="02. Disabled"
+          installation="npx saelix-ui add disabled-input"
+          ComponentCodeTS={`import Disabled_input from "@/components/ui/Disabled-input";
+
+const DisabledInputDemo = () => {
+  return (
+    <div>
+      <Disabled_input disabled />
+    </div>
+  );
+};
+
+export default DisabledInputDemo;
+
+`}
+          ComponentCodeJS={`import Disabled_input from "./components/ui/Disabled-input";
+
+const DisabledInputDemo = () => {
+  return (
+    <div>
+      <Disabled_input disabled />
+    </div>
+  );
+};
+
+export default DisabledInputDemo;
+`}
+        >
+          <Disabled_input disabled />
         </ShowComponent>
       </div>
     </div>
