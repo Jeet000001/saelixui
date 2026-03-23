@@ -1,5 +1,6 @@
 import Default_input from "@/Components/Input/Default_Input";
-import Disabled_input from "@/Components/Input/Disabled-Input";
+import Disabled_input from "@/Components/Input/Disabled_Input";
+import With_button_input from "@/Components/Input/With_Button";
 import ShowComponent from "@/Components/ShowComponent";
 
 const page = () => {
@@ -77,6 +78,37 @@ export default DisabledInputDemo;
 `}
         >
           <Disabled_input disabled />
+        </ShowComponent>
+        {/* with button */}
+        <ShowComponent
+          ComponentName="03. With Button"
+          installation="npx saelix-ui add with-button-input"
+          ComponentCodeTS={`import With_button_input from "@/components/ui/With-button-input";
+
+const WithButtonInputDemo = () => {
+  return (
+    <div>
+      <With_button_input />
+    </div>
+  );
+};
+
+export default WithButtonInputDemo;
+`}
+          ComponentCodeJS={`import With_button_input from "./components/ui/With-button-input";
+
+const WithButtonInputDemo = () => {
+  return (
+    <div>
+      <With_button_input />
+    </div>
+  );
+};
+
+export default WithButtonInputDemo;
+`}
+        >
+          <With_button_input />
         </ShowComponent>
       </div>
     </div>
